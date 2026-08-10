@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+
+message: "Si utiliza esta obra, por favor cítela de la siguiente manera."
+
+title: "Inteligencia Artificial Local: Diseño, Integración y Automatización de Soluciones con LLM"
+
+type: book
+
+authors:
+  - family-names: "López-Núñez"
+    given-names: "Julio"
+    affiliation: "Universidad de Las Américas, Chile"
+    
+
+version: 1.0.0
+
+date-released: 2026-08-09
+
+repository-code: "https://github.com/juliopez/ia-local-integracion"
+
+license: "CC-BY-ND-4.0"
+
+
