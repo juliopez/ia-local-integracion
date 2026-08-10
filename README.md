@@ -271,6 +271,7 @@ Las decisiones, configuraciones, pruebas y resultados forman parte del proceso d
 ├── Volumen 3 - Cuaderno de Laboratorios/
 ├── Volumen 4 - Manual del Proyecto Integrador/
 ├── Volumen 5 - Manual de Referencia Técnica/
+├── Presentaciones/
 ├── Scripts/
 ├── Images/
 └── README.md
