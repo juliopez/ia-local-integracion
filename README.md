@@ -1,3 +1,9 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21877028.svg)](https://doi.org/10.5281/zenodo.21877028)
+![Version](https://img.shields.io/badge/versión-1.0.0-blue)
+![License](https://img.shields.io/badge/licencia-CC%20BY--ND%204.0-green)
+![Language](https://img.shields.io/badge/idioma-Español-red)
+![Status](https://img.shields.io/badge/estado-versión%20estable-brightgreen)
+
 # Inteligencia Artificial Local: Diseño, Integración y Automatización de Soluciones con LLM
 
 > Una guía teórico-práctica para aprender a diseñar, implementar, integrar y evaluar soluciones basadas en modelos de lenguaje ejecutados localmente, utilizando Ollama, Open WebUI, Python y Google Workspace.
@@ -310,11 +316,20 @@ Sus áreas de trabajo incluyen analítica de datos, Inteligencia Artificial apli
 
 # Cómo citar esta obra
 
-```text
-López-Núñez, J. (2026).
-Inteligencia Artificial Local: Diseño, Integración y Automatización de Soluciones con LLM.
-GitHub.
-```
+**López-Núñez, J. (2026). _Inteligencia Artificial Local: Diseño, Integración y Automatización de Soluciones con LLM_ (Versión 1.0.0). Zenodo. https://doi.org/10.5281/zenodo.21877028**
+
+### BibTeX
+
+```bibtex
+@book{lopez_nunez_2026_ia_local,
+  author    = {López-Núñez, Julio},
+  title     = {Inteligencia Artificial Local: Diseño, Integración y Automatización de Soluciones con LLM},
+  year      = {2026},
+  version   = {1.0.0},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.21877028},
+  url       = {https://doi.org/10.5281/zenodo.21877028}
+}
 
 ---
 
