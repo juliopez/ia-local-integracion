@@ -41,27 +41,26 @@ La obra se organiza en seis capítulos teóricos acompañados por seis laborator
 
 ## Capítulos teóricos
 
-### Capítulo 1 — Introducción a la Inteligencia Artificial Local
-
+### [Capítulo 1 — Introducción a la Inteligencia Artificial Local](https://github.com/juliopez/ia-local-integracion/blob/main/vol1_manual_participante/cap01.md)
 Fundamentos de la Inteligencia Artificial Local, modelos de lenguaje, ejecución local, privacidad, autonomía tecnológica y componentes básicos del ecosistema.
 
-### Capítulo 2 — Diseño y configuración de asistentes inteligentes especializados
+### [Capítulo 2 — Diseño y configuración de asistentes inteligentes especializados](https://github.com/juliopez/ia-local-integracion/blob/main/vol1_manual_participante/cap02.md)
 
 Diseño de asistentes especializados, definición de propósito, rol, contexto, restricciones y construcción de System Prompts.
 
-### Capítulo 3 — Validación y optimización del asistente inteligente
+### [Capítulo 3 — Validación y optimización del asistente inteligente](https://github.com/juliopez/ia-local-integracion/blob/main/vol1_manual_participante/cap03.md)
 
 Diseño de casos de prueba, evaluación de respuestas, identificación de problemas y optimización sistemática del comportamiento del asistente.
 
-### Capítulo 4 — Integración del asistente inteligente en flujos funcionales
+### [Capítulo 4 — Integración del asistente inteligente en flujos funcionales](https://github.com/juliopez/ia-local-integracion/blob/main/vol1_manual_participante/cap04.md)
 
 Principios de integración, intercambio de información entre componentes y conexión de modelos locales con herramientas digitales.
 
-### Capítulo 5 — Consolidación del Proyecto Integrador
+### [Capítulo 5 — Consolidación del Proyecto Integrador](https://github.com/juliopez/ia-local-integracion/blob/main/vol1_manual_participante/cap05.md)
 
 Análisis de procesos organizacionales, identificación del aporte de la Inteligencia Artificial y consolidación de una solución integrada.
 
-### Capítulo 6 — Presentación del Proyecto Integrador y uso responsable de la Inteligencia Artificial
+### [Capítulo 6 — Presentación del Proyecto Integrador y uso responsable de la Inteligencia Artificial](https://github.com/juliopez/ia-local-integracion/blob/main/vol1_manual_participante/cap06.md)
 
 Evaluación de la solución, comunicación de resultados, limitaciones, riesgos, privacidad, supervisión humana y principios para un uso responsable de la Inteligencia Artificial.
 
@@ -71,27 +70,26 @@ Evaluación de la solución, comunicación de resultados, limitaciones, riesgos,
 
 Cada capítulo se complementa con actividades prácticas que permiten aplicar progresivamente los conceptos estudiados.
 
-### Laboratorio 1 — Instalación de Ollama y Open WebUI, exploración de un LLM y primeros prompts
-
+### [Laboratorio 1 — Instalación de Ollama y Open WebUI, exploración de un LLM y primeros prompts](https://github.com/juliopez/ia-local-integracion/blob/main/vol3_laboratorios/Lab01.md)
 Preparación del entorno local, ejecución de modelos y primeras interacciones mediante prompts.
 
-### Laboratorio 2 — Diseño y configuración de un asistente inteligente especializado
+### [Laboratorio 2 — Diseño y configuración de un asistente inteligente especializado](https://github.com/juliopez/ia-local-integracion/blob/main/vol3_laboratorios/Lab02.md)
 
 Definición del propósito, comportamiento y System Prompt de un asistente adaptado a una necesidad específica.
 
-### Laboratorio 3 — Validación y optimización del asistente inteligente
+### [Laboratorio 3 — Validación y optimización del asistente inteligente](https://github.com/juliopez/ia-local-integracion/blob/main/vol3_laboratorios/Lab03.md)
 
 Construcción de casos de prueba, evaluación de resultados y optimización del asistente.
 
-### Laboratorio 4 — Integración del asistente con herramientas digitales
+### [Laboratorio 4 — Integración del asistente con herramientas digitales](https://github.com/juliopez/ia-local-integracion/blob/main/vol3_laboratorios/Lab04.md)
 
 Construcción de un flujo integrado utilizando Google Forms, Google Sheets, Google Apps Script, Python, Ollama y Gmail.
 
-### Laboratorio 5 — Consolidación de la solución y análisis del proceso organizacional
+### [Laboratorio 5 — Consolidación de la solución y análisis del proceso organizacional](https://github.com/juliopez/ia-local-integracion/blob/main/vol3_laboratorios/Lab05.md)
 
 Análisis del proceso completo, papel de la Inteligencia Artificial, actores involucrados, beneficios, riesgos y oportunidades de mejora.
 
-### Laboratorio 6 — Presentación ejecutiva y reflexión profesional del proyecto
+### [Laboratorio 6 — Presentación ejecutiva y reflexión profesional del proyecto](https://github.com/juliopez/ia-local-integracion/blob/main/vol3_laboratorios/Lab06.md)
 
 Consolidación de evidencias, demostración de la solución, presentación de resultados y reflexión sobre su aplicación y evolución futura.
 
@@ -153,11 +151,11 @@ El repositorio se organiza en cinco documentos complementarios.
 
 | Documento                             | Propósito                                                                               |
 | ------------------------------------- | --------------------------------------------------------------------------------------- |
-| 📘 **Manual del Participante**        | Fundamentos conceptuales y metodológicos organizados en seis capítulos.                 |
-| 📗 **Manual Técnico**                 | Instalación, configuración, integración, operación y evaluación técnica de la solución. |
-| 📙 **Cuaderno de Laboratorios**       | Seis laboratorios prácticos para aplicar progresivamente los contenidos.                |
-| 📕 **Manual del Proyecto Integrador** | Plantillas y orientaciones para documentar el desarrollo de una solución propia.        |
-| 📓 **Manual de Referencia Técnica**   | Arquitecturas, diagramas, comandos y recursos técnicos de consulta.                     |
+| 📘 [**Manual del Participante**](https://github.com/juliopez/ia-local-integracion/tree/main/vol1_manual_participante)      | Fundamentos conceptuales y metodológicos organizados en seis capítulos.                 |
+| 📗 [**Manual Técnico**](https://github.com/juliopez/ia-local-integracion/tree/main/vol2_manual_tecnico)                 | Instalación, configuración, integración, operación y evaluación técnica de la solución. |
+| 📙 [**Cuaderno de Laboratorios**](https://github.com/juliopez/ia-local-integracion/tree/main/vol3_laboratorios )      | Seis laboratorios prácticos para aplicar progresivamente los contenidos.                |
+| 📕 [**Manual del Proyecto Integrador**](https://github.com/juliopez/ia-local-integracion/tree/main/vol4_proyecto_integrador ) | Plantillas y orientaciones para documentar el desarrollo de una solución propia.        |
+| 📓 [**Manual de Referencia Técnica**]( https://github.com/juliopez/ia-local-integracion/tree/main/vol5_manual_referencia)   | Arquitecturas, diagramas, comandos y recursos técnicos de consulta.                     |
 
 Los documentos pueden consultarse individualmente, aunque su utilización conjunta permite seguir el recorrido completo propuesto por la obra.
 
