@@ -330,6 +330,7 @@ Sus áreas de trabajo incluyen analítica de datos, Inteligencia Artificial apli
   doi       = {10.5281/zenodo.21877028},
   url       = {https://doi.org/10.5281/zenodo.21877028}
 }
+```
 
 ---
 
