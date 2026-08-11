@@ -3079,7 +3079,7 @@ Taller_IA_Local
 └── 03_Scripts
 ```
 
-Ejecute:
+Ejecute en Windows Power Shell:
 
 ```powershell
 python puente_local.py
