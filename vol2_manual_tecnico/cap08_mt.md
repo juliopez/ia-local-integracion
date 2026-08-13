@@ -1482,39 +1482,7 @@ Durante este capítulo se utilizarán los siguientes estados:
 
 # Parte B. Configuración del servicio de intercambio en Apps Script
 
-## Paso 1. Configurar el proveedor del modelo de lenguaje (LLM)
-
-En Google Apps Script acceda a:
-
-```
-Configuración del proyecto
-↓
-Propiedades de script
-↓
-Añadir propiedad de script
-```
-
-Cree las siguientes propiedades:
-
-| Propiedad | Valor |
-|-----------|-------|
-| LLM_PROVIDER | openwebui |
-| OPENWEBUI_URL | http://localhost:8080 |
-| MODEL_NAME | llama3.2:latest |
-
-Estas propiedades permiten desacoplar la configuración del proveedor de inteligencia artificial respecto del código fuente, facilitando la reutilización del proyecto y permitiendo cambiar el modelo o el servidor de inferencia sin modificar la lógica del programa.
-
-En este laboratorio se utilizará Open WebUI como interfaz de acceso al modelo de lenguaje, ejecutándose localmente sobre el puerto **8080**, mientras que el modelo seleccionado será **llama3.2:latest**.
-
-<p align="center">
-  <img
-    src="../images/MT8-1.png"
-    width="700">
-</p>
-
----
-
-## Paso 2. Obtener una solicitud pendiente
+## Paso 1. Obtener una solicitud pendiente
 
 > En la sección anterior implementamos una primera versión de `leerSolicitud()` con fines didácticos.
 
@@ -1589,7 +1557,7 @@ function leerSolicitud() {
 
 ---
 
-## Paso 3. Publicar la solicitud mediante `doGet()`
+## Paso 2. Publicar la solicitud mediante `doGet()`
 
 En el archivo **`Code.gs`**, agregue la siguiente función:
 
@@ -1631,7 +1599,7 @@ Esta función publica un servicio web que permite recuperar la siguiente solicit
 </p>
 ---
 
-## Paso 4. Crear la función de respuesta JSON
+## Paso 3. Crear la función de respuesta JSON
 
 En `Code.gs`, agregue:
 
@@ -1647,7 +1615,7 @@ Esta función transforma la información recibida en una respuesta JSON, formato
 
 ---
 
-## Paso 5. Recibir la respuesta procesada
+## Paso 4. Recibir la respuesta procesada
 
 En `Code.gs`, agregue:
 
@@ -2701,10 +2669,6 @@ function enviarCorreo(correo, nombre, tipo, respuesta) {
     "Respuesta a tu consulta académica: " + categoria;
 
   const cuerpo =
-    "Hola " + nombreUsuario + ":\n\n" +
-    "Hemos procesado tu consulta mediante el " +
-    "Servicio Inteligente Académico.\n\n" +
-    "Respuesta:\n\n" +
     respuesta + "\n\n" +
     "Esta respuesta fue generada automáticamente. " +
     "Si necesitas una revisión adicional, comunícate " +
