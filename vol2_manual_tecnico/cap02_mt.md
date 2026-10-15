@@ -866,7 +866,7 @@ Antes de continuar confirme que:
 
 **No descargue todavía un modelo.** Antes de hacerlo, complete el Capítulo 3, donde se explican tamaños, cuantización, selección asistida mediante llmfit y disponibilidad en Ollama.
 
-Una vez elegido el modelo, utilice el procedimiento de descarga y verificación de la **Sección 3.5.1**. Regrese luego a las secciones 2.7 y 2.8 como material de consulta para los comandos y la administración de Ollama.
+Una vez elegido el modelo, utilice el procedimiento de descarga y verificación de la **Sección 3.5.2**. Regrese luego a las secciones 2.7 y 2.8 como material de consulta para los comandos y la administración de Ollama.
 
 ---
 
@@ -889,9 +889,9 @@ Conocer y utilizar los comandos más importantes de Ollama para consultar inform
 Antes de comenzar esta sección deberá haber completado:
 
 - Sección 2.3 – Instalación de Ollama.
-- Sección 2.6 – Descarga del primer modelo.
+- Sección 2.6 – Orientación para seleccionar y descargar el modelo en el Capítulo 3.
 
-Además, deberá tener al menos un modelo instalado.
+Para practicar comandos sobre un modelo o administrarlo, complete primero la Sección 3.5.2 del Capítulo 3. Puede leer esta sección como referencia sin tener todavía modelos instalados.
 
 ---
 
@@ -1147,10 +1147,10 @@ Aprender a administrar los modelos instalados en Ollama, consultando su informac
 
 Antes de comenzar esta sección deberá haber completado:
 
-- Sección 2.6 – Descarga del primer modelo.
+- Sección 2.6 – Orientación para seleccionar y descargar el modelo en el Capítulo 3.
 - Sección 2.7 – Comandos principales.
 
-Además, deberá tener al menos un modelo instalado.
+Para practicar comandos sobre un modelo o administrarlo, complete primero la Sección 3.5.2 del Capítulo 3. Puede leer esta sección como referencia sin tener todavía modelos instalados.
 
 ---
 
