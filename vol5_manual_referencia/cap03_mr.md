@@ -42,7 +42,7 @@ Antes de ejecutar cualquier comando, verifique que se encuentra en el entorno co
 
 # C3.0
 
-# llmfit — selección de modelos en Ubuntu
+# llmfit — selección de modelos en Ubuntu, Windows y macOS
 
 Los siguientes comandos son **alternativas**, no instrucciones consecutivas. Permiten realizar el diagnóstico de hardware antes de instalar Ollama.
 
@@ -59,6 +59,27 @@ sudo docker run -it --rm ghcr.io/alexsjones/llmfit --tui
 ```
 
 Docker debe estar instalado para la segunda opción. La ejecución en contenedor puede ofrecer una detección de hardware diferente de la instalación nativa, especialmente respecto de la GPU. Revise el script remoto antes de ejecutarlo. Consulte https://github.com/AlexsJones/llmfit para confirmar instrucciones actualizadas.
+
+**Windows 10/11 (x86-64) — instalación nativa recomendada:**
+
+En PowerShell, si Scoop ya está instalado:
+
+```powershell
+scoop install llmfit
+llmfit
+```
+
+Si no dispone de Scoop, consulte https://scoop.sh/ para instalarlo o descargue el binario compatible desde https://github.com/AlexsJones/llmfit/releases. No es necesario instalar Ubuntu, WSL2 ni Docker para utilizar la versión nativa de Windows. Compruebe la procedencia del ejecutable y, cuando corresponda, su firma digital.
+
+**macOS — Homebrew:**
+
+```bash
+brew install AlexsJones/llmfit/llmfit
+llmfit
+```
+
+**Criterio para el taller:** llmfit es opcional. Si la instalación no resulta viable, registre RAM, CPU y GPU/VRAM (si corresponde), seleccione manualmente un modelo compatible en la biblioteca de Ollama y continúe con el laboratorio. Las estimaciones de llmfit requieren una prueba real de rendimiento.
+
 
 ---
 
