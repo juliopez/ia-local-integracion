@@ -692,6 +692,8 @@ Compruebe que todos los campos contienen la información esperada.
 
 Verifique que el Web App de Google Apps Script se encuentre correctamente implementado y que Ollama esté operativo.
 
+> **Importante para el laboratorio:** utilice exclusivamente solicitudes ficticias, sin datos personales de estudiantes. El ejemplo de Apps Script del Manual Técnico no incorpora autenticación en los puntos de entrada `doGet()` y `doPost()`; no debe desplegarse como servicio institucional ni con datos reales. Para validar la actividad, diferencie los estados `PENDIENTE`, `PROCESANDO`, `RESPONDIDA` y `ENVIADA`, y compruebe el envío de correo por separado.
+
 A continuación, ejecute el archivo `puente_local.py` desde la terminal, siguiendo las instrucciones desarrolladas en el Manual Técnico.
 
 Observe cómo el puente identifica las solicitudes pendientes, las envía al modelo ejecutado mediante Ollama y devuelve las respuestas al servicio de Google Apps Script.
