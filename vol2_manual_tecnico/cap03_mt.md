@@ -1016,6 +1016,25 @@ Utilizar **llmfit** como apoyo para identificar modelos de lenguaje adecuados pa
 
 **Paso 2. Instalar llmfit, si corresponde.** Siga el método oficial compatible con su equipo. Su instalación es opcional: cuando no sea viable, utilice las especificaciones de hardware y la biblioteca de Ollama para seleccionar manualmente el modelo.
 
+**Ubuntu — alternativas prácticas para utilizar llmfit**
+
+**Opción A. Instalación mediante script:**
+
+```bash
+curl -fsSL https://llmfit.axjns.dev/install.sh | sh
+```
+
+Después de la instalación, ejecute `llmfit` desde la terminal (o el comando indicado por el instalador). El script se descarga y ejecuta directamente: compruebe antes su procedencia y contenido.
+
+**Opción B. Ejecución temporal mediante Docker (TUI):**
+
+```bash
+sudo docker run -it --rm ghcr.io/alexsjones/llmfit --tui
+```
+
+Esta opción requiere Docker instalado y operativo. **No es un segundo paso obligatorio tras la opción A:** ambos métodos son alternativas. El contenedor se elimina al salir por `--rm`; la detección de GPU y otros recursos puede variar respecto de la ejecución nativa. `sudo` se utiliza aquí conforme al ejemplo probado en Ubuntu, pero depende de los permisos de Docker del equipo.
+
+
 **Paso 3. Analizar las recomendaciones.** Ejecute llmfit conforme a la documentación de la versión instalada. Compare al menos dos modelos, considerando:
 
 - RAM y VRAM disponibles, además de CPU y GPU;
