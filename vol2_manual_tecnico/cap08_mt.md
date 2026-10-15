@@ -1403,6 +1403,8 @@ En ese contexto, `localhost` no representa el computador del estudiante.
 
 Para conservar el procesamiento local se utilizará la siguiente arquitectura:
 
+> **Precaución de seguridad:** el puente local inicia conexiones salientes hacia la aplicación web de Apps Script. No es necesario exponer el puerto local 11434 de Ollama a Internet. Antes de trabajar con datos reales, revise permisos de la aplicación web, autenticación, control de acceso, tratamiento de datos personales y gestión de errores. El ejemplo del taller es un prototipo educativo y no debe considerarse un servicio de producción sin controles adicionales.
+
 ```text
 Google Sheets
       │
