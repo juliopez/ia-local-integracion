@@ -407,6 +407,8 @@ Open WebUI puede instalarse utilizando el administrador de paquetes de Python (*
 
 Este método permite descargar e instalar los componentes necesarios para ejecutar Open WebUI. Posteriormente se realizará la configuración inicial de la aplicación y se verificará su comunicación con Ollama.
 
+> **Alcance de esta guía:** los comandos y capturas corresponden a una instalación de Open WebUI mediante Python/pip en Windows. En Ubuntu, macOS o instalaciones mediante Docker, consulte el procedimiento oficial vigente: https://docs.openwebui.com/getting-started/quick-start/. No mezcle instrucciones de distintos métodos de instalación. Es preferible usar un entorno virtual de Python para evitar conflictos con paquetes del sistema.
+
 ---
 
 ## Paso 1. Abrir Windows PowerShell
