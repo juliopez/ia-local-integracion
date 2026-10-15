@@ -212,7 +212,7 @@ El script finaliza con error de autorización.
 ### Procedimiento recomendado
 
 - Ejecutar nuevamente el script.
-- Aceptar todos los permisos solicitados.
+- Revisar los permisos solicitados y autorizarlos únicamente si son necesarios y corresponden a una aplicación confiable.
 - Verificar la cuenta utilizada.
 
 ---
