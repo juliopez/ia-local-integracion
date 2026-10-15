@@ -69,7 +69,8 @@ Registrar las versiones de las herramientas utilizadas para la ejecución local 
 | ------------------ | --------------------------------------------------------- |
 | Ollama             | Registrar la versión oficial utilizada durante el taller. |
 | Open WebUI         | Registrar la versión utilizada.                           |
-| Modelo de lenguaje | Indicar el nombre y versión del modelo empleado.          |
+| Modelo de lenguaje | Indicar la etiqueta exacta, versión y cuantización cuando corresponda. |
+| llmfit (opcional) | Registrar la versión y fecha del diagnóstico si se utilizó. |
 
 ---
 
