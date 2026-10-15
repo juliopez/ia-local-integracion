@@ -1034,6 +1034,27 @@ sudo docker run -it --rm ghcr.io/alexsjones/llmfit --tui
 
 Esta opción requiere Docker instalado y operativo. **No es un segundo paso obligatorio tras la opción A:** ambos métodos son alternativas. El contenedor se elimina al salir por `--rm`; la detección de GPU y otros recursos puede variar respecto de la ejecución nativa. `sudo` se utiliza aquí conforme al ejemplo probado en Ubuntu, pero depende de los permisos de Docker del equipo.
 
+**Windows 10/11 (x86-64) — instalación nativa recomendada:**
+
+En PowerShell, si Scoop ya está instalado:
+
+```powershell
+scoop install llmfit
+llmfit
+```
+
+Si no dispone de Scoop, consulte https://scoop.sh/ para instalarlo o descargue el binario compatible desde https://github.com/AlexsJones/llmfit/releases. No es necesario instalar Ubuntu, WSL2 ni Docker para utilizar la versión nativa de Windows. Compruebe la procedencia del ejecutable y, cuando corresponda, su firma digital.
+
+**macOS — Homebrew:**
+
+```bash
+brew install AlexsJones/llmfit/llmfit
+llmfit
+```
+
+**Criterio para el taller:** llmfit es opcional. Si la instalación no resulta viable, registre RAM, CPU y GPU/VRAM (si corresponde), seleccione manualmente un modelo compatible en la biblioteca de Ollama y continúe con el laboratorio. Las estimaciones de llmfit requieren una prueba real de rendimiento.
+
+
 
 **Paso 3. Analizar las recomendaciones.** Ejecute llmfit conforme a la documentación de la versión instalada. Compare al menos dos modelos, considerando:
 
