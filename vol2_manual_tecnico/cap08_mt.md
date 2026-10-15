@@ -1391,6 +1391,8 @@ Además, deberá disponer de:
 
 ### Consideración técnica
 
+> **Alcance de la validación:** los fragmentos de código de este capítulo se presentan como construcción progresiva. Su presencia en el manual no acredita una prueba de ejecución extremo a extremo. La recuperación de solicitudes modifica el estado a `PROCESANDO`; si el puente se interrumpe, la fila puede permanecer bloqueada y necesitar recuperación controlada. Además, el envío de correo se incorpora en una etapa posterior: registrar `RESPONDIDA` no equivale a haber enviado un mensaje.
+
 Google Apps Script se ejecuta en la infraestructura de Google.
 
 Por este motivo, una instrucción como la siguiente no permite acceder al Ollama instalado en el computador del participante:
@@ -1722,7 +1724,7 @@ Utilice una configuración equivalente a:
 | ---------------------- | -------------------------------------------------------------------------------- |
 | **Descripción**        | `Servicio Inteligente Académico`                                                 |
 | **Ejecutar como**      | **Yo** / propietario del proyecto                                                |
-| **Quién tiene acceso** | **Cualquier persona** o la opción equivalente que permita acceso mediante enlace |
+| **Quién tiene acceso** | **Solo usuarios autorizados**, cuando el entorno y el método de autenticación lo permitan. La opción **Cualquier persona** se limita a una demostración aislada con datos ficticios y nunca debe interpretarse como configuración segura para datos reales. |
 
 <p align="center">
   <img
@@ -1733,6 +1735,8 @@ Utilice una configuración equivalente a:
 ---
 
 ## Paso 3. Copiar la URL
+
+> **Control crítico antes de publicar:** el ejemplo de `doGet()` recupera solicitudes y `doPost()` acepta actualizaciones de filas sin validar identidad ni autorización. Si se habilita el acceso anónimo, cualquier persona que conozca la URL podría interactuar con el servicio. **No use nombres, correos ni consultas reales de estudiantes en esa configuración.** Para un uso institucional se requiere diseñar y probar autenticación, autorización por operación, validación de entradas, control de concurrencia y registro de auditoría; la presente guía no implementa todavía esos controles.
 
 > **Importante:** Al finalizar la implementación, Google Apps Script mostrará la URL de la aplicación web. Copie esta dirección y guárdela, ya que será utilizada posteriormente para configurar el puente local que se comunicará con el servicio.
 
