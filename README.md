@@ -77,7 +77,7 @@ Evaluación de la solución, comunicación de resultados, limitaciones, riesgos,
 Cada capítulo se complementa con actividades prácticas que permiten aplicar progresivamente los conceptos estudiados.
 
 ### [Laboratorio 1 — Instalación de Ollama y Open WebUI, exploración de un LLM y primeros prompts](https://github.com/juliopez/ia-local-integracion/blob/main/vol3_laboratorios/Lab01.md)
-Preparación del entorno local, ejecución de modelos y primeras interacciones mediante prompts.
+Preparación del entorno local, diagnóstico opcional de hardware con llmfit, selección fundamentada del modelo, ejecución mediante Ollama y primeras interacciones mediante prompts.
 
 ### [Laboratorio 2 — Diseño y configuración de un asistente inteligente especializado](https://github.com/juliopez/ia-local-integracion/blob/main/vol3_laboratorios/Lab02.md)
 
@@ -140,6 +140,7 @@ Esta arquitectura permite estudiar cómo un modelo ejecutado localmente puede pa
 
 La obra utiliza principalmente:
 
+* **llmfit** — herramienta complementaria y opcional para orientar la selección de modelos según los recursos del computador;
 * **Ollama** — ejecución local de modelos de lenguaje;
 * **Open WebUI** — interfaz para configuración y experimentación con modelos locales;
 * **Python** — integración y automatización;
@@ -170,6 +171,9 @@ Los documentos pueden consultarse individualmente, aunque su utilización conjun
 # Ruta de aprendizaje sugerida
 
 Para quienes estudien el contenido de manera autónoma se recomienda avanzar de forma progresiva:
+
+En el **Laboratorio 1**, antes de descargar un modelo, puede utilizarse [llmfit](https://github.com/AlexsJones/llmfit) para comparar alternativas compatibles con el hardware disponible. El procedimiento está documentado en el [Capítulo 3 del Manual Técnico](vol2_manual_tecnico/cap03_mt.md). Esta herramienta es opcional y no sustituye las pruebas reales de funcionamiento en Ollama.
+
 
 ```text
 Capítulo 1
