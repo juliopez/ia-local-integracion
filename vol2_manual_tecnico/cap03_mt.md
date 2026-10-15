@@ -20,13 +20,13 @@ Comprender qué es un modelo de lenguaje y cuál es su función dentro del entor
 
 Antes de comenzar esta sección deberá haber completado el **Capítulo 2 – Instalación y administración de Ollama**.
 
-Además, se recomienda tener al menos un modelo instalado en el computador.
+No es necesario tener un modelo instalado: la descarga se realizará después de revisar los criterios de selección de este capítulo.
 
 ---
 
 ### Procedimiento
 
-Hasta este momento ha instalado Ollama y descargado su primer modelo.
+Hasta este momento ha instalado Ollama. En este capítulo aprenderá a seleccionar un modelo antes de descargarlo.
 
 Ahora es importante comprender qué representa realmente ese modelo.
 
@@ -990,6 +990,101 @@ Antes de continuar confirme que:
 
 ---
 
+## 3.5.1 Diagnóstico de hardware y selección asistida mediante llmfit
+
+### Objetivo
+
+Utilizar **llmfit** como apoyo para identificar modelos de lenguaje adecuados para el hardware disponible, antes de descargarlos con Ollama. Esta actividad complementa los criterios de las secciones 3.5 y 3.6 y se aplica en el Laboratorio 1.
+
+### Tiempo estimado
+
+**10–15 minutos** (adicionales si se requiere instalar la herramienta).
+
+### Requisitos previos
+
+- Haber identificado la RAM, CPU y, cuando corresponda, GPU y VRAM del computador.
+- Disponer de conexión a Internet para consultar las instrucciones de instalación.
+- Para el diagnóstico inicial **no se necesita Ollama ni otro backend instalado**. Ollama se instalará antes de descargar y ejecutar el modelo seleccionado.
+
+### Procedimiento
+
+**Orden recomendado para el primer laboratorio:** ejecutar llmfit para diagnosticar el equipo **antes de instalar Ollama**, interpretar las recomendaciones, instalar Ollama, descargar un modelo disponible en su biblioteca, instalar Open WebUI y comprobar el rendimiento real. Si Ollama ya está instalado, no es necesario reinstalarlo.
+
+> **llmfit funciona sin un backend instalado.** Puede analizar el hardware y mostrar recomendaciones aunque todavía no se haya instalado Ollama, llama.cpp u otro motor de ejecución. Si la interfaz indica `Ollama: X` u otros backends con una `X`, esto puede significar simplemente que no están instalados o no han sido detectados; **no implica por sí solo un fallo de llmfit**. La recomendación de un modelo tampoco garantiza su disponibilidad en la biblioteca de Ollama.
+
+**Paso 1. Consultar el proyecto oficial.** Abra https://github.com/AlexsJones/llmfit y revise las instrucciones actualizadas para su sistema operativo. llmfit es una herramienta complementaria de diagnóstico y recomendación; **no reemplaza Ollama ni Open WebUI**.
+
+**Paso 2. Instalar llmfit, si corresponde.** Siga el método oficial compatible con su equipo. Su instalación es opcional: cuando no sea viable, utilice las especificaciones de hardware y la biblioteca de Ollama para seleccionar manualmente el modelo.
+
+**Paso 3. Analizar las recomendaciones.** Ejecute llmfit conforme a la documentación de la versión instalada. Compare al menos dos modelos, considerando:
+
+- RAM y VRAM disponibles, además de CPU y GPU;
+- tamaño y cuantización del modelo;
+- memoria requerida y rendimiento estimado;
+- capacidad de contexto y adecuación a la tarea.
+
+**Paso 4. Instalar Ollama (si aún no está instalado) y verificar el modelo.** Siga el procedimiento del Capítulo 2 y compruebe que Ollama funciona. Luego consulte https://ollama.com/library, identifique la etiqueta exacta de la variante elegida y ejecute en PowerShell:
+
+```powershell
+ollama pull NOMBRE_DEL_MODELO
+ollama run NOMBRE_DEL_MODELO
+```
+
+Sustituya `NOMBRE_DEL_MODELO` por el identificador real obtenido de la biblioteca. Los comandos son plantillas, no nombres de modelos existentes.
+
+**Paso 5. Validar en la práctica.** Realice una consulta breve, mida aproximadamente la latencia y observe la calidad de la respuesta. Verifique después su disponibilidad en Open WebUI. Si la ejecución es demasiado lenta, considere una variante más pequeña o una cuantización menos exigente.
+
+### Registro de decisión
+
+| Criterio | Registro del participante |
+|---|---|
+| RAM y GPU/VRAM (si aplica) | |
+| Modelo candidato A | |
+| Modelo candidato B | |
+| Modelo seleccionado y etiqueta de Ollama | |
+| Motivo de selección | |
+| Resultado de la prueba | |
+
+### Precauciones
+
+- Las recomendaciones de llmfit son **estimaciones**, no garantías de rendimiento.
+- Que un modelo quepa en memoria no implica que sea suficientemente rápido ni adecuado para todas las tareas.
+- La cuantización, la ventana de contexto y otras aplicaciones abiertas pueden alterar el consumo real de memoria.
+- Para integrar posteriormente el modelo mediante API, compruebe que admite las funciones requeridas por la solución.
+- **Llama 3.x** puede mantenerse como ejemplo didáctico, pero no debe imponerse como elección universal.
+
+### Verificación
+
+☐ Identifiqué los recursos de mi computador.
+
+☐ Comparé al menos dos modelos o justifiqué una selección manual.
+
+☐ Verifiqué la disponibilidad del modelo en Ollama.
+
+☐ Ejecuté una prueba y registré el resultado.
+
+---
+
+## 3.5.2 Descarga y primera ejecución del modelo seleccionado
+
+**Realice este procedimiento únicamente después de seleccionar el modelo mediante los criterios de la sección 3.5 y, opcionalmente, llmfit (3.5.1).**
+
+1. Confirme que Ollama está instalado y disponible (`ollama --version`).
+2. Busque en https://ollama.com/library la etiqueta exacta del modelo elegido.
+3. Descargue y compruebe el modelo desde PowerShell o la terminal:
+
+```powershell
+ollama pull NOMBRE_DEL_MODELO
+ollama list
+ollama run NOMBRE_DEL_MODELO
+```
+
+Reemplace `NOMBRE_DEL_MODELO` por la etiqueta real. Por ejemplo, `llama3.2` es una alternativa ilustrativa, **no una elección obligatoria**. En la sesión interactiva, realice una pregunta breve y compruebe la respuesta. Si la ejecución falla o es lenta, elija un modelo más pequeño o con otra cuantización.
+
+**Evidencia:** registre modelo y etiqueta, hardware, motivo de elección y resultado de la prueba. La interfaz Open WebUI se instalará y conectará en el Capítulo 4.
+
+---
+
 ## 3.6 Comparación de modelos
 
 ### Objetivo
@@ -1010,7 +1105,7 @@ Antes de comenzar esta sección deberá haber completado:
 
 - Sección 3.5 – ¿Qué modelo elegir?
 
-Además, deberá disponer de al menos dos modelos instalados en Ollama.
+Además, para realizar la **comparación práctica opcional**, deberá disponer de al menos dos modelos instalados en Ollama. Si solo dispone de uno, revise los criterios de comparación y continúe con el taller; no es necesario descargar un segundo modelo.
 
 ---
 
@@ -1212,81 +1307,6 @@ Antes de continuar confirme que:
 
 ---
 
-## 3.6.1 Diagnóstico de hardware y selección asistida mediante llmfit
-
-### Objetivo
-
-Utilizar **llmfit** como apoyo para identificar modelos de lenguaje adecuados para el hardware disponible, antes de descargarlos con Ollama. Esta actividad complementa los criterios de las secciones 3.5 y 3.6 y se aplica en el Laboratorio 1.
-
-### Tiempo estimado
-
-**10–15 minutos** (adicionales si se requiere instalar la herramienta).
-
-### Requisitos previos
-
-- Haber identificado la RAM, CPU y, cuando corresponda, GPU y VRAM del computador.
-- Disponer de conexión a Internet para consultar las instrucciones de instalación.
-- Para el diagnóstico inicial **no se necesita Ollama ni otro backend instalado**. Ollama se instalará antes de descargar y ejecutar el modelo seleccionado.
-
-### Procedimiento
-
-**Orden recomendado para el primer laboratorio:** ejecutar llmfit para diagnosticar el equipo **antes de instalar Ollama**, interpretar las recomendaciones, instalar Ollama, descargar un modelo disponible en su biblioteca, instalar Open WebUI y comprobar el rendimiento real. Si Ollama ya está instalado, no es necesario reinstalarlo.
-
-> **llmfit funciona sin un backend instalado.** Puede analizar el hardware y mostrar recomendaciones aunque todavía no se haya instalado Ollama, llama.cpp u otro motor de ejecución. Si la interfaz indica `Ollama: X` u otros backends con una `X`, esto puede significar simplemente que no están instalados o no han sido detectados; **no implica por sí solo un fallo de llmfit**. La recomendación de un modelo tampoco garantiza su disponibilidad en la biblioteca de Ollama.
-
-**Paso 1. Consultar el proyecto oficial.** Abra https://github.com/AlexsJones/llmfit y revise las instrucciones actualizadas para su sistema operativo. llmfit es una herramienta complementaria de diagnóstico y recomendación; **no reemplaza Ollama ni Open WebUI**.
-
-**Paso 2. Instalar llmfit, si corresponde.** Siga el método oficial compatible con su equipo. Su instalación es opcional: cuando no sea viable, utilice las especificaciones de hardware y la biblioteca de Ollama para seleccionar manualmente el modelo.
-
-**Paso 3. Analizar las recomendaciones.** Ejecute llmfit conforme a la documentación de la versión instalada. Compare al menos dos modelos, considerando:
-
-- RAM y VRAM disponibles, además de CPU y GPU;
-- tamaño y cuantización del modelo;
-- memoria requerida y rendimiento estimado;
-- capacidad de contexto y adecuación a la tarea.
-
-**Paso 4. Instalar Ollama (si aún no está instalado) y verificar el modelo.** Siga el procedimiento del Capítulo 2 y compruebe que Ollama funciona. Luego consulte https://ollama.com/library, identifique la etiqueta exacta de la variante elegida y ejecute en PowerShell:
-
-```powershell
-ollama pull NOMBRE_DEL_MODELO
-ollama run NOMBRE_DEL_MODELO
-```
-
-Sustituya `NOMBRE_DEL_MODELO` por el identificador real obtenido de la biblioteca. Los comandos son plantillas, no nombres de modelos existentes.
-
-**Paso 5. Validar en la práctica.** Realice una consulta breve, mida aproximadamente la latencia y observe la calidad de la respuesta. Verifique después su disponibilidad en Open WebUI. Si la ejecución es demasiado lenta, considere una variante más pequeña o una cuantización menos exigente.
-
-### Registro de decisión
-
-| Criterio | Registro del participante |
-|---|---|
-| RAM y GPU/VRAM (si aplica) | |
-| Modelo candidato A | |
-| Modelo candidato B | |
-| Modelo seleccionado y etiqueta de Ollama | |
-| Motivo de selección | |
-| Resultado de la prueba | |
-
-### Precauciones
-
-- Las recomendaciones de llmfit son **estimaciones**, no garantías de rendimiento.
-- Que un modelo quepa en memoria no implica que sea suficientemente rápido ni adecuado para todas las tareas.
-- La cuantización, la ventana de contexto y otras aplicaciones abiertas pueden alterar el consumo real de memoria.
-- Para integrar posteriormente el modelo mediante API, compruebe que admite las funciones requeridas por la solución.
-- **Llama 3.x** puede mantenerse como ejemplo didáctico, pero no debe imponerse como elección universal.
-
-### Verificación
-
-☐ Identifiqué los recursos de mi computador.
-
-☐ Comparé al menos dos modelos o justifiqué una selección manual.
-
-☐ Verifiqué la disponibilidad del modelo en Ollama.
-
-☐ Ejecuté una prueba y registré el resultado.
-
----
-
 ## 3.7 Modelos recomendados para este taller
 
 ### Objetivo
@@ -1398,7 +1418,7 @@ No será obligatorio durante el taller, pero constituye una buena alternativa pa
 | Equipos básicos | Computadores con poca memoria | Bajos |
 | Programación | Desarrollo de código | Variables según el modelo |
 
-La elección definitiva dependerá siempre de las características del computador y de la actividad que se desee realizar. Para fundamentarla, utilice opcionalmente **llmfit** según la Sección 3.6.1 y compruebe el desempeño mediante una prueba real.
+La elección definitiva dependerá siempre de las características del computador y de la actividad que se desee realizar. Para fundamentarla, utilice opcionalmente **llmfit** según la Sección 3.5.1 y compruebe el desempeño mediante una prueba real.
 
 ---
 
