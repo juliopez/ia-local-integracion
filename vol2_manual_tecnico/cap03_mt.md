@@ -1226,9 +1226,13 @@ Utilizar **llmfit** como apoyo para identificar modelos de lenguaje adecuados pa
 
 - Haber identificado la RAM, CPU y, cuando corresponda, GPU y VRAM del computador.
 - Disponer de conexión a Internet para consultar las instrucciones de instalación.
-- Tener Ollama instalado y operativo para descargar posteriormente el modelo elegido.
+- Para el diagnóstico inicial **no se necesita Ollama ni otro backend instalado**. Ollama se instalará antes de descargar y ejecutar el modelo seleccionado.
 
 ### Procedimiento
+
+**Orden recomendado para el primer laboratorio:** ejecutar llmfit para diagnosticar el equipo **antes de instalar Ollama**, interpretar las recomendaciones, instalar Ollama, descargar un modelo disponible en su biblioteca, instalar Open WebUI y comprobar el rendimiento real. Si Ollama ya está instalado, no es necesario reinstalarlo.
+
+> **llmfit funciona sin un backend instalado.** Puede analizar el hardware y mostrar recomendaciones aunque todavía no se haya instalado Ollama, llama.cpp u otro motor de ejecución. Si la interfaz indica `Ollama: X` u otros backends con una `X`, esto puede significar simplemente que no están instalados o no han sido detectados; **no implica por sí solo un fallo de llmfit**. La recomendación de un modelo tampoco garantiza su disponibilidad en la biblioteca de Ollama.
 
 **Paso 1. Consultar el proyecto oficial.** Abra https://github.com/AlexsJones/llmfit y revise las instrucciones actualizadas para su sistema operativo. llmfit es una herramienta complementaria de diagnóstico y recomendación; **no reemplaza Ollama ni Open WebUI**.
 
@@ -1241,7 +1245,7 @@ Utilizar **llmfit** como apoyo para identificar modelos de lenguaje adecuados pa
 - memoria requerida y rendimiento estimado;
 - capacidad de contexto y adecuación a la tarea.
 
-**Paso 4. Verificar el modelo en Ollama.** Consulte https://ollama.com/library, identifique la etiqueta exacta de la variante elegida y ejecute en PowerShell:
+**Paso 4. Instalar Ollama (si aún no está instalado) y verificar el modelo.** Siga el procedimiento del Capítulo 2 y compruebe que Ollama funciona. Luego consulte https://ollama.com/library, identifique la etiqueta exacta de la variante elegida y ejecute en PowerShell:
 
 ```powershell
 ollama pull NOMBRE_DEL_MODELO
