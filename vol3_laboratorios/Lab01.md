@@ -264,9 +264,29 @@ Esta práctica reduce significativamente los problemas posteriores y permite con
 Utilizando el **Manual Técnico**, realice los procedimientos correspondientes a:
 
 - instalación y verificación de Ollama;
-- descarga del modelo recomendado para el taller;
+- diagnóstico del hardware y selección fundamentada del modelo con **llmfit** (actividad opcional guiada, descrita a continuación);
+- descarga del modelo seleccionado para el taller;
 - instalación y primera ejecución de Open WebUI;
 - conexión de Open WebUI con Ollama.
+
+### Paso 0.1. Seleccionar el modelo según el hardware disponible (llmfit)
+
+Antes de descargar un modelo, revise las características de su equipo: sistema operativo, RAM, CPU y, si corresponde, GPU y VRAM. La herramienta de código abierto **llmfit** (https://github.com/AlexsJones/llmfit) ayuda a comparar modelos de lenguaje según los recursos detectados y estimaciones de ejecución.
+
+1. Consulte la documentación oficial de llmfit y seleccione el procedimiento de instalación correspondiente a su sistema operativo. La instalación de llmfit es **opcional**; si no está disponible, utilice las especificaciones del equipo y la orientación del docente.
+2. Ejecute llmfit siguiendo las instrucciones de su versión y examine los modelos sugeridos. Compare al menos dos alternativas, registrando nombre, tamaño o cuantización, memoria estimada y rendimiento previsto, cuando la herramienta entregue esos datos.
+3. Compruebe que el modelo elegido está disponible en la biblioteca de Ollama y registre su identificador exacto. La recomendación de **Llama 3.x** utilizada como ejemplo en otros materiales **no es un requisito universal**: la elección debe ajustarse al equipo y a las tareas previstas.
+4. Descargue el modelo seleccionado con el comando indicado por Ollama, reemplazando el marcador por el identificador verificado:
+
+```bash
+ollama pull NOMBRE_DEL_MODELO
+```
+
+5. Ejecute una consulta breve y compruebe su funcionamiento en Open WebUI. Si el modelo es demasiado lento o no se ejecuta, pruebe una alternativa más pequeña o una cuantización menos exigente.
+
+> **Importante:** Que un modelo quepa en memoria no garantiza respuestas rápidas ni calidad suficiente. Las estimaciones de llmfit deben contrastarse mediante pruebas reales. Para actividades posteriores de integración, verifique además la compatibilidad del modelo con las funciones que utilizará.
+
+**Registro de selección:** RAM: ______; GPU/VRAM (si aplica): ______; modelo y etiqueta Ollama: ______; motivo de elección: ______; resultado de la prueba: ______.
 
 Una vez completados estos procedimientos, continúe con la verificación funcional descrita a continuación.
 
