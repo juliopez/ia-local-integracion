@@ -8,7 +8,7 @@
 
 Reunir el código fuente oficial utilizado durante el desarrollo de la solución presentada en esta colección, proporcionando una referencia única para la implementación, mantenimiento y futuras adaptaciones del proyecto.
 
-Los fragmentos incluidos en este capítulo corresponden a las versiones utilizadas durante el desarrollo del taller y constituyen la base técnica para el funcionamiento de la solución.
+Los fragmentos incluidos en este capítulo documentan una **implementación de referencia para fines educativos**, pendiente de validación funcional extremo a extremo. No acreditan una solución lista para producción. En particular, los puntos de entrada `doGet()` y `doPost()` no autentican ni autorizan las solicitudes: **no despliegue el Web App con acceso público ni procese información real o personal**. Use únicamente datos ficticios en un entorno aislado.
 
 ---
 
@@ -24,7 +24,7 @@ Cada sección incluye:
 - código fuente;
 - observaciones técnicas.
 
-Se recomienda copiar el código respetando exactamente su estructura y nomenclatura.
+Se recomienda copiar el código respetando su estructura y nomenclatura, sustituyendo las URL y el nombre del modelo por valores propios. La publicación del Web App y los controles de acceso requieren una revisión específica antes de cualquier uso fuera del laboratorio.
 
 ---
 
@@ -75,6 +75,7 @@ El script implementa las siguientes funciones.
 
 ## Código fuente
 
+> **Limitaciones conocidas del ejemplo:** `getActiveSheet()` depende de la pestaña activa; `leerSolicitud()` marca `PROCESANDO` sin bloqueo de concurrencia ni recuperación automática tras fallos; `doPost()` recibe un número de fila sin autenticar al emisor ni comprobar que el estado previo corresponda a esa solicitud. El envío de Gmail y la escritura en Sheets no constituyen una transacción atómica. Se requiere rediseño y pruebas antes de utilizar el servicio con datos reales.
 
 ```javascript
 function leerSolicitud() {
