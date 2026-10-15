@@ -445,7 +445,7 @@ Una vez descargados los modelos, gran parte del trabajo podrá realizarse sin co
 | Espacio libre | 20 GB |
 | Internet | Necesario durante la instalación |
 
-Estos requisitos permiten desarrollar correctamente todas las actividades propuestas durante el taller.
+Estos valores son referencias orientativas para preparar el entorno, no una garantía de que todos los modelos o actividades funcionarán con igual rendimiento. La viabilidad depende del modelo, su cuantización, el contexto, la memoria realmente disponible y el uso de CPU o GPU. La selección se realiza en el Capítulo 3, con apoyo opcional de llmfit.
 
 ---
 
@@ -1248,7 +1248,7 @@ Esta herramienta permitirá utilizar Ollama mediante una interfaz gráfica mucho
 
 ### Modelos de lenguaje
 
-Después de instalar Ollama descargará uno o más modelos compatibles.
+Después de instalar Ollama, revisará en el Capítulo 3 los criterios de selección (incluido llmfit, opcional) y descargará el modelo compatible elegido.
 
 Estos modelos serán utilizados durante todo el desarrollo del taller.
 
