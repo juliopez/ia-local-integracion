@@ -677,6 +677,8 @@ Una vez recuperada la solicitud, `puente_local.py` construye el mensaje correspo
 
 Para ello utiliza el _System Prompt_ definido para el asistente y los datos correspondientes a la solicitud recuperada desde Google Sheets.
 
+> **Distinción conceptual:** el asistente configurado visualmente en Open WebUI no se transfiere automáticamente al puente Python. En la automatización, el puente envía directamente a Ollama el modelo identificado en su configuración y el contenido de `system_prompt.txt`. Por ello, las instrucciones y el modelo utilizados en el flujo deben verificarse y mantenerse coherentes con los validados en Open WebUI.
+
 En este flujo automatizado, Open WebUI no participa directamente en la comunicación. Su función corresponde principalmente a la interacción y configuración visual del asistente, mientras que `puente_local.py` se comunica directamente con la API de Ollama.
 
 ---
@@ -706,7 +708,7 @@ El usuario recibe la respuesta directamente en el correo electrónico registrado
 
 ## ¿Qué aprenderemos durante el laboratorio?
 
-La demostración desarrollada en esta sección representa exactamente el flujo que será implementado durante el laboratorio.
+La demostración desarrollada en esta sección representa el flujo **objetivo** que se construirá progresivamente durante el laboratorio. Para la práctica se utilizarán datos ficticios; el ejemplo del Manual Técnico no implementa todavía autenticación en los puntos de entrada `doGet()` y `doPost()` de Apps Script. No debe considerarse apto para gestionar consultas reales sin controles adicionales de acceso, concurrencia y protección de datos.
 
 La diferencia es que, durante la actividad práctica, cada participante configurará los distintos componentes de la arquitectura y verificará el funcionamiento completo del proceso.
 
