@@ -1163,7 +1163,7 @@ Se requiere un programa capaz de interpretarlo y mostrarlo en pantalla.
 
 De manera análoga, un modelo de lenguaje necesita un motor que permita utilizarlo.
 
-Durante este taller ese rol será desempeñado por **Ollama**, herramienta que será estudiada en profundidad en el siguiente capítulo.
+Durante este taller ese rol será desempeñado por **Ollama**, cuyo procedimiento de instalación y ejecución se desarrolla en el **Manual Técnico, capítulo 2**. Los criterios de selección del modelo, incluida la herramienta opcional llmfit, se abordan en el **Manual Técnico, capítulo 3**, antes de descargar el modelo elegido.
 
 Por ahora basta comprender que constituye el componente encargado de ejecutar los modelos de IA de manera local.
 
@@ -1277,6 +1277,8 @@ Al finalizar este apartado, el participante debería comprender que:
 - La interfaz de usuario facilita la interacción entre las personas y el modelo de inteligencia artificial.
 - La calidad de los resultados depende tanto del modelo como de la información disponible y de las instrucciones proporcionadas por el usuario.
 - Comprender la arquitectura general resulta más importante que memorizar herramientas específicas, ya que estas evolucionan con rapidez mientras que los principios de funcionamiento permanecen estables.
+
+> **Alcance de la IA local:** ejecutar un LLM en el computador puede reducir la necesidad de enviar prompts a proveedores externos, pero **no garantiza por sí solo privacidad, seguridad ni funcionamiento completamente desconectado**. La solución del taller utiliza también Google Forms, Sheets, Apps Script y Gmail, por lo que parte de la información circula por servicios en la nube. Antes de trabajar con información real deben revisarse permisos, autenticación, tratamiento de datos personales y políticas institucionales.
 
 ## 4.7 ¿Qué es un asistente inteligente especializado?
 
