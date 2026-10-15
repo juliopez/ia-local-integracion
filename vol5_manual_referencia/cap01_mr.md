@@ -342,7 +342,7 @@ Durante la ejecución, Ollama utiliza principalmente los siguientes recursos del
 
 # Tabla de decisión rápida
 
-La siguiente tabla proporciona una orientación general para seleccionar modelos según la memoria RAM disponible en el equipo.
+La siguiente tabla ofrece **ejemplos aproximados**, no umbrales garantizados. Antes de descargar un modelo, compruebe la memoria realmente disponible, la cuantización, el contexto y el uso de CPU/GPU. Puede utilizar **llmfit** como apoyo opcional, sin necesidad de instalar previamente Ollama, siguiendo el Capítulo 3 del Manual Técnico.
 
 | Memoria RAM disponible | Tamaño recomendado del modelo |
 |------------------------|-------------------------------|
@@ -358,7 +358,7 @@ La siguiente tabla proporciona una orientación general para seleccionar modelos
 
 - Ollama trabaja completamente en el computador local.
 - Los modelos permanecen almacenados localmente.
-- No es necesario enviar información a servicios externos para generar respuestas.
+- La inferencia con Ollama puede realizarse localmente, sin enviar el prompt a un proveedor externo; sin embargo, el flujo completo del taller utiliza servicios en la nube (Forms, Sheets, Apps Script y Gmail). Por tanto, la solución integrada no es completamente local ni su privacidad queda garantizada por usar Ollama.
 - Es posible instalar distintos modelos según las necesidades del proyecto.
 - El cambio de modelo no requiere modificar la arquitectura general de la solución.
 
@@ -784,10 +784,11 @@ Ejemplo de información enviada.
 
 | Campo | Descripción |
 |--------|-------------|
-| prompt | Consulta enviada al modelo. |
-| usuario | Identificador del solicitante. |
-| fecha | Momento del envío. |
-| contexto | Información adicional utilizada por el asistente. |
+| `fila` | Número de fila de la solicitud en Google Sheets. |
+| `nombre` | Nombre del solicitante. |
+| `tipo` | Categoría de consulta. |
+| `consulta` | Texto de la consulta que se enviará al modelo. |
+| `correo` | Dirección para la respuesta (dato personal: utilizar solo datos ficticios en el taller). |
 
 ---
 
@@ -797,9 +798,9 @@ Información devuelta al flujo.
 
 | Campo | Descripción |
 |--------|-------------|
-| respuesta | Texto generado por el modelo. |
-| estado | Resultado del procesamiento. |
-| fecha_respuesta | Fecha y hora de finalización. |
+| `fila` | Fila que debe actualizar Apps Script. |
+| `respuesta` | Texto generado por el modelo. |
+| `estado` | Estado informado por el puente, por ejemplo `RESPONDIDA`; el Web App registra `ENVIADA` solo tras enviar el correo. |
 
 ---
 
