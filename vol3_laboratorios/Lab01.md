@@ -293,6 +293,27 @@ sudo docker run -it --rm ghcr.io/alexsjones/llmfit --tui
 
 Esta opción requiere Docker instalado y operativo. **No es un segundo paso obligatorio tras la opción A:** ambos métodos son alternativas. El contenedor se elimina al salir por `--rm`; la detección de GPU y otros recursos puede variar respecto de la ejecución nativa. `sudo` se utiliza aquí conforme al ejemplo probado en Ubuntu, pero depende de los permisos de Docker del equipo.
 
+**Windows 10/11 (x86-64) — instalación nativa recomendada:**
+
+En PowerShell, si Scoop ya está instalado:
+
+```powershell
+scoop install llmfit
+llmfit
+```
+
+Si no dispone de Scoop, consulte https://scoop.sh/ para instalarlo o descargue el binario compatible desde https://github.com/AlexsJones/llmfit/releases. No es necesario instalar Ubuntu, WSL2 ni Docker para utilizar la versión nativa de Windows. Compruebe la procedencia del ejecutable y, cuando corresponda, su firma digital.
+
+**macOS — Homebrew:**
+
+```bash
+brew install AlexsJones/llmfit/llmfit
+llmfit
+```
+
+**Criterio para el taller:** llmfit es opcional. Si la instalación no resulta viable, registre RAM, CPU y GPU/VRAM (si corresponde), seleccione manualmente un modelo compatible en la biblioteca de Ollama y continúe con el laboratorio. Las estimaciones de llmfit requieren una prueba real de rendimiento.
+
+
 2. Ejecute llmfit siguiendo las instrucciones de su versión y examine los modelos sugeridos. Compare al menos dos alternativas, registrando nombre, tamaño o cuantización, memoria estimada y rendimiento previsto, cuando la herramienta entregue esos datos.
 3. Compruebe que el modelo elegido está disponible en la biblioteca de Ollama y registre su identificador exacto. La recomendación de **Llama 3.x** utilizada como ejemplo en otros materiales **no es un requisito universal**: la elección debe ajustarse al equipo y a las tareas previstas.
 4. Una vez instalado Ollama conforme al Capítulo 2 del Manual Técnico, descargue el modelo seleccionado con el comando indicado por Ollama, reemplazando el marcador por el identificador verificado:
