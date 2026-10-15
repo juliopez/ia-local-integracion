@@ -956,6 +956,9 @@ Observaciones:
 | Aplicación Web publicada   | □        |
 | Configuración implementada |          |
 | URL del Web App            |          |
+| Usuarios autorizados y método de acceso |          |
+| ¿Se utilizan únicamente datos ficticios? |          |
+| Limitaciones de autenticación del prototipo |          |
 
 ---
 
@@ -974,7 +977,10 @@ Observaciones:
 
 | Elemento | Registro |
 |-----------|----------|
-| Modelo utilizado | |
+| Modelo utilizado y etiqueta exacta | |
+| Cuantización, si corresponde | |
+| Criterio de selección según hardware | |
+| Diagnóstico con llmfit (opcional) | |
 | Estado | |
 | Versión | |
 
@@ -1005,7 +1011,9 @@ Complete la siguiente ficha.
 
 # 6. Pruebas de integración
 
-Registre las pruebas realizadas.
+Registre las pruebas realizadas **sin dar por comprobado ningún componente antes de ejecutarlo**. Para el taller utilice únicamente datos ficticios. El ejemplo del Manual de Referencia no implementa autenticación propia en `doGet()` y `doPost()`; por ello, no se debe utilizar con consultas reales ni presentarlo como servicio institucional listo para producción.
+
+Distinga entre los estados `PENDIENTE`, `PROCESANDO`, `RESPONDIDA`, `ENVIADA` y `ERROR`. Documente qué sucede si el puente se detiene y cómo se evita el reprocesamiento o el envío duplicado.
 
 | Prueba                                             | Resultado | Observaciones |
 | -------------------------------------------------- | :-------: | ------------- |
@@ -1017,6 +1025,9 @@ Registre las pruebas realizadas.
 | Devolución de la respuesta al Web App              |     □     |               |
 | Registro de respuesta y estado en Google Sheets    |     □     |               |
 | Envío de respuesta mediante Gmail                  |     □     |               |
+| Verificación del estado final `ENVIADA` tras envío efectivo | □ | |
+| Recuperación controlada de una solicitud interrumpida | □ | |
+| Revisión de permisos y acceso al Web App | □ | |
 
 ---
 
