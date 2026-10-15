@@ -1212,6 +1212,77 @@ Antes de continuar confirme que:
 
 ---
 
+## 3.6.1 Diagnóstico de hardware y selección asistida mediante llmfit
+
+### Objetivo
+
+Utilizar **llmfit** como apoyo para identificar modelos de lenguaje adecuados para el hardware disponible, antes de descargarlos con Ollama. Esta actividad complementa los criterios de las secciones 3.5 y 3.6 y se aplica en el Laboratorio 1.
+
+### Tiempo estimado
+
+**10–15 minutos** (adicionales si se requiere instalar la herramienta).
+
+### Requisitos previos
+
+- Haber identificado la RAM, CPU y, cuando corresponda, GPU y VRAM del computador.
+- Disponer de conexión a Internet para consultar las instrucciones de instalación.
+- Tener Ollama instalado y operativo para descargar posteriormente el modelo elegido.
+
+### Procedimiento
+
+**Paso 1. Consultar el proyecto oficial.** Abra https://github.com/AlexsJones/llmfit y revise las instrucciones actualizadas para su sistema operativo. llmfit es una herramienta complementaria de diagnóstico y recomendación; **no reemplaza Ollama ni Open WebUI**.
+
+**Paso 2. Instalar llmfit, si corresponde.** Siga el método oficial compatible con su equipo. Su instalación es opcional: cuando no sea viable, utilice las especificaciones de hardware y la biblioteca de Ollama para seleccionar manualmente el modelo.
+
+**Paso 3. Analizar las recomendaciones.** Ejecute llmfit conforme a la documentación de la versión instalada. Compare al menos dos modelos, considerando:
+
+- RAM y VRAM disponibles, además de CPU y GPU;
+- tamaño y cuantización del modelo;
+- memoria requerida y rendimiento estimado;
+- capacidad de contexto y adecuación a la tarea.
+
+**Paso 4. Verificar el modelo en Ollama.** Consulte https://ollama.com/library, identifique la etiqueta exacta de la variante elegida y ejecute en PowerShell:
+
+```powershell
+ollama pull NOMBRE_DEL_MODELO
+ollama run NOMBRE_DEL_MODELO
+```
+
+Sustituya `NOMBRE_DEL_MODELO` por el identificador real obtenido de la biblioteca. Los comandos son plantillas, no nombres de modelos existentes.
+
+**Paso 5. Validar en la práctica.** Realice una consulta breve, mida aproximadamente la latencia y observe la calidad de la respuesta. Verifique después su disponibilidad en Open WebUI. Si la ejecución es demasiado lenta, considere una variante más pequeña o una cuantización menos exigente.
+
+### Registro de decisión
+
+| Criterio | Registro del participante |
+|---|---|
+| RAM y GPU/VRAM (si aplica) | |
+| Modelo candidato A | |
+| Modelo candidato B | |
+| Modelo seleccionado y etiqueta de Ollama | |
+| Motivo de selección | |
+| Resultado de la prueba | |
+
+### Precauciones
+
+- Las recomendaciones de llmfit son **estimaciones**, no garantías de rendimiento.
+- Que un modelo quepa en memoria no implica que sea suficientemente rápido ni adecuado para todas las tareas.
+- La cuantización, la ventana de contexto y otras aplicaciones abiertas pueden alterar el consumo real de memoria.
+- Para integrar posteriormente el modelo mediante API, compruebe que admite las funciones requeridas por la solución.
+- **Llama 3.x** puede mantenerse como ejemplo didáctico, pero no debe imponerse como elección universal.
+
+### Verificación
+
+☐ Identifiqué los recursos de mi computador.
+
+☐ Comparé al menos dos modelos o justifiqué una selección manual.
+
+☐ Verifiqué la disponibilidad del modelo en Ollama.
+
+☐ Ejecuté una prueba y registré el resultado.
+
+---
+
 ## 3.7 Modelos recomendados para este taller
 
 ### Objetivo
@@ -1323,7 +1394,7 @@ No será obligatorio durante el taller, pero constituye una buena alternativa pa
 | Equipos básicos | Computadores con poca memoria | Bajos |
 | Programación | Desarrollo de código | Variables según el modelo |
 
-La elección definitiva dependerá siempre de las características del computador y de la actividad que se desee realizar.
+La elección definitiva dependerá siempre de las características del computador y de la actividad que se desee realizar. Para fundamentarla, utilice opcionalmente **llmfit** según la Sección 3.6.1 y compruebe el desempeño mediante una prueba real.
 
 ---
 
