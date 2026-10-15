@@ -948,6 +948,8 @@ Además, deberá disponer de:
 
 El servicio inteligente depende de componentes locales y servicios en la nube.
 
+> **Nota de operación:** el puente consulta Apps Script desde el equipo local y se comunica con Ollama mediante `localhost:11434`; no publique el puerto de Ollama en Internet. Antes de utilizar el servicio con información real, verifique autenticación, permisos de acceso a la aplicación web, tratamiento de datos personales y recuperación ante fallos. La configuración del taller corresponde a un prototipo educativo.
+
 Por este motivo, el orden de inicio es importante.
 
 Iniciar el sistema sin verificar previamente sus dependencias puede provocar:
