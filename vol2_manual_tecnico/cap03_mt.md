@@ -920,13 +920,13 @@ Además de la memoria disponible, el tipo de tarea también influye en la elecci
 | Generar o revisar código (Python, Apps Script, SQL, PowerShell) | Modelo especializado en programación                   | Especialización                        |
 | Desarrollar el Proyecto Integrador                              | Modelo de propósito general recomendado para el taller | Equilibrio                             |
 
-> Recomendación del instructor: Para el desarrollo de las actividades prácticas y del Proyecto Integrador se recomienda utilizar un modelo de propósito general de tamaño medio (7B–8B) con cuantización Q5, ya que ofrece un excelente equilibrio entre consumo de recursos, velocidad de respuesta y calidad de los resultados en computadores personales.
+> Recomendación del instructor: Para el desarrollo de las actividades prácticas y del Proyecto Integrador, considere inicialmente un modelo de propósito general; su tamaño y cuantización deben determinarse según el hardware disponible, las recomendaciones orientativas de llmfit y una prueba real. La combinación 7B–8B/Q5 es solo un ejemplo posible, no un requisito.
 
 ---
 
 ## Recomendación para este taller
 
-Para desarrollar las actividades propuestas en este curso se recomienda utilizar un modelo de propósito general, de tamaño medio y compatible con computadores personales.
+Para desarrollar las actividades propuestas en este curso se recomienda priorizar un modelo de propósito general compatible con el equipo. Los tamaños medianos son una opción posible, pero no obligatoria: se debe considerar la memoria disponible y verificar el rendimiento real.
 
 La selección específica será presentada en la **Sección 3.7 – Modelos recomendados para este taller**.
 
@@ -1023,16 +1023,9 @@ Utilizar **llmfit** como apoyo para identificar modelos de lenguaje adecuados pa
 - memoria requerida y rendimiento estimado;
 - capacidad de contexto y adecuación a la tarea.
 
-**Paso 4. Instalar Ollama (si aún no está instalado) y verificar el modelo.** Siga el procedimiento del Capítulo 2 y compruebe que Ollama funciona. Luego consulte https://ollama.com/library, identifique la etiqueta exacta de la variante elegida y ejecute en PowerShell:
+**Paso 4. Verificar la disponibilidad en Ollama.** Compruebe en https://ollama.com/library que el modelo recomendado tiene una etiqueta compatible con Ollama. **Todavía no es necesario descargarlo**: la instalación, descarga y primera prueba se realizan en la Sección 3.5.2.
 
-```powershell
-ollama pull NOMBRE_DEL_MODELO
-ollama run NOMBRE_DEL_MODELO
-```
-
-Sustituya `NOMBRE_DEL_MODELO` por el identificador real obtenido de la biblioteca. Los comandos son plantillas, no nombres de modelos existentes.
-
-**Paso 5. Validar en la práctica.** Realice una consulta breve, mida aproximadamente la latencia y observe la calidad de la respuesta. Verifique después su disponibilidad en Open WebUI. Si la ejecución es demasiado lenta, considere una variante más pequeña o una cuantización menos exigente.
+**Paso 5. Registrar la decisión inicial.** Anote el modelo candidato y sus estimaciones. Tras completar la Sección 3.5.2, contraste la recomendación con una consulta real; la verificación en Open WebUI corresponde al Capítulo 4.
 
 ### Registro de decisión
 
