@@ -40,6 +40,28 @@ Antes de ejecutar cualquier comando, verifique que se encuentra en el entorno co
 
 ---
 
+# C3.0
+
+# llmfit — selección de modelos en Ubuntu
+
+Los siguientes comandos son **alternativas**, no instrucciones consecutivas. Permiten realizar el diagnóstico de hardware antes de instalar Ollama.
+
+**Instalación mediante script:**
+
+```bash
+curl -fsSL https://llmfit.axjns.dev/install.sh | sh
+```
+
+**Ejecución temporal con Docker y TUI:**
+
+```bash
+sudo docker run -it --rm ghcr.io/alexsjones/llmfit --tui
+```
+
+Docker debe estar instalado para la segunda opción. La ejecución en contenedor puede ofrecer una detección de hardware diferente de la instalación nativa, especialmente respecto de la GPU. Revise el script remoto antes de ejecutarlo. Consulte https://github.com/AlexsJones/llmfit para confirmar instrucciones actualizadas.
+
+---
+
 # C3.1
 
 # Comandos de Ollama
