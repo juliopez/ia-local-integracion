@@ -114,6 +114,12 @@ Registra solicitudes, respuestas y estados del proceso.
 
 ---
 
+## llmfit
+
+Herramienta opcional para orientar la selección de modelos según los recursos del equipo. Funciona antes de instalar Ollama; sus estimaciones no garantizan disponibilidad en Ollama ni rendimiento real.
+
+---
+
 ## Inteligencia Artificial Local
 
 **Definición**
