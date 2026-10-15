@@ -451,6 +451,8 @@ Antes de considerar finalizado el proyecto, resulta recomendable responder pregu
 
 Responder estas preguntas fortalece la calidad del proyecto y demuestra un ejercicio responsable de la Inteligencia Artificial.
 
+**Alcance del prototipo:** una demostración funcional no equivale a un servicio institucional listo para producción. En la integración Google Workspace–Python–Ollama deben revisarse los permisos de acceso, la protección de datos, la recuperación ante fallos y la supervisión humana. Para las demostraciones del taller se utilizarán únicamente datos ficticios.
+
 ---
 
 ## 4.6 Proyectar la evolución futura
