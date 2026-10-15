@@ -948,6 +948,8 @@ Además, deberá disponer de:
 
 El servicio inteligente depende de componentes locales y servicios en la nube.
 
+> **Verificación previa obligatoria:** antes de procesar solicitudes reales, compruebe que la aplicación web de Apps Script no expone consultas o actualizaciones a usuarios no autorizados. Los ejemplos del Capítulo 8 no implementan autenticación de `doGet()` y `doPost()`. Para la demostración utilice únicamente registros ficticios y una implementación aislada. Compruebe también que las filas en `PROCESANDO` se recuperan de manera controlada tras una interrupción y que el estado `ENVIADA` solo se registra después de un envío efectivo.
+
 > **Nota de operación:** el puente consulta Apps Script desde el equipo local y se comunica con Ollama mediante `localhost:11434`; no publique el puerto de Ollama en Internet. Antes de utilizar el servicio con información real, verifique autenticación, permisos de acceso a la aplicación web, tratamiento de datos personales y recuperación ante fallos. La configuración del taller corresponde a un prototipo educativo.
 
 Por este motivo, el orden de inicio es importante.
