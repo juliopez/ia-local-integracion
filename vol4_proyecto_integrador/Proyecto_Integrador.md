@@ -37,7 +37,7 @@ La retroalimentación obtenida en cada hito deberá ser considerada en el desarr
 
 ## 3. Evaluación sumativa: Proyecto Integrador
 
-La evaluación sumativa corresponde a la presentación del **Portafolio del Proyecto Integrador**, mediante el cual el participante evidenciará el proceso de desarrollo y los resultados alcanzados durante el proyecto.
+La evaluación sumativa corresponde a la presentación del **Portafolio del Proyecto Integrador**, mediante el cual el participante evidenciará el proceso de desarrollo y los resultados alcanzados durante el proyecto. Las demostraciones deben utilizar datos ficticios; la implementación descrita en los manuales es un prototipo educativo, no un servicio institucional listo para producción.
 
 El portafolio reunirá de manera estructurada las evidencias generadas durante el desarrollo del Proyecto Integrador, documentando el proceso de definición del problema, diseño, validación, integración y análisis de la solución desarrollada.
 
@@ -76,11 +76,13 @@ La evaluación considerará la definición del problema, el diseño y validació
 
 **Puntaje total: 100 puntos**
 
+**Evidencias técnicas mínimas recomendadas:** documentar el modelo y su selección según el hardware (llmfit opcional), la versión del System Prompt, casos de prueba, recorrido de una solicitud ficticia por Forms–Sheets–Apps Script–Python–Ollama–Sheets–Gmail, estados de procesamiento y limitaciones de seguridad. La evidencia de integración debe corresponder a pruebas realmente ejecutadas; las etapas no verificadas deben declararse como pendientes.
+
 ---
 
 # Niveles de desempeño
 
-Cada criterio será evaluado utilizando cuatro niveles de desempeño, los cuales reflejan el grado de logro alcanzado por el participante respecto de los aprendizajes esperados del taller. Considerando que cada criterio tiene una ponderación de **20 puntos**, los niveles corresponden a los siguientes puntajes:
+Cada criterio será evaluado utilizando cuatro niveles de desempeño, los cuales reflejan el grado de logro alcanzado por el participante respecto de los aprendizajes esperados del taller. **Observación para la aplicación de la rúbrica:** los cuatro niveles describen desempeños con evidencia, pero no contemplan expresamente la ausencia total de evidencia. Antes de utilizarla para calificar, debe definirse institucionalmente cómo registrar un criterio no presentado; no se debe asignar automáticamente el nivel Inicial a un trabajo inexistente. Considerando que cada criterio tiene una ponderación de **20 puntos**, los niveles corresponden a los siguientes puntajes:
 
 | Nivel             | Porcentaje | Puntaje por criterio | Descripción                                                                                                                                                                                                                                                          |
 | ----------------- | ---------- | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
