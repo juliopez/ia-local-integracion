@@ -72,7 +72,7 @@ ollama pull nombre_modelo
 
 Descripción
 
-Descarga un modelo disponible a través de Ollama.
+Descarga un modelo disponible a través de Ollama. Antes de ejecutarlo, seleccione un candidato según el hardware (opcionalmente mediante llmfit), confirme su etiqueta exacta en la biblioteca oficial de Ollama y siga el Capítulo 3 del Manual Técnico. `nombre_modelo` es un marcador de posición.
 
 ---
 
