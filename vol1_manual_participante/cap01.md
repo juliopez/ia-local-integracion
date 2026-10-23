@@ -783,6 +783,29 @@ Al finalizar este apartado, el participante debería comprender que:
 - Los LLM no recuperan respuestas previamente almacenadas, sino que generan nuevo contenido de forma dinámica.
 - Los asistentes inteligentes especializados aprovechan esta capacidad para adaptarse a distintos dominios disciplinares mediante la definición de contextos e instrucciones específicas.
 
+### Demostración interactiva: cómo un LLM genera texto
+
+Después de comprender la tokenización, podemos observar cómo un modelo utiliza el contexto para **predecir el siguiente token** y construir una respuesta progresivamente.
+
+**Recurso:** [Transformer Explainer — visualización interactiva de un modelo Transformer](https://poloclub.github.io/transformer-explainer/).
+
+**Contexto conceptual.** Los modelos de lenguaje de tipo Transformer representan los tokens numéricamente y utilizan mecanismos de atención para combinar información del contexto. En la generación autorregresiva, el modelo estima una distribución de probabilidades para el siguiente token, selecciona uno según su configuración y repite el proceso. La atención ayuda a relacionar posiciones del texto, pero una visualización de atención no equivale por sí sola a una explicación completa de por qué el modelo responde algo.
+
+**Exploración guiada (8–10 minutos):**
+
+1. Abra Transformer Explainer y reconozca el texto de entrada y la predicción del siguiente token.
+2. Introduzca una frase breve en el idioma que admita la demostración y observe cómo cambia la predicción al modificar su contexto.
+3. Examine la representación visual de tokens y atención; identifique que el modelo considera información previa al producir el siguiente token.
+4. Compare dos continuaciones posibles. Analice por qué el resultado puede variar y por qué una continuación lingüísticamente plausible no garantiza exactitud factual.
+
+**Preguntas para docentes:** ¿qué diferencia existe entre predecir texto y consultar una fuente verificada? ¿Por qué es importante proporcionar contexto y restricciones al diseñar un asistente especializado? ¿Qué limitaciones tiene esta demostración respecto de los modelos que utilizaremos con Ollama?
+
+**Alcance y precauciones.** Transformer Explainer representa un modelo y una arquitectura concretos con fines educativos: no reproduce necesariamente el comportamiento, el tokenizador ni los parámetros de los modelos locales elegidos en el taller. No ingrese información confidencial o datos reales de estudiantes. Si la página no está disponible, el docente puede explicar la secuencia «texto → tokens → contexto/atención → predicción del siguiente token → repetición» utilizando el ejemplo de esta sección.
+
+**Conexión con el Proyecto Integrador:** comprender esta generación progresiva permite justificar la necesidad de instrucciones claras, ejemplos pertinentes, validación de respuestas y, cuando corresponda, fuentes documentales externas.
+
+---
+
 ## 4.4 IA en la nube versus IA local
 
 Durante los últimos años, la mayoría de las personas ha conocido la Inteligencia Artificial Generativa a través de servicios disponibles en Internet, como ChatGPT, Claude, Gemini o Microsoft Copilot. Estas plataformas han democratizado el acceso a modelos de lenguaje de gran escala, permitiendo que millones de usuarios interactúen con sistemas capaces de responder preguntas, redactar documentos, traducir textos o generar código mediante lenguaje natural.
