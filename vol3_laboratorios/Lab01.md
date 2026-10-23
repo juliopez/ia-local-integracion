@@ -236,6 +236,28 @@ El verdadero objetivo es comenzar a comprender cómo los modelos de lenguaje int
 
 ---
 
+## Microactividad complementaria: explorar la tokenización (10 minutos)
+
+**Propósito:** observar cómo se divide el texto antes de que un LLM lo procese y relacionar el resultado con la redacción de instrucciones. Consulte la explicación «Del lenguaje humano a los tokens» del Capítulo 1 del Manual del Participante.
+
+1. Abra el [tokenizador interactivo de OpenAI](https://platform.openai.com/tokenizer).
+2. Introduzca «¿Qué es el aprendizaje activo?» y registre la cantidad de tokens indicada.
+3. Repita con «Actúa como profesor universitario y proporciona retroalimentación formativa sobre la siguiente respuesta de un estudiante.»
+4. Pruebe una tercera instrucción más extensa: «Actúa como profesor universitario especializado en evaluación formativa. Analiza la respuesta de un estudiante de primer año, identifica dos fortalezas y dos aspectos por mejorar, y entrega recomendaciones concretas utilizando un lenguaje claro y respetuoso.»
+5. Compare palabras y tokens; observe si aparecen fragmentos de palabras y comente qué implicaría añadir una rúbrica o documento extenso a un asistente.
+
+| Texto | Palabras (estimación) | Tokens observados | ¿Qué aprendí? |
+|---|---:|---:|---|
+| Consulta breve | | | |
+| Instrucción docente | | | |
+| Instrucción contextualizada | | | |
+
+**Evidencia:** tabla completada y una conclusión breve sobre la relación entre longitud, tokenización y ventana de contexto. **No se exige instalar software adicional.** El resultado de OpenAI no equivale necesariamente al recuento de tokens de los modelos locales utilizados en Ollama. No ingrese datos personales ni trabajos reales de estudiantes.
+
+**Reflexión:** ¿una instrucción más corta es siempre mejor? Justifique considerando la información necesaria para obtener una respuesta útil.
+
+---
+
 # Actividad 1
 # Verificación del entorno de trabajo
 
