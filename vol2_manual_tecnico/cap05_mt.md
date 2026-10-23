@@ -1757,6 +1757,8 @@ Antes de finalizar el capítulo confirme que:
 
 ---
 
+> **Entorno de referencia del taller (verificado el 23-10-2026):** Open WebUI **v0.12.3**, versión estable publicada el 16 de octubre de 2026. Consulte [la publicación oficial](https://github.com/open-webui/open-webui/releases/tag/v0.12.3). Las secciones 5.9–5.12 se han contrastado con la documentación pública de **Knowledge**, **Notes** y **Skills**, y con los cambios del editor de modelos introducidos en la serie 0.12. Use la misma versión durante las demostraciones y las prácticas; evite actualizaciones automáticas a mitad del taller.
+
 ## 5.9 Incorporación de documentos de contexto en Open WebUI
 
 ### Objetivo
@@ -1844,7 +1846,7 @@ Definir un procedimiento reutilizable de respuesta y distinguir una skill de los
 - **Skill:** contiene instrucciones procedimentales reutilizables en Markdown. Por sí sola **no ejecuta código ni crea una conexión con servicios externos**.
 
 ### Procedimiento
-1. Si Open WebUI dispone de **Workspace → Skills** y su usuario tiene permisos, seleccione **Create**.
+1. En Open WebUI v0.12.3, abra **Workspace → Skills** (con los permisos correspondientes) y seleccione la opción para crear una skill.
 2. Asigne el nombre `Retroalimentación formativa`, identifique el propósito y edite su archivo principal `SKILL.md`.
 3. Utilice como ejemplo el siguiente contenido Markdown, con encabezado YAML:
 
@@ -3631,7 +3633,7 @@ Antes de finalizar el capítulo confirme que:
  y seleccionándola en el menú, según la configuración disponible.
 5. Pruebe una misma consulta **con y sin skill** en conversaciones nuevas. Compare estructura, pertinencia y reconocimiento de información faltante.
 
-**Compatibilidad:** Skills es una función que puede depender de una versión más reciente de Open WebUI y de permisos de acceso. Si no existe **Workspace → Skills**, no intente crear menús inexistentes: conserve `SKILL.md` como recurso de aprendizaje y pruebe sus instrucciones manualmente en una conversación. En la sesión 5 podrá revisar su comportamiento y decidir si incorporarla a una instalación compatible.
+**Compatibilidad de v0.12.3:** Skills figura entre las funciones documentadas de Open WebUI. Su disponibilidad efectiva depende de los permisos y de la configuración del servidor. Si no aparece, compruebe permisos y versión antes de continuar; como alternativa didáctica, conserve `SKILL.md` y pruebe el procedimiento como instrucciones de la conversación. En la sesión 5 comparará respuestas antes y después de la optimización.
 
 **Precaución para la automatización:** el flujo `puente_local.py → Ollama` utiliza la API del motor local y no incorpora automáticamente las configuraciones, bases de conocimiento o skills guardadas únicamente en Open WebUI. Para que afecten al flujo automatizado deben trasladarse o integrarse explícitamente según la arquitectura técnica elegida; nunca dé por supuesto que se comparten.
 
@@ -3657,6 +3659,23 @@ Dejar evidencia verificable de la configuración del asistente sin ampliar innec
 **Secuencia sugerida en sesión 2:** primero configure el asistente (§5.2–5.6); incorpore un documento corto (§5.9); registre la bitácora (§5.10); y realice una prueba breve (§5.6–5.7). La creación formal de una skill (§5.11) puede prepararse aquí y perfeccionarse en la sesión 5.
 
 **Importante:** estos apartados completan el procedimiento en Open WebUI, pero no sustituyen las pruebas técnicas ni garantizan que un modelo local pequeño disponga de herramientas de recuperación. Documente el modelo y la versión de Open WebUI utilizados.
+
+---
+
+
+### Control de compatibilidad previo al taller (v0.12.3)
+
+| Componente | Ruta que debe comprobar el docente | Criterio de aprobación |
+|---|---|---|
+| Modelos | Workspace → Models → Edit | Se observa el editor con secciones desplegables para System Prompt, Knowledge y Skills |
+| Knowledge | Workspace → Knowledge | Es posible crear una base, cargar un archivo y consultar su contenido |
+| Notes | Notes, desde la navegación | Se crea una nota en Markdown y se conserva después de cerrar y reabrir |
+| Skills | Workspace → Skills | Se guarda una skill con `SKILL.md` y puede seleccionarse o mencionarse |
+| Modelo local | Conversación nueva con Ollama | Responde a una instrucción y se conocen sus límites de recuperación de archivos y uso de herramientas |
+
+**Alcance de la verificación:** las rutas y capacidades anteriores se han cotejado con las notas de publicación y la documentación oficial; **no constituyen una prueba de ejecución de la instalación particular de cada estudiante**. Antes de dictar el taller, ejecute estas cinco comprobaciones en un equipo de referencia.
+
+Fuentes oficiales: [versión estable](https://github.com/open-webui/open-webui/releases/tag/v0.12.3) · [Knowledge](https://docs.openwebui.com/features/workspace/knowledge/) · [Notes](https://docs.openwebui.com/features/notes/) · [Skills](https://docs.openwebui.com/features/workspace/skills/).
 
 ---
 
