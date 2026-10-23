@@ -1,5 +1,19 @@
 # Cuaderno de Laboratorios
 
+
+## Ruta intensiva — sesión 5 (60 minutos de optimización)
+
+Esta actividad se desarrolla **después** de haber implementado el flujo Google Workspace ↔ Ollama en las sesiones 3 y 4. El bloque completo de la jornada contempla **15 minutos de contextualización, 60 minutos de mejora del asistente y 45 minutos de evaluación** (el instrumento evaluativo se definirá por separado).
+
+1. **10 min:** escoger tres consultas representativas, incluida una cuya respuesta no figure en los documentos.
+2. **15 min:** registrar respuestas iniciales del asistente (actividad 1–3); comparar exactitud, pertinencia y reconocimiento de límites.
+3. **20 min:** modificar una variable cada vez: `system_prompt.txt`, `contexto/*.md` o `SKILL.md` (actividad 4; Manual Técnico cap. 6, §§6.2–6.3). Reinicie el puente si modifica el System Prompt.
+4. **15 min:** repetir exactamente las consultas, registrar diferencias y conclusiones (actividades 5–6; Manual Técnico cap. 6, §§6.4–6.6).
+
+**Evidencia:** tabla antes/después, cambios documentados en bitácora y archivos locales actualizados. No confunda mayor extensión de la respuesta con mayor calidad ni envíe pruebas a direcciones externas reales.
+
+---
+
 # Laboratorio 3
 
 # Validación y optimización del asistente inteligente mediante casos de prueba
