@@ -1,4 +1,6 @@
-function leerSolicitud() {
+function leerSolicitud(reservar) {
+  // reservar=false solo observa; reservar=true requiere exclusión mutua.
+
   const hoja = SpreadsheetApp
     .getActiveSpreadsheet()
     .getActiveSheet();
@@ -33,8 +35,10 @@ function leerSolicitud() {
     if (estado === "PENDIENTE") {
       const numeroFila = indice + 1;
 
-      // Marcar inmediatamente la solicitud como en procesamiento
-      hoja.getRange(numeroFila, 6).setValue("PROCESANDO");
+      if (reservar) {
+        hoja.getRange(numeroFila, 6).setValue("PROCESANDO");
+        SpreadsheetApp.flush();
+      }
 
       return {
         disponible: true,
@@ -56,7 +60,7 @@ function leerSolicitud() {
 
 function doGet() {
   try {
-    const solicitud = leerSolicitud();
+    const solicitud = leerSolicitud(false);
 
     return ContentService
       .createTextOutput(JSON.stringify(solicitud))
@@ -67,7 +71,7 @@ function doGet() {
       .createTextOutput(
         JSON.stringify({
           disponible: false,
-          mensaje: error.message
+          error: error.message
         })
       )
       .setMimeType(ContentService.MimeType.JSON);
@@ -78,87 +82,57 @@ function doGet() {
 function doPost(e) {
   let hoja = null;
   let fila = null;
-
+  const lock = LockService.getScriptLock();
   try {
-    const contenido = JSON.parse(
-      e.postData.contents || "{}"
-    );
+    const contenido = JSON.parse(e.postData.contents || "{}");
+    const accion = String(contenido.accion || "completar");
 
+    if (accion === "reclamar") {
+      lock.waitLock(15000);
+      try {
+        const solicitud = leerSolicitud(true);
+        return respuestaJson_(Object.assign({correcto: true}, solicitud));
+      } finally {
+        lock.releaseLock();
+      }
+    }
+
+    if (accion !== "completar") {
+      throw new Error("Acción no reconocida.");
+    }
     fila = Number(contenido.fila);
-
-    const respuesta = String(
-      contenido.respuesta || ""
-    ).trim();
-
+    const respuesta = String(contenido.respuesta || "").trim();
     if (!Number.isInteger(fila) || fila < 2) {
-      throw new Error(
-        "El número de fila no es válido."
-      );
+      throw new Error("El número de fila no es válido.");
     }
-
     if (!respuesta) {
-      throw new Error(
-        "La respuesta recibida está vacía."
-      );
+      throw new Error("La respuesta recibida está vacía.");
     }
-
-    hoja = SpreadsheetApp
-      .getActiveSpreadsheet()
-      .getActiveSheet();
-
-    if (!hoja) {
-      throw new Error(
-        "No se encontró la hoja de respuestas."
-      );
+    lock.waitLock(15000);
+    try {
+      hoja = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+      if (!hoja) throw new Error("No se encontró la hoja de respuestas.");
+      const estado = String(hoja.getRange(fila, 6).getValue() || "").trim().toUpperCase();
+      if (estado !== "PROCESANDO") {
+        throw new Error("La fila no está en estado PROCESANDO.");
+      }
+      const nombre = String(hoja.getRange(fila, 2).getValue() || "").trim();
+      const tipo = String(hoja.getRange(fila, 3).getValue() || "").trim();
+      const correo = String(hoja.getRange(fila, 5).getValue() || "").trim();
+      hoja.getRange(fila, 7).setValue(respuesta);
+      hoja.getRange(fila, 8).setValue(new Date());
+      // Advertencia: el envío y la escritura no forman una transacción atómica.
+      enviarCorreo(correo, nombre, tipo, respuesta);
+      hoja.getRange(fila, 6).setValue("ENVIADA");
+      return respuestaJson_({correcto: true, mensaje: "Respuesta registrada y enviada."});
+    } finally {
+      lock.releaseLock();
     }
-
-    const nombre = String(
-      hoja.getRange(fila, 2).getValue() || ""
-    ).trim();
-
-    const tipo = String(
-      hoja.getRange(fila, 3).getValue() || ""
-    ).trim();
-
-    const correo = String(
-      hoja.getRange(fila, 5).getValue() || ""
-    ).trim();
-
-    // Registrar la respuesta generada
-    hoja.getRange(fila, 7).setValue(respuesta);
-    hoja.getRange(fila, 8).setValue(new Date());
-
-    // Enviar la respuesta al estudiante
-    enviarCorreo(
-      correo,
-      nombre,
-      tipo,
-      respuesta
-    );
-
-    // Finalizar la solicitud
-    hoja.getRange(fila, 6).setValue("ENVIADA");
-
-    return respuestaJson_({
-      correcto: true,
-      mensaje: "Respuesta registrada y enviada correctamente."
-    });
-
   } catch (error) {
-
-    if (
-      hoja &&
-      fila &&
-      Number.isInteger(fila) &&
-      fila >= 2
-    ) {
+    if (hoja && fila && Number.isInteger(fila) && fila >= 2) {
       hoja.getRange(fila, 6).setValue("ERROR");
     }
-
-    return respuestaJson_({
-      correcto: false,
-      error: error.message
-    });
+    return respuestaJson_({correcto: false, error: error.message});
   }
 }
 
