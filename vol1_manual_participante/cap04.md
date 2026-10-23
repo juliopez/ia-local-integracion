@@ -337,6 +337,30 @@ Cuando estos componentes trabajan de manera coordinada, el asistente deja de ser
 
 Durante este taller se utilizará una arquitectura integrada por distintos componentes que cumplen funciones específicas dentro del flujo de trabajo.
 
+### Visualización guiada del flujo de integración
+
+El siguiente esquema resume las responsabilidades de cada componente. Las flechas representan el recorrido lógico de la solicitud y de la respuesta; **no implican que Google Sheets invoque directamente al modelo local**.
+
+```mermaid
+flowchart TD
+    A["Docente / usuario"] --> B["Google Forms<br/>Captura de solicitud"]
+    B --> C["Google Sheets<br/>Registro de entrada"]
+    C <--> D["Google Apps Script / Web App<br/>Intercambio de solicitudes y respuestas"]
+    D <--> E["puente_local.py<br/>Consulta de pendientes y coordinación local"]
+    E <--> F["Ollama<br/>Motor de ejecución"]
+    F <--> G["LLM local<br/>Generación de respuesta"]
+    D --> H["Google Sheets<br/>Registro de resultado"]
+    H --> I["Gmail<br/>Comunicación al usuario"]
+```
+
+**Lectura del esquema.** El formulario inicia la captura; Sheets persiste la información; Apps Script permite el intercambio con el puente; `puente_local.py` consulta las solicitudes pendientes y remite al modelo local las que corresponda; Ollama ejecuta el LLM; la respuesta retorna por el mismo puente hacia Apps Script y queda registrada en Sheets antes de su eventual comunicación por Gmail.
+
+**Exploración didáctica (5 minutos).** Identifique (a) dónde se almacena la solicitud, (b) dónde se ejecuta realmente el modelo, (c) qué componente conecta el entorno de Google con el entorno local y (d) en qué puntos conviene validar datos y registrar errores.
+
+**Precaución técnica.** La integración exige configurar credenciales, permisos, conectividad y tratamiento de errores. El esquema es conceptual; la implementación detallada se aborda en el Manual Técnico y en el Laboratorio 4. Se utiliza un diagrama estático compatible con GitHub, sin agregar una aplicación interactiva que distraiga del objetivo didáctico.
+
+---
+
 ### Captura de información
 
 El proceso comienza cuando un usuario completa un formulario electrónico.
