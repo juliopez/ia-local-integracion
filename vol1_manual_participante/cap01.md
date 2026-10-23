@@ -277,6 +277,54 @@ Al finalizar esta sección, el participante deberá familiarizarse con los sigui
 - Flujo funcional.
 - Proyecto Integrador.
 
+## Complemento conceptual: del lenguaje humano a los tokens
+
+**Objetivo:** comprender cómo un modelo de lenguaje representa inicialmente el texto y relacionar la tokenización con el diseño de asistentes inteligentes locales. **Tiempo orientativo:** 10–15 minutos de explicación y 10 minutos de exploración guiada.
+
+### ¿Qué es la tokenización?
+
+Antes de procesar una instrucción, un modelo de lenguaje utiliza un **tokenizador** para segmentar el texto en unidades llamadas *tokens*. Un token puede representar una palabra, parte de ella, un signo de puntuación o una secuencia que incluya espacios. Por ello, **un token no equivale necesariamente a una palabra**.
+
+Por ejemplo, la instrucción «Explica qué es la inteligencia artificial» se divide en unidades según el vocabulario y las reglas del tokenizador utilizado. No existe una segmentación idéntica para todos los modelos.
+
+### Tokens, identificadores y embeddings
+
+El proceso puede resumirse así:
+
+```text
+Texto escrito por la persona
+        ↓
+Tokenización: fragmentos de texto
+        ↓
+Token IDs: identificadores numéricos del vocabulario
+        ↓
+Embeddings: vectores numéricos aprendidos por el modelo
+        ↓
+Procesamiento contextual y generación de respuesta
+```
+
+Un **Token ID** identifica una unidad dentro del vocabulario del tokenizador; su valor numérico no expresa por sí mismo el significado ni la importancia del fragmento. Los **embeddings internos** son representaciones vectoriales aprendidas que el modelo utiliza para procesar los tokens. No deben confundirse con los embeddings empleados para recuperar documentos en un sistema RAG: aunque ambos son vectores, sus funciones son distintas.
+
+### Ventana de contexto y diseño de instrucciones
+
+La **ventana de contexto** establece cuántos tokens puede considerar el modelo en una interacción, de acuerdo con sus capacidades y configuración. Las instrucciones del sistema, los mensajes, los documentos incorporados y la respuesta pueden consumir parte de ese presupuesto. Por eso conviene proporcionar información pertinente, clara y organizada. **Reducir tokens no es un fin en sí mismo**: una instrucción demasiado breve puede omitir información esencial.
+
+### Exploración guiada: tokenizador de OpenAI
+
+Abra https://platform.openai.com/tokenizer y pruebe estos textos:
+
+1. «¿Qué es el aprendizaje activo?»
+2. «Actúa como profesor universitario y proporciona retroalimentación formativa sobre la siguiente respuesta de un estudiante.»
+3. «Actúa como profesor universitario especializado en evaluación formativa. Analiza la respuesta de un estudiante de primer año, identifica dos fortalezas y dos aspectos por mejorar, y entrega recomendaciones concretas utilizando un lenguaje claro y respetuoso.»
+
+Compare la cantidad de palabras y tokens, observe si aparecen fragmentos de palabras y explique qué cambia entre las instrucciones. **Precaución:** el tokenizador de OpenAI es un recurso didáctico; no calcula necesariamente la misma segmentación ni el mismo número de tokens que un modelo ejecutado con Ollama. Utilice ejemplos ficticios, sin respuestas reales de estudiantes ni datos personales.
+
+**Preguntas de reflexión:** ¿por qué palabras y tokens no coinciden? ¿Qué ocurre al añadir una rúbrica extensa al contexto? ¿Por qué distintos modelos pueden producir recuentos diferentes? ¿Cómo equilibrar claridad y extensión en un System Prompt?
+
+**Idea clave:** conocer la tokenización ayuda a diseñar instrucciones y a interpretar límites del contexto; no es necesario programar un tokenizador para construir un asistente docente.
+
+---
+
 # 4. Desarrollo conceptual
 
 ## 4.1 ¿Qué entendemos por Inteligencia Artificial?
