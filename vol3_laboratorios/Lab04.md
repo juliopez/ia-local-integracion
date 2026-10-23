@@ -1,5 +1,18 @@
 # Cuaderno de Laboratorios
 
+
+## Ruta intensiva — sesiones 3 y 4
+
+El Laboratorio 4 se ejecuta en **dos jornadas**, utilizando una sola carpeta de ejemplo: `scripts/puente_local.py`, `scripts/system_prompt.txt`, `scripts/contexto/` y `scripts/skills/`. Consulte la [guía de preparación](../scripts/GUIA_CONTEXTO_SKILLS.md) y el [Manual Técnico, capítulos 7 y 8](../vol2_manual_tecnico/cap08_mt.md).
+
+**Sesión 3 (80 min):** actividades 1–3: comprender arquitectura, crear Forms y enlazar Sheets. Continúe con Manual Técnico cap. 8, §§8.1–8.6 para configurar Apps Script, el Web App y preparar la lectura desde el puente. **Checkpoint:** una solicitud ficticia aparece como pendiente en Sheets y es accesible desde el Web App. El puente completo también genera respuestas; no lo inicie como simple comprobación de lectura sin supervisión.
+
+**Sesión 4 (60 min):** actividad 4: ejecutar el puente y comprobar `Apps Script → Ollama → Sheets → Gmail`; actividad 5: analizar resultados y errores. **Checkpoint:** una consulta ficticia recibe respuesta fundamentada, queda registrada en Sheets y llega al correo de prueba autorizado.
+
+El System Prompt, los documentos y la skill deben existir localmente porque el puente llama directamente a Ollama; las bases de Open WebUI no se sincronizan por sí solas. Solo emplee datos de prueba. Una falla puede dejar una fila en estado `PROCESANDO`; revise el estado antes de reintentar.
+
+---
+
 # Laboratorio 4
 
 # Integración del asistente inteligente con Google Workspace y un modelo de IA local
