@@ -1,5 +1,29 @@
 # Capítulo 8
 
+
+### Ruta técnica de las sesiones 3 y 4: puente local con contexto y skills
+
+Antes de ejecutar el código, consulte la [guía de la carpeta local](../scripts/GUIA_CONTEXTO_SKILLS.md). Mantenga esta estructura:
+
+```text
+scripts/
+  puente_local.py
+  system_prompt.txt
+  contexto/
+    normativa_ejemplo.md
+  skills/
+    retroalimentacion-formativa/
+      SKILL.md
+```
+
+**Sesión 3 — captura y lectura (80 min):** complete Forms → Sheets (cap. 7); habilite Apps Script y despliegue su Web App (cap. 8, §§8.1–8.6); configure en `puente_local.py` su `URL_APPS_SCRIPT` y el identificador exacto de `MODELO_OLLAMA`; instale `requests` y pruebe la lectura con solicitudes ficticias. El archivo incluye un bucle que **también procesa y registra** cuando detecta solicitudes; para practicar únicamente lectura, realice la verificación de Apps Script antes de iniciar el bucle completo. No registre solicitudes reales.
+
+**Sesión 4 — respuesta completa (60 min):** ejecute el puente, compruebe que Ollama recibe instrucciones de `system_prompt.txt`, la skill local y los documentos de `contexto/`; después verifique respuesta en Sheets y envío con Gmail (§§8.6–8.8).
+
+**Precauciones:** Open WebUI no sincroniza su configuración con este código. Los documentos se incorporan íntegramente, no mediante RAG. El Apps Script de ejemplo cambia el estado a `PROCESANDO` al leer; si falla una solicitud, se requiere revisión del estado. Valide permisos, configuración y destinatarios de correo antes de usar el sistema fuera del laboratorio.
+
+---
+
 # Automatización del asistente inteligente mediante Google Apps Script y Ollama
 
 ## 8.1 Arquitectura del flujo automatizado
