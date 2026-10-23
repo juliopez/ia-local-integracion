@@ -1,5 +1,21 @@
 # Cuaderno de Laboratorios
 
+
+## Ruta intensiva — sesión 2 (40 minutos de práctica)
+
+Para el taller de cinco sesiones, las actividades completas de este laboratorio permanecen disponibles como material de profundización. La ejecución prioritaria es:
+
+1. **10 min:** propósito, rol, usuarios y restricciones (actividades 1–5). Consulte Manual Técnico [cap. 5, §§5.2–5.5](../vol2_manual_tecnico/cap05_mt.md).
+2. **10 min:** configure el asistente en Open WebUI y escriba el System Prompt (actividades 6–7, §5.6).
+3. **10 min:** añada un documento ficticio a Knowledge y prepare su copia local en `scripts/contexto/` (Manual Técnico §5.9). Registre una nota en Markdown (§5.10).
+4. **10 min:** prepare o revise `scripts/skills/retroalimentacion-formativa/SKILL.md` (§5.11) y registre una consulta de prueba.
+
+**Producto:** carpeta `scripts/` con `system_prompt.txt`, documento local, skill en Markdown y bitácora. Descargue el repositorio desde Code → Download ZIP y consulte [la guía de archivos](../scripts/GUIA_CONTEXTO_SKILLS.md).
+
+**Distinción:** Knowledge, Notes y Skills de Open WebUI no son consultados automáticamente por `puente_local.py`; deben conservarse en los archivos locales para el flujo con Ollama. La evaluación sistemática de respuestas se trabajará en sesión 5.
+
+---
+
 # Laboratorio 2
 
 # Diseño de un asistente inteligente utilizando un caso guiado
