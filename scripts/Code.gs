@@ -82,6 +82,7 @@ function doGet() {
 function doPost(e) {
   let hoja = null;
   let fila = null;
+  let reservaConfirmada = false;
   const lock = LockService.getScriptLock();
   try {
     const contenido = JSON.parse(e.postData.contents || "{}");
@@ -116,6 +117,7 @@ function doPost(e) {
       if (estado !== "PROCESANDO") {
         throw new Error("La fila no está en estado PROCESANDO.");
       }
+      reservaConfirmada = true;
       const nombre = String(hoja.getRange(fila, 2).getValue() || "").trim();
       const tipo = String(hoja.getRange(fila, 3).getValue() || "").trim();
       const correo = String(hoja.getRange(fila, 5).getValue() || "").trim();
@@ -129,7 +131,7 @@ function doPost(e) {
       lock.releaseLock();
     }
   } catch (error) {
-    if (hoja && fila && Number.isInteger(fila) && fila >= 2) {
+    if (reservaConfirmada && hoja && fila && Number.isInteger(fila) && fila >= 2) {
       hoja.getRange(fila, 6).setValue("ERROR");
     }
     return respuestaJson_({correcto: false, error: error.message});
