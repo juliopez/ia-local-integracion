@@ -1,5 +1,7 @@
 # Capítulo 8
 
+> **IMPORTANTE — CÓDIGO VIGENTE DEL TALLER:** los fragmentos de `leerSolicitud()`, `doGet()` y `doPost()` que aparecen más adelante en este capítulo ilustran la **construcción progresiva histórica**, pero algunos corresponden a una arquitectura anterior. **No los copie ni los combine** para desplegar el taller. Utilice exclusivamente el archivo completo y actualizado [`scripts/Code.gs`](../scripts/Code.gs), en el que GET consulta sin modificar y POST utiliza las operaciones `reclamar` y `completar`. Para Python utilice [`scripts/puente_local.py`](../scripts/puente_local.py) con `--modo lectura`, `--modo prueba` o `--modo completo`. Los procedimientos y ejemplos antiguos se conservan solo con fines de comparación didáctica. Se requiere volver a desplegar el Web App tras copiar `Code.gs`.
+
 ## Ejecución por modos — versión de taller
 
 El puente dispone de tres modos, seleccionados mediante argumentos en la terminal:
@@ -14,7 +16,7 @@ python scripts/puente_local.py --modo completo --una-vez
 - **Prueba (preparación sesión 4):** consulta local ficticia a Ollama, cargando `system_prompt.txt`, `contexto/` y `SKILL.md`; no accede a Apps Script.
 - **Completo (sesión 4):** reserva por POST (`accion=reclamar`), genera con Ollama y devuelve mediante POST (`accion=completar`). Apps Script registra en Sheets y envía Gmail. Sin `--una-vez` el puente consulta periódicamente.
 
-**Requisito obligatorio:** actualizar y volver a desplegar el Web App desde el código vigente de [Code.gs](../../scripts/Code.gs) (ajuste la ruta del enlace según el documento). Una implementación antigua sigue cambiando el estado al ejecutar GET y no es compatible con `accion=reclamar`. No ejecute modo completo contra una instalación antigua.
+**Requisito obligatorio:** actualizar y volver a desplegar el Web App desde el código vigente de [Code.gs](../scripts/Code.gs). Una implementación antigua sigue cambiando el estado al ejecutar GET y no es compatible con `accion=reclamar`. No ejecute modo completo contra una instalación antigua.
 
 **Límites conocidos:** la reserva y el envío de Gmail no son transacciones atómicas. Una falla podría dejar filas `PROCESANDO` o `ERROR`, y el envío podría haberse realizado aun cuando no se confirme la operación. No reintente manualmente sin revisar el estado y la bandeja de envíos. El modelo es un prototipo docente, no una solución de producción.
 
@@ -36,11 +38,11 @@ scripts/
       SKILL.md
 ```
 
-**Sesión 3 — captura y lectura (80 min):** complete Forms → Sheets (cap. 7); habilite Apps Script y despliegue su Web App (cap. 8, §§8.1–8.6); configure en `puente_local.py` su `URL_APPS_SCRIPT` y el identificador exacto de `MODELO_OLLAMA`; instale `requests` y pruebe la lectura con solicitudes ficticias. El archivo incluye un bucle que **también procesa y registra** cuando detecta solicitudes; para practicar únicamente lectura, realice la verificación de Apps Script antes de iniciar el bucle completo. No registre solicitudes reales.
+**Sesión 3 — captura y lectura (80 min):** complete Forms → Sheets (cap. 7), configure Apps Script y vuelva a desplegar la versión vigente de `scripts/Code.gs`. Configure la URL del Web App en `puente_local.py`, instale `requests` y ejecute `python scripts/puente_local.py --modo lectura`. Este modo solo consulta solicitudes pendientes, **sin cambiar su estado, invocar Ollama ni enviar correos**. Use datos ficticios.
 
 **Sesión 4 — respuesta completa (60 min):** ejecute el puente, compruebe que Ollama recibe instrucciones de `system_prompt.txt`, la skill local y los documentos de `contexto/`; después verifique respuesta en Sheets y envío con Gmail (§§8.6–8.8).
 
-**Precauciones:** Open WebUI no sincroniza su configuración con este código. Los documentos se incorporan íntegramente, no mediante RAG. El Apps Script de ejemplo cambia el estado a `PROCESANDO` al leer; si falla una solicitud, se requiere revisión del estado. Valide permisos, configuración y destinatarios de correo antes de usar el sistema fuera del laboratorio.
+**Precauciones:** Open WebUI no sincroniza automáticamente su configuración con este código; los documentos se incorporan íntegramente, no mediante RAG. En la **versión vigente**, GET solo observa y `POST accion=reclamar` reserva cambiando el estado a `PROCESANDO`. Una interrupción tras reservar requiere revisión manual. Valide permisos, configuración y destinatarios ficticios antes de realizar pruebas.
 
 ---
 
