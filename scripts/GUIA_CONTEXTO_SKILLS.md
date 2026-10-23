@@ -52,3 +52,15 @@ Extender el puente original de Google Apps Script → Ollama sin sustituir sus i
 - Los límites por archivo y totales son deliberados para un laboratorio. No garantizan encaje en todas las ventanas de contexto; reduzca contenido o seleccione un modelo adecuado.
 - La arquitectura actual marca una fila como `PROCESANDO` al leerla. Una interrupción o error puede dejar filas sin reintento automático; antes del uso real añada recuperación de estados, autenticación, control de duplicados y autorización de destinatarios.
 - **No usar en producción sin asegurar el Web App**, sus permisos de acceso y los envíos de Gmail. 
+
+## Comprobación antes del despliegue
+
+Ejecute las pruebas unitarias simuladas desde la raíz del repositorio:
+
+```bash
+python -m unittest discover -s scripts/tests -v
+```
+
+No requieren acceso a Google Workspace ni Ollama: sustituyen llamadas de red por respuestas ficticias. Cubren lectura no destructiva, prueba aislada, reserva/procesamiento, ausencia de pendientes y respuestas de error. **Estas pruebas no sustituyen la ejecución real del Web App.**
+
+Después de modificar `Code.gs`, vuelva a publicar una nueva versión del despliegue de Apps Script; verifique que `GET` no cambia `PENDIENTE`, que POST con `accion=reclamar` pasa a `PROCESANDO`, y que POST con `accion=completar` registra y envía a una cuenta de prueba autorizada. Revise estados y correos antes de intentar repetir una fila con errores. El Web App del ejemplo carece de autenticación específica entre puente y servidor y **no debe exponerse con permisos públicos ni datos reales**.
