@@ -1597,6 +1597,29 @@ Durante las siguientes sesiones será refinado progresivamente mediante activida
 
 ---
 
+### Microactividad guiada: comparar instrucciones en Open WebUI (10–15 minutos)
+
+**Propósito didáctico.** Observar cómo las instrucciones de nivel general orientan las respuestas de un mismo modelo, sin confundir una mejora puntual con una garantía de desempeño.
+
+1. En **Open WebUI**, seleccione el mismo modelo local para todas las pruebas. Configure inicialmente un asistente sin instrucciones especializadas y abra una conversación nueva.
+2. Solicite: «Explica a un estudiante universitario por qué su respuesta sobre aprendizaje activo necesita mejoras». Registre la respuesta inicial.
+3. Cree o configure un asistente con un *System Prompt* breve: «Actúas como docente universitario. Entrega retroalimentación formativa clara y respetuosa. Identifica fortalezas, aspectos por mejorar y recomendaciones concretas; no inventes información sobre el trabajo del estudiante».
+4. Abra una **conversación nueva** con el asistente configurado y repita exactamente la misma consulta. Conserve, cuando la interfaz lo permita, los mismos parámetros de generación.
+5. Compare ambas respuestas según pertinencia, estructura, lenguaje, reconocimiento de información faltante y cumplimiento de restricciones.
+
+| Criterio | Sin *System Prompt* especializado | Con *System Prompt* especializado |
+|---|---|---|
+| Pertinencia pedagógica | | |
+| Claridad y estructura | | |
+| Reconoce información insuficiente | | |
+| Cumple las restricciones | | |
+
+**Interpretación.** Los resultados pueden variar entre ejecuciones, incluso sin modificar las instrucciones. Para atribuir cambios al *System Prompt*, compare varias respuestas cuando sea posible y mantenga constantes las demás condiciones. No utilice datos reales de estudiantes en las pruebas.
+
+**Pregunta de reflexión.** ¿Qué instrucciones contribuyeron a orientar el comportamiento y cuáles requieren validación adicional? La comparación inicial alimentará los casos de prueba del Capítulo 3.
+
+---
+
 ### Un documento vivo
 
 Es importante comprender que el *System Prompt* no constituye un documento definitivo.
