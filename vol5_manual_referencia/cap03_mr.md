@@ -83,6 +83,23 @@ llmfit
 
 ---
 
+# C3.0.1
+
+# Tokenización — referencia rápida
+
+**Herramienta interactiva:** https://platform.openai.com/tokenizer
+
+- **Token:** unidad de texto definida por el tokenizador; no siempre coincide con una palabra.
+- **Token ID:** número que identifica un token dentro de un vocabulario específico; no es una medida de significado.
+- **Embedding interno:** representación vectorial aprendida del token que el modelo utiliza durante su procesamiento; no equivale automáticamente al embedding de recuperación utilizado en RAG.
+- **Ventana de contexto:** límite de tokens que el modelo puede considerar, condicionado por el modelo y su configuración.
+
+**Actividad rápida:** compare «¿Qué es el aprendizaje activo?» con una instrucción de retroalimentación formativa más extensa. Observe cantidad y segmentación de tokens.
+
+**Advertencia:** el tokenizador de OpenAI es un ejemplo pedagógico; los modelos disponibles en Ollama pueden usar tokenizadores distintos. No ingrese información personal o académica confidencial en la herramienta web.
+
+---
+
 # C3.1
 
 # Comandos de Ollama
