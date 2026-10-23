@@ -1,5 +1,7 @@
 # Cuaderno de Laboratorios
 
+> **Ruta de ejecución obligatoria:** para las sesiones 3 y 4 utilice los archivos completos de [`scripts/Code.gs`](../scripts/Code.gs) y [`scripts/puente_local.py`](../scripts/puente_local.py). El modo `lectura` **no cambia estados**; el modo `prueba` únicamente consulta Ollama; el modo `completo` reserva, procesa, registra y envía mediante Gmail. Los esquemas descriptivos de este laboratorio no sustituyen al código vigente. El Web App debe desplegarse nuevamente con `Code.gs` actualizado.
+
 ## Ejecución por modos — versión de taller
 
 El puente dispone de tres modos, seleccionados mediante argumentos en la terminal:
@@ -14,7 +16,7 @@ python scripts/puente_local.py --modo completo --una-vez
 - **Prueba (preparación sesión 4):** consulta local ficticia a Ollama, cargando `system_prompt.txt`, `contexto/` y `SKILL.md`; no accede a Apps Script.
 - **Completo (sesión 4):** reserva por POST (`accion=reclamar`), genera con Ollama y devuelve mediante POST (`accion=completar`). Apps Script registra en Sheets y envía Gmail. Sin `--una-vez` el puente consulta periódicamente.
 
-**Requisito obligatorio:** actualizar y volver a desplegar el Web App desde el código vigente de [Code.gs](../../scripts/Code.gs) (ajuste la ruta del enlace según el documento). Una implementación antigua sigue cambiando el estado al ejecutar GET y no es compatible con `accion=reclamar`. No ejecute modo completo contra una instalación antigua.
+**Requisito obligatorio:** actualizar y volver a desplegar el Web App desde el código vigente de [Code.gs](../scripts/Code.gs). Una implementación antigua sigue cambiando el estado al ejecutar GET y no es compatible con `accion=reclamar`. No ejecute modo completo contra una instalación antigua.
 
 **Límites conocidos:** la reserva y el envío de Gmail no son transacciones atómicas. Una falla podría dejar filas `PROCESANDO` o `ERROR`, y el envío podría haberse realizado aun cuando no se confirme la operación. No reintente manualmente sin revisar el estado y la bandeja de envíos. El modelo es un prototipo docente, no una solución de producción.
 
@@ -23,9 +25,9 @@ python scripts/puente_local.py --modo completo --una-vez
 
 ## Ruta intensiva — sesiones 3 y 4
 
-El Laboratorio 4 se ejecuta en **dos jornadas**, utilizando una sola carpeta de ejemplo: `scripts/puente_local.py`, `scripts/system_prompt.txt`, `scripts/contexto/` y `scripts/skills/`. Consulte la [guía de preparación](../scripts/GUIA_CONTEXTO_SKILLS.md) y el [Manual Técnico, capítulos 7 y 8](../vol2_manual_tecnico/cap08_mt.md).
+El Laboratorio 4 se ejecuta en **dos jornadas**, utilizando una sola carpeta de ejemplo: `scripts/puente_local.py`, `scripts/system_prompt.txt`, `scripts/contexto/` y `scripts/skills/`. Consulte la [guía de preparación](../scripts/GUIA_CONTEXTO_SKILLS.md) y el [Manual Técnico, capítulo 7](../vol2_manual_tecnico/cap07_mt.md) y [capítulo 8](../vol2_manual_tecnico/cap08_mt.md).
 
-**Sesión 3 (80 min):** actividades 1–3: comprender arquitectura, crear Forms y enlazar Sheets. Continúe con Manual Técnico cap. 8, §§8.1–8.6 para configurar Apps Script, el Web App y preparar la lectura desde el puente. **Checkpoint:** una solicitud ficticia aparece como pendiente en Sheets y es accesible desde el Web App. El puente completo también genera respuestas; no lo inicie como simple comprobación de lectura sin supervisión.
+**Sesión 3 (80 min):** actividades 1–3: comprender arquitectura, crear Forms y enlazar Sheets. Continúe con Manual Técnico cap. 8, §§8.1–8.6 y copie la versión vigente de `scripts/Code.gs`. Ejecute `python scripts/puente_local.py --modo lectura`. **Checkpoint:** una solicitud ficticia aparece como `PENDIENTE` en Sheets, es visible desde Python y **conserva** su estado. No ejecute el modo completo en esta sesión.
 
 **Sesión 4 (60 min):** actividad 4: ejecutar el puente y comprobar `Apps Script → Ollama → Sheets → Gmail`; actividad 5: analizar resultados y errores. **Checkpoint:** una consulta ficticia recibe respuesta fundamentada, queda registrada en Sheets y llega al correo de prueba autorizado.
 
