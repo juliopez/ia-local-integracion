@@ -1,5 +1,25 @@
 # Cuaderno de Laboratorios
 
+## Ejecución por modos — versión de taller
+
+El puente dispone de tres modos, seleccionados mediante argumentos en la terminal:
+
+```bash
+python scripts/puente_local.py --modo lectura
+python scripts/puente_local.py --modo prueba
+python scripts/puente_local.py --modo completo --una-vez
+```
+
+- **Lectura (sesión 3):** GET a Apps Script, muestra una consulta pendiente y **no cambia estados ni envía mensajes**.
+- **Prueba (preparación sesión 4):** consulta local ficticia a Ollama, cargando `system_prompt.txt`, `contexto/` y `SKILL.md`; no accede a Apps Script.
+- **Completo (sesión 4):** reserva por POST (`accion=reclamar`), genera con Ollama y devuelve mediante POST (`accion=completar`). Apps Script registra en Sheets y envía Gmail. Sin `--una-vez` el puente consulta periódicamente.
+
+**Requisito obligatorio:** actualizar y volver a desplegar el Web App desde el código vigente de [Code.gs](../../scripts/Code.gs) (ajuste la ruta del enlace según el documento). Una implementación antigua sigue cambiando el estado al ejecutar GET y no es compatible con `accion=reclamar`. No ejecute modo completo contra una instalación antigua.
+
+**Límites conocidos:** la reserva y el envío de Gmail no son transacciones atómicas. Una falla podría dejar filas `PROCESANDO` o `ERROR`, y el envío podría haberse realizado aun cuando no se confirme la operación. No reintente manualmente sin revisar el estado y la bandeja de envíos. El modelo es un prototipo docente, no una solución de producción.
+
+---
+
 
 ## Ruta intensiva — sesiones 3 y 4
 
