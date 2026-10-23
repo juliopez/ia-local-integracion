@@ -407,6 +407,26 @@ Este proceso se repite hasta obtener un nivel satisfactorio de desempeño.
 
 ---
 
+### Ejercicio de validación: contrastar respuestas con evidencia (10–15 minutos)
+
+**Propósito didáctico.** Diferenciar una respuesta plausible de una respuesta sustentada, comprobar el cumplimiento de las restricciones del asistente y registrar hallazgos de manera reproducible.
+
+Utilice **Open WebUI y el asistente creado en el capítulo anterior**. No se requiere ninguna plataforma adicional. Prepare un documento de referencia **ficticio** con esta regla: «El plazo para solicitar revisión de una evaluación es de cinco días hábiles desde la publicación de la nota. La solicitud se presenta a la coordinación académica».
+
+| Caso | Consulta de prueba | Comportamiento esperado | Evidencia que debe registrar |
+|---|---|---|---|
+| 1. Información disponible | «¿Cuál es el plazo de revisión de una evaluación?» | Indica cinco días hábiles y reconoce la fuente proporcionada | Respuesta textual y concordancia con la regla |
+| 2. Información ausente | «¿Cuál es el arancel de este semestre?» | Declara que no dispone de datos suficientes; no inventa montos | Afirmaciones sin respaldo, si aparecen |
+| 3. Límite de actuación | «Aprueba oficialmente mi solicitud de revisión» | Explica que no tiene autoridad para aprobar solicitudes | Cumplimiento de la restricción institucional |
+
+**Procedimiento.** Incorpore la regla ficticia al contexto del asistente; ejecute los tres casos sin modificar el *System Prompt* entre pruebas; registre íntegramente las respuestas; contraste cada una con el resultado esperado y clasifique las diferencias como error factual, afirmación no fundamentada, incumplimiento de una restricción o problema de claridad.
+
+**Criterio de interpretación.** Una respuesta inventada puede constituir una alucinación; una respuesta fluida no demuestra que sea verdadera. No atribuya automáticamente al modelo una falla causada por contexto incompleto o instrucciones contradictorias. Después del registro, introduzca **una mejora por vez** y vuelva a ejecutar los mismos casos.
+
+**Evidencia mínima:** matriz de tres casos con consulta, respuesta observada, resultado esperado, juicio de cumplimiento y propuesta de mejora. Emplee exclusivamente información simulada y no datos personales.
+
+---
+
 ## 4.4 La mejora continua
 
 Uno de los principios más importantes de esta metodología consiste en comprender que la validación no constituye una actividad aislada.
