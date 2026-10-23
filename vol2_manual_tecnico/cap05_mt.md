@@ -1,5 +1,25 @@
 # Parte II
 
+
+### Ruta intensiva de la sesión 2: asistente y archivos locales
+
+La configuración de Open WebUI y la ejecución del puente son **dos entornos distintos**. En Open WebUI diseñará el System Prompt, la base Knowledge, Notes y una skill; para utilizar esas mismas instrucciones durante la automatización, prepare una copia local de trabajo.
+
+**Carpeta descargable:** descargue el repositorio desde **Code → Download ZIP** y abra la carpeta `scripts/`. Consulte la [guía del puente](../scripts/GUIA_CONTEXTO_SKILLS.md).
+
+| Archivo | Uso |
+|---|---|
+| `scripts/system_prompt.txt` | Instrucciones permanentes. El puente lo carga al iniciar; se requiere reiniciar tras modificarlo |
+| `scripts/contexto/*.md` o `*.txt` | Textos breves y autorizados que se incorporan íntegramente en cada consulta |
+| `scripts/skills/retroalimentacion-formativa/SKILL.md` | Procedimiento reusable en Markdown, interpretado como instrucciones y no como código |
+| `scripts/puente_local.py` | Consulta Apps Script y conecta con Ollama; su ejecución se aborda en sesiones 3 y 4 |
+
+**Práctica autónoma (40 min):** (1) Defina rol, propósito y restricciones (§§5.2–5.6); (2) pruebe un documento ficticio en Knowledge (§5.9) y copie su contenido a `contexto/`; (3) registre decisiones en Notes o `bitacora_asistente.md` (§5.10); (4) prepare `SKILL.md` (§5.11) y conserve su versión local; (5) compruebe el resultado (§5.12). La optimización detallada corresponde a la sesión 5.
+
+**Evidencia:** carpeta local con el prompt, un documento ficticio, skill en Markdown y bitácora. No incluya antecedentes reales ni datos personales.
+
+---
+
 # Diseño e implementación de asistentes inteligentes
 
 ---
