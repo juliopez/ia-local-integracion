@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import time
+import argparse
 from pathlib import Path
 from typing import Any
 
@@ -114,6 +115,8 @@ def obtener_solicitud() -> dict[str, Any] | None:
     respuesta.raise_for_status()
 
     solicitud = respuesta.json()
+    if solicitud.get("error"):
+        raise RuntimeError(str(solicitud["error"]))
 
     if not solicitud.get("disponible"):
         return None
@@ -219,6 +222,7 @@ def registrar_respuesta(
     estado: str = "RESPONDIDA",
 ) -> None:
     carga = {
+        "accion": "completar",
         "fila": fila,
         "respuesta": respuesta_ia,
         "estado": estado,
@@ -244,67 +248,93 @@ def registrar_respuesta(
 
 
 # ---------------------------------------------------------
-# Procesar una solicitud
+# Tres modos de ejecución: lectura, prueba y completo
 # ---------------------------------------------------------
 
-def procesar_una_solicitud(
-    system_prompt: str
-) -> bool:
-    solicitud = obtener_solicitud()
+def reclamar_solicitud() -> dict[str, Any] | None:
+    """Reserva una solicitud mediante Apps Script, sin generar una respuesta."""
+    respuesta = requests.post(
+        URL_APPS_SCRIPT,
+        json={"accion": "reclamar"},
+        timeout=30,
+    )
+    respuesta.raise_for_status()
+    datos = respuesta.json()
+    if not datos.get("correcto"):
+        raise RuntimeError(datos.get("error", "No se pudo reservar la solicitud."))
+    if not datos.get("disponible"):
+        return None
+    return datos
 
+
+def modo_lectura() -> None:
+    """Lee únicamente: no reserva, no llama a Ollama y no modifica Sheets."""
+    solicitud = obtener_solicitud()
+    if solicitud is None:
+        print("No existen solicitudes pendientes.")
+    else:
+        print("Solicitud pendiente encontrada (sin alterar su estado):")
+        print("Fila:", solicitud.get("fila"))
+        print("Tipo:", solicitud.get("tipo"))
+        print("Consulta:", solicitud.get("consulta"))
+
+
+def modo_prueba() -> None:
+    """Prueba local: no contacta Google Workspace ni envía correos."""
+    system_prompt = cargar_system_prompt()
+    solicitud = {
+        "nombre": "Usuario ficticio",
+        "tipo": "Prueba local",
+        "consulta": "¿Cuál es el plazo para solicitar revisión según el documento de ejemplo?",
+    }
+    texto = consultar_ollama(system_prompt, construir_mensaje(solicitud))
+    print("Respuesta de prueba (sin cambios en Sheets):")
+    print(texto)
+
+
+def procesar_una_solicitud(system_prompt: str) -> bool:
+    solicitud = reclamar_solicitud()
     if solicitud is None:
         print("No existen solicitudes pendientes.")
         return False
-
     fila = int(solicitud["fila"])
-
-    print(f"Procesando la fila {fila}...")
-
+    print(f"Procesando fila {fila}...")
     mensaje = construir_mensaje(solicitud)
-
-    respuesta_ia = consultar_ollama(
-        system_prompt,
-        mensaje,
-    )
-
-    registrar_respuesta(
-        fila=fila,
-        respuesta_ia=respuesta_ia,
-    )
-
+    respuesta_ia = consultar_ollama(system_prompt, mensaje)
+    registrar_respuesta(fila, respuesta_ia)
     print(f"Fila {fila} procesada correctamente.")
-
     return True
 
 
-# ---------------------------------------------------------
-# Ejecución continua
-# ---------------------------------------------------------
-
 def main() -> None:
+    parser = argparse.ArgumentParser(description="Puente local para el taller")
+    parser.add_argument(
+        "--modo", choices=("lectura", "prueba", "completo"),
+        default="lectura", help="lectura no modifica Sheets; completo sí envía correo",
+    )
+    parser.add_argument("--una-vez", action="store_true",
+                        help="Ejecutar un solo ciclo en modo completo")
+    args = parser.parse_args()
+    if args.modo == "lectura":
+        modo_lectura()
+        return
+    if args.modo == "prueba":
+        modo_prueba()
+        return
     system_prompt = cargar_system_prompt()
-
-    print("Puente local iniciado.")
-    print("Presione CTRL+C para detenerlo.")
-
+    print("Modo COMPLETO: se procesarán solicitudes y Apps Script enviará correos.")
+    print("CTRL+C para detener.")
     while True:
         try:
             procesar_una_solicitud(system_prompt)
-
         except requests.RequestException as error:
             print(f"Error de comunicación: {error}")
-
-        except (
-            FileNotFoundError,
-            ValueError,
-            RuntimeError,
-            KeyError,
-        ) as error:
+        except (FileNotFoundError, ValueError, RuntimeError, KeyError) as error:
             print(f"Error de procesamiento: {error}")
-
         except Exception as error:
             print(f"Error no previsto: {error}")
-
+        if args.una_vez:
+            break
         time.sleep(INTERVALO_SEGUNDOS)
 
 
@@ -312,4 +342,4 @@ if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
-        print("\nPuente local detenido.")
+        print("\\nPuente local detenido.")
