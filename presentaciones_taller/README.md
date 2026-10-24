@@ -12,14 +12,6 @@ Los PDF serán subidos por el docente. **Mientras no estén publicados, los enla
 | 4 | Automatización con Ollama y Google Workspace | `Sesion_04_Automatizacion.pdf` |
 | 5 | Optimización y evaluación final | `Sesion_05_Optimizacion_Evaluacion.pdf` |
 
-## Cómo publicar los archivos
-
-1. En GitHub, abra esta carpeta y seleccione **Add file → Upload files**.
-2. Arrastre los cinco PDF, respetando exactamente los nombres anteriores.
-3. Confirme la publicación de los archivos mediante un commit en `main`.
-4. Compruebe que los PDF abren correctamente y conservan sus enlaces clicables.
-5. Desde GitHub Pages, acceda a **Recursos técnicos → Presentaciones del taller**.
-
 **Nota:** los archivos fuente editables (`.pptx`) no forman parte de esta carpeta.
 
 ## Relación con los materiales
