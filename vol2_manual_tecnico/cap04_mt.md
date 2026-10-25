@@ -1,5 +1,8 @@
 # Capítulo 4
 
+
+> **Ruta de autoaprendizaje Windows:** [Guía autónoma de sesiones 1 y 2](../vol3_laboratorios/Guia_Autonoma_Windows_Sesiones01_02.md). Mantiene **Python/pip** como método de instalación principal de este manual y explica los checkpoints, sin utilizar la receta Docker de Ubuntu.
+
 # Instalación y configuración de Open WebUI
 
 ## 4.1 ¿Qué es Open WebUI?
