@@ -10,6 +10,29 @@
 - **macOS u otros entornos:** siga los requisitos oficiales de Ollama/Open WebUI y adapte solo la instalación; las actividades de diseño y verificación siguen siendo aplicables.
 - **Equipo institucional restringido:** revise permisos y capacidades antes de instalar; pida autorización o soporte TI cuando corresponda. No desactive políticas de seguridad para completar una práctica.
 
+
+## Mapa de referencias cruzadas — cinco volúmenes
+
+Cada etapa del itinerario combina recursos con funciones distintas. **Regrese siempre a este índice para cambiar de etapa**, no lea necesariamente los cinco volúmenes de principio a fin.
+
+| Recurso | Función en la ruta autónoma | Acceso |
+|---|---|---|
+| **Volumen 1 — Manual del Participante** | Conceptos y fundamentos antes de la práctica | [Capítulos y materiales](vol1_manual_participante/) |
+| **Volumen 2 — Manual Técnico** | Procedimientos, comandos y **capturas de referencia conservadas** | [Capítulos técnicos](vol2_manual_tecnico/) |
+| **Volumen 3 — Laboratorios** | Actividades, checkpoints y evidencias | [Laboratorios](vol3_laboratorios/) |
+| **Volumen 4 — Proyecto Integrador** | Documentar progresivamente el producto de cada etapa | [Manual del Proyecto Integrador](vol4_proyecto_integrador/) |
+| **Volumen 5 — Manual de Referencia Técnica** | Resolver dudas sobre arquitectura y componentes | [Manual de Referencia](vol5_manual_referencia/) |
+
+**Correspondencia para las primeras etapas:**
+
+| Etapa | Practique aquí | Amplíe aquí | Registre aquí |
+|---|---|---|---|
+| **1** | [Guía Windows sesiones 1–2](vol3_laboratorios/Guia_Autonoma_Windows_Sesiones01_02.md) y [Lab01](vol3_laboratorios/Lab01.md) | [Manual Técnico cap. 4 — imágenes de instalación](vol2_manual_tecnico/cap04_mt.md); [Manual del Participante](vol1_manual_participante/) | [Proyecto Integrador](vol4_proyecto_integrador/) |
+| **2** | [Guía Windows sesiones 1–2](vol3_laboratorios/Guia_Autonoma_Windows_Sesiones01_02.md) y [Lab02](vol3_laboratorios/Lab02.md) | [Manual Técnico cap. 5 — imágenes de configuración](vol2_manual_tecnico/cap05_mt.md); [Referencia Técnica](vol5_manual_referencia/) | [Proyecto Integrador](vol4_proyecto_integrador/) |
+| **3** | [Guía autónoma Windows sesión 3](vol3_laboratorios/Guia_Autonoma_Sesion03_Windows.md) y [Lab04](vol3_laboratorios/Lab04.md) | [Manual Técnico cap. 7 — imágenes de Forms](vol2_manual_tecnico/cap07_mt.md); [cap. 8](vol2_manual_tecnico/cap08_mt.md); [Referencia Técnica](vol5_manual_referencia/) | [Proyecto Integrador](vol4_proyecto_integrador/) |
+
+**Sobre las imágenes:** están dentro de los manuales correspondientes, vinculadas a archivos originales de `images/`. Las nuevas guías no reemplazan esas imágenes; enlazan al capítulo donde se explica y representa visualmente el procedimiento.
+
 ## Cómo estudiar sin profesor
 Cada etapa tiene **lectura imprescindible → actividad reproducible → evidencia → comprobación → qué hacer si falla**. Puede detenerse y volver a empezar usando sus evidencias y archivos locales. No pase a la siguiente etapa solo porque una pantalla abre: compruebe el producto esperado.
 
