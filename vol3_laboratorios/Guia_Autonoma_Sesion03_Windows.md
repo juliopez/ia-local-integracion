@@ -1,5 +1,8 @@
 # Sesión 3 · Ruta autónoma Windows: Google Forms → Sheets → Apps Script → Python
 
+> **Navegación autónoma y referencias cruzadas:** [Volver al itinerario de cinco etapas](../EMPEZAR_AQUI.md) · [Volumen 1 — conceptos](../vol1_manual_participante/) · [Volumen 4 — portafolio](../vol4_proyecto_integrador/) · [Volumen 5 — consulta técnica](../vol5_manual_referencia/). Los procedimientos con capturas originales permanecen en el **Manual Técnico (volumen 2)**; la guía autónoma indica el orden, no sustituye las imágenes.
+
+
 **Objetivo:** capturar una consulta ficticia, guardarla en Sheets y leerla desde Python **sin modificar su estado ni enviar correos**. Esta guía es el recorrido principal para el participante; [Laboratorio 4](Lab04.md), [Manual Técnico cap. 7](../vol2_manual_tecnico/cap07_mt.md) y [cap. 8](../vol2_manual_tecnico/cap08_mt.md) amplían conceptos y procedimientos.
 
 **Sistema de referencia:** Windows 10/11, PowerShell, Python y Ollama instalados en la sesión 1. Ubuntu se utilizó para validar la lectura final del ensayo docente; en Windows las etapas Google son idénticas y el comando se ejecuta con `py` o `python`. La ejecución integral en Windows aún no se ha comprobado en un equipo independiente.
