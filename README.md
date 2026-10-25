@@ -6,6 +6,8 @@
 
 # Inteligencia Artificial Local: Diseño, Integración y Automatización de Soluciones con LLM
 
+> **¿Primera vez aquí?** **[EMPEZAR AQUÍ — itinerario autónomo de cinco etapas](EMPEZAR_AQUI.md)**. Es el punto de entrada único para estudiar **sin profesor**, con Windows como ruta prioritaria. No es necesario leer los manuales completos antes de comenzar. [GitHub Pages](https://juliopez.github.io/ia-local-integracion/) ofrece la navegación visual.
+
 > Una guía teórico-práctica para aprender a diseñar, implementar, integrar y evaluar soluciones basadas en modelos de lenguaje ejecutados localmente, utilizando Ollama, Open WebUI, Python y Google Workspace.
 
 ---
