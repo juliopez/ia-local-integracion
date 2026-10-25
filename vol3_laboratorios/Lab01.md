@@ -4,6 +4,9 @@
 
 # Instalación de Ollama y Open WebUI, exploración de un LLM y primeros prompts
 
+
+> **Para participantes que trabajan de manera independiente en Windows:** comience por la [Ruta autónoma de sesiones 1 y 2](Guia_Autonoma_Windows_Sesiones01_02.md), con comandos PowerShell, evidencias, checkpoints y soluciones condicionales. El Manual Técnico mantiene el procedimiento principal Windows; Ubuntu queda como anexo.
+
 > **Complemento validado para Ubuntu (25-10-2026):** [Guía paso a paso de la sesión 1, incidencias resueltas y selección de modelo con llmfit](Guia_Ubuntu_Sesion01_Validacion_2026.md). Esta guía complementaria no reemplaza la ruta principal del Manual Técnico para Windows.
 
 **Capítulo asociado:** Capítulo 1. Introducción a la Inteligencia Artificial Generativa Local
