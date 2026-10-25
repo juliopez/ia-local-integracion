@@ -23,6 +23,8 @@ python scripts/puente_local.py --modo completo --una-vez
 ---
 
 
+> **Aclaración de compatibilidad (sesión 3):** la descripción histórica de la Actividad 2 presenta «Nombre del solicitante, Correo electrónico, Descripción de la solicitud y Prioridad». Esa estructura **no coincide** con el esquema operativo de [`scripts/Code.gs`](../scripts/Code.gs). Para el caso automatizado de sesiones 3–4 use los cuatro campos del [Manual Técnico cap. 7](../vol2_manual_tecnico/cap07_mt.md): **Nombre, Tipo de consulta, Consulta, Correo electrónico**, en ese orden. Puede crear Forms y Sheets de una vez con [`scripts/crear_formulario_taller.gs`](../scripts/crear_formulario_taller.gs), ejecutado desde un **proyecto Apps Script independiente**. Después de enviar una respuesta ficticia, compruebe el estado **PENDIENTE** antes de instalar el código del Web App en la hoja vinculada. No pegue ambos archivos .gs en el mismo proyecto sin revisar sus funciones y disparadores.
+
 ## Ruta intensiva — sesiones 3 y 4
 
 El Laboratorio 4 se ejecuta en **dos jornadas**, utilizando una sola carpeta de ejemplo: `scripts/puente_local.py`, `scripts/system_prompt.txt`, `scripts/contexto/` y `scripts/skills/`. Consulte la [guía de preparación](../scripts/GUIA_CONTEXTO_SKILLS.md) y el [Manual Técnico, capítulo 7](../vol2_manual_tecnico/cap07_mt.md) y [capítulo 8](../vol2_manual_tecnico/cap08_mt.md).
