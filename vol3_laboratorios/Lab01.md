@@ -4,6 +4,8 @@
 
 # Instalación de Ollama y Open WebUI, exploración de un LLM y primeros prompts
 
+> **Complemento validado para Ubuntu (25-10-2026):** [Guía paso a paso de la sesión 1, incidencias resueltas y selección de modelo con llmfit](Guia_Ubuntu_Sesion01_Validacion_2026.md). Esta guía complementaria no reemplaza la ruta principal del Manual Técnico para Windows.
+
 **Capítulo asociado:** Capítulo 1. Introducción a la Inteligencia Artificial Generativa Local
 
 **Duración estimada:** 100 minutos
