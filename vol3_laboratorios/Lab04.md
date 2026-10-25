@@ -1,6 +1,6 @@
 # Cuaderno de Laboratorios
 
-> **Navegación autónoma y referencias cruzadas:** [Volver al itinerario de cinco etapas](../EMPEZAR_AQUI.md) · [Volumen 1 — conceptos](../vol1_manual_participante/) · [Volumen 4 — portafolio](../vol4_proyecto_integrador/) · [Volumen 5 — consulta técnica](../vol5_manual_referencia/). Los procedimientos con capturas originales permanecen en el **Manual Técnico (volumen 2)**; la guía autónoma indica el orden, no sustituye las imágenes.
+> **Para orientarse:** [Ruta de aprendizaje](../EMPEZAR_AQUI.md) · [Volumen 1 — conceptos](../vol1_manual_participante/) · [Volumen 4 — portafolio](../vol4_proyecto_integrador/) · [Volumen 5 — consulta técnica](../vol5_manual_referencia/). Consulte el Manual Técnico para ver las instrucciones ilustradas.
 
 
 > **Ruta de ejecución obligatoria:** para las sesiones 3 y 4 utilice los archivos completos de [`scripts/Code.gs`](../scripts/Code.gs) y [`scripts/puente_local.py`](../scripts/puente_local.py). El modo `lectura` **no cambia estados**; el modo `prueba` únicamente consulta Ollama; el modo `completo` reserva, procesa, registra y envía mediante Gmail. Los esquemas descriptivos de este laboratorio no sustituyen al código vigente. El Web App debe desplegarse nuevamente con `Code.gs` actualizado.
