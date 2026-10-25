@@ -3,6 +3,9 @@
 
 ## Ruta intensiva — sesión 2 (40 minutos de práctica)
 
+> **Trabajo autónomo desde Windows:** siga la [Ruta autónoma de sesiones 1 y 2](Guia_Autonoma_Windows_Sesiones01_02.md) antes de esta versión extensa del laboratorio. Incluye guardado preventivo del asistente, carga y verificación de Knowledge, Skills y bitácora.
+
+
 > **Validación del taller (25-10-2026):** consulte la [Guía complementaria de validación: Windows y anexo Ubuntu](Guia_Sesion02_Knowledge_Skills_Windows_Ubuntu.md). La ruta prioritaria es **Windows**; las incidencias de Ubuntu son un **anexo**. Guarde el asistente antes de cargar Knowledge; si falla la recuperación, revise el modo de llamadas a funciones y pruebe **Heredado** solo como corrección condicional. La Skill importada debe además asociarse al modelo; **no equipare una respuesta con fuente con ausencia de alucinaciones**. Guarde copias de los archivos en `scripts/`.
 
 
