@@ -3,6 +3,9 @@
 
 ## Ruta intensiva — sesión 2 (40 minutos de práctica)
 
+> **Validación del taller (25-10-2026):** consulte la [Guía complementaria de validación: Windows y anexo Ubuntu](Guia_Sesion02_Knowledge_Skills_Windows_Ubuntu.md). La ruta prioritaria es **Windows**; las incidencias de Ubuntu son un **anexo**. Guarde el asistente antes de cargar Knowledge; si falla la recuperación, revise el modo de llamadas a funciones y pruebe **Heredado** solo como corrección condicional. La Skill importada debe además asociarse al modelo; **no equipare una respuesta con fuente con ausencia de alucinaciones**. Guarde copias de los archivos en `scripts/`.
+
+
 Para el taller de cinco sesiones, las actividades completas de este laboratorio permanecen disponibles como material de profundización. La ejecución prioritaria es:
 
 1. **10 min:** propósito, rol, usuarios y restricciones (actividades 1–5). Consulte Manual Técnico [cap. 5, §§5.2–5.5](../vol2_manual_tecnico/cap05_mt.md).
