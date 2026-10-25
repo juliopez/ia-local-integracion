@@ -1,4 +1,7 @@
 # Ruta autónoma para Windows · Sesiones 1 y 2
+
+> **Navegación autónoma y referencias cruzadas:** [Volver al itinerario de cinco etapas](../EMPEZAR_AQUI.md) · [Volumen 1 — conceptos](../vol1_manual_participante/) · [Volumen 4 — portafolio](../vol4_proyecto_integrador/) · [Volumen 5 — consulta técnica](../vol5_manual_referencia/). Los procedimientos con capturas originales permanecen en el **Manual Técnico (volumen 2)**; la guía autónoma indica el orden, no sustituye las imágenes.
+
 **Taller IA local + Google Workspace · Guía del participante sin profesor presente**  
 **Plataforma principal:** Windows 10/11 de 64 bits. **Revisión documental:** 25-10-2026. **Duración del taller:** sesiones de 120 min; esta guía identifica la ruta mínima y las ampliaciones opcionales.  
 **Fuentes obligatorias:** [Laboratorio 1](Lab01.md), [Laboratorio 2](Lab02.md), [Manual Técnico](../vol2_manual_tecnico/cap04_mt.md), [guía complementaria sesión 2](Guia_Sesion02_Knowledge_Skills_Windows_Ubuntu.md).
