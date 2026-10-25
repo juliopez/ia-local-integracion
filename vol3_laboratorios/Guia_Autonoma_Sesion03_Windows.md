@@ -1,11 +1,11 @@
 # Sesión 3 · Ruta autónoma Windows: Google Forms → Sheets → Apps Script → Python
 
-> **Navegación autónoma y referencias cruzadas:** [Volver al itinerario de cinco etapas](../EMPEZAR_AQUI.md) · [Volumen 1 — conceptos](../vol1_manual_participante/) · [Volumen 4 — portafolio](../vol4_proyecto_integrador/) · [Volumen 5 — consulta técnica](../vol5_manual_referencia/). Los procedimientos con capturas originales permanecen en el **Manual Técnico (volumen 2)**; la guía autónoma indica el orden, no sustituye las imágenes.
+> **Para orientarse:** [Ruta de aprendizaje](../EMPEZAR_AQUI.md) · [Volumen 1 — conceptos](../vol1_manual_participante/) · [Volumen 4 — portafolio](../vol4_proyecto_integrador/) · [Volumen 5 — consulta técnica](../vol5_manual_referencia/). Consulte el Manual Técnico para ver las instrucciones ilustradas.
 
 
 **Objetivo:** capturar una consulta ficticia, guardarla en Sheets y leerla desde Python **sin modificar su estado ni enviar correos**. Esta guía es el recorrido principal para el participante; [Laboratorio 4](Lab04.md), [Manual Técnico cap. 7](../vol2_manual_tecnico/cap07_mt.md) y [cap. 8](../vol2_manual_tecnico/cap08_mt.md) amplían conceptos y procedimientos.
 
-**Sistema de referencia:** Windows 10/11, PowerShell, Python y Ollama instalados en la sesión 1. Ubuntu se utilizó para validar la lectura final del ensayo docente; en Windows las etapas Google son idénticas y el comando se ejecuta con `py` o `python`. La ejecución integral en Windows aún no se ha comprobado en un equipo independiente.
+**Sistema de referencia:** Windows 10/11, PowerShell, Python y Ollama instalados en la sesión 1. Ubuntu se utilizó para validar la lectura final del prueba práctica; en Windows las etapas Google son idénticas y el comando se ejecuta con `py` o `python`. La ejecución integral en Windows aún no se ha comprobado en un equipo independiente.
 
 ## Antes de comenzar (5 minutos)
 - Inicie sesión en su propia cuenta de Google; disponga de permisos para crear Forms, Sheets y proyectos Apps Script.
@@ -71,7 +71,7 @@ Si el JSON indica `disponible:false`, compruebe que la columna F dice `PENDIENTE
 **Checkpoint 3:** respuesta JSON correcta y hoja inalterada.
 
 ## Paso 5. Configurar y ejecutar el puente en Windows (20 minutos)
-1. Abra `scripts/puente_local.py` extraído del ZIP. En la configuración inicial, cambie **solamente** `URL_APPS_SCRIPT` por su URL privada `/exec`; conserve las comillas. **No copie su URL a GitHub**. En el ensayo docente, la URL se editó en un clon local.
+1. Abra `scripts/puente_local.py` extraído del ZIP. En la configuración inicial, cambie **solamente** `URL_APPS_SCRIPT` por su URL privada `/exec`; conserve las comillas. **No copie su URL a GitHub**. En el prueba práctica, la URL se editó en un clon local.
 2. Abra **PowerShell** en la carpeta raíz del repositorio extraído (puede usar «Abrir en Terminal» desde el Explorador de archivos).
 3. Compruebe la ayuda:
 
@@ -110,7 +110,7 @@ Si recibe `disponible: true` y los datos ficticios, **no** ejecute `--modo compl
 - Salida de `--modo lectura` y comprobación final F/G/H.
 - Si algo falla: error literal, momento, corrección y nueva comprobación.
 
-## Validación docente (25 de octubre de 2026)
+## Ejemplo de comprobación
 Se creó un formulario desde `crear_formulario_taller.gs`; Google registró los enlaces de Forms y Sheets. Se envió la consulta ficticia; Sheets registró la fila y el activador colocó `PENDIENTE`. Se configuró `Code.gs` en un proyecto vinculado a Sheets, se implementó Web App, el navegador mostró JSON de solicitud disponible, y la consulta desde Ubuntu mediante `python3 scripts/puente_local.py --modo lectura` recuperó la misma solicitud. **Después de ambas lecturas, la columna F seguía PENDIENTE, G y H vacías.** La ruta **PowerShell en Windows** está documentada, pero **no ha sido ejecutada de extremo a extremo en Windows**.
 
 **Continuación:** [Laboratorio 4, sesión 4](Lab04.md) para `--modo prueba` y `--modo completo --una-vez`. No se han probado aún esos modos como parte de este ensayo.
