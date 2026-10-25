@@ -1,5 +1,8 @@
 # Capítulo 4
 
+> **Navegación autónoma y referencias cruzadas:** [Volver al itinerario de cinco etapas](../EMPEZAR_AQUI.md) · [Volumen 1 — conceptos](../vol1_manual_participante/) · [Volumen 4 — portafolio](../vol4_proyecto_integrador/) · [Volumen 5 — consulta técnica](../vol5_manual_referencia/). Los procedimientos con capturas originales permanecen en el **Manual Técnico (volumen 2)**; la guía autónoma indica el orden, no sustituye las imágenes.
+
+
 
 > **Ruta de autoaprendizaje Windows:** [Guía autónoma de sesiones 1 y 2](../vol3_laboratorios/Guia_Autonoma_Windows_Sesiones01_02.md). Mantiene **Python/pip** como método de instalación principal de este manual y explica los checkpoints, sin utilizar la receta Docker de Ubuntu.
 
