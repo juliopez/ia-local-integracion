@@ -3,7 +3,7 @@ function leerSolicitud(reservar) {
 
   const hoja = SpreadsheetApp
     .getActiveSpreadsheet()
-    .getActiveSheet();
+    .getSheetByName("Respuestas de formulario 1");
 
   if (!hoja) {
     throw new Error("No se encontró la hoja de respuestas.");
@@ -111,7 +111,7 @@ function doPost(e) {
     }
     lock.waitLock(15000);
     try {
-      hoja = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+      hoja = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Respuestas de formulario 1");
       if (!hoja) throw new Error("No se encontró la hoja de respuestas.");
       const estado = String(hoja.getRange(fila, 6).getValue() || "").trim().toUpperCase();
       if (estado !== "PROCESANDO") {
