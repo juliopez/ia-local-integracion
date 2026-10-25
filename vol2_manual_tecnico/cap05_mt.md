@@ -3,6 +3,8 @@
 
 ### Ruta intensiva de la sesión 2: asistente y archivos locales
 
+> **Ejecución autónoma en Windows:** [guía paso a paso de sesiones 1 y 2](../vol3_laboratorios/Guia_Autonoma_Windows_Sesiones01_02.md), con preparación, verificaciones, manejo de fallos y evidencias. Siga esta ruta antes de la profundización del capítulo.
+
 > **Validación del taller (25-10-2026):** consulte la [Guía de validación de sesión 2 (Windows principal, Ubuntu anexo)](../vol3_laboratorios/Guia_Sesion02_Knowledge_Skills_Windows_Ubuntu.md). La ruta prioritaria es **Windows**; las incidencias de Ubuntu son un **anexo**. Guarde el asistente antes de cargar Knowledge; si falla la recuperación, revise el modo de llamadas a funciones y pruebe **Heredado** solo como corrección condicional. La Skill importada debe además asociarse al modelo; **no equipare una respuesta con fuente con ausencia de alucinaciones**. Guarde copias de los archivos en `scripts/`.
 
 
