@@ -6,7 +6,7 @@
 
 # Inteligencia Artificial Local: Diseño, Integración y Automatización de Soluciones con LLM
 
-> **¿Primera vez aquí?** **[EMPEZAR AQUÍ — itinerario autónomo de cinco etapas](EMPEZAR_AQUI.md)**. Es el punto de entrada único para estudiar **sin profesor**, con Windows como ruta prioritaria. No es necesario leer los manuales completos antes de comenzar. [GitHub Pages](https://juliopez.github.io/ia-local-integracion/) ofrece la navegación visual.
+> **¿Primera vez aquí?** **[EMPEZAR AQUÍ — itinerario autónomo de cinco etapas](EMPEZAR_AQUI.md)**. Es el punto de entrada único para estudiar **a su ritmo**, con Windows como ruta prioritaria. No es necesario leer los manuales completos antes de comenzar. [GitHub Pages](https://juliopez.github.io/ia-local-integracion/) ofrece la navegación visual.
 
 > Una guía teórico-práctica para aprender a diseñar, implementar, integrar y evaluar soluciones basadas en modelos de lenguaje ejecutados localmente, utilizando Ollama, Open WebUI, Python y Google Workspace.
 
@@ -15,7 +15,7 @@
 
 ## Ruta intensiva de cinco jornadas (120 minutos cada una)
 
-Esta ruta **complementa** el recorrido original de seis laboratorios. Para ejecutar las prácticas, consulte primero la guía de [carpeta local y archivos del puente](scripts/GUIA_CONTEXTO_SKILLS.md) y descargue el repositorio completo mediante **Code → Download ZIP**. Mantenga juntos `scripts/puente_local.py`, `scripts/system_prompt.txt`, `scripts/contexto/` y `scripts/skills/`.
+Esta ruta **complementa** el recorrido original de seis laboratorios. Para ejecutar las prácticas, consulte primero la guía de [carpeta local y archivos de integración](scripts/GUIA_CONTEXTO_SKILLS.md) y descargue el repositorio completo mediante **Code → Download ZIP**. Mantenga juntos `scripts/puente_local.py`, `scripts/system_prompt.txt`, `scripts/contexto/` y `scripts/skills/`.
 
 | Sesión | Producto de cierre | Manual Técnico | Trabajo práctico |
 |---|---|---|---|
