@@ -3,6 +3,9 @@
 
 ### Ruta intensiva de la sesión 2: asistente y archivos locales
 
+> **Validación del taller (25-10-2026):** consulte la [Guía de validación de sesión 2 (Windows principal, Ubuntu anexo)](../vol3_laboratorios/Guia_Sesion02_Knowledge_Skills_Windows_Ubuntu.md). La ruta prioritaria es **Windows**; las incidencias de Ubuntu son un **anexo**. Guarde el asistente antes de cargar Knowledge; si falla la recuperación, revise el modo de llamadas a funciones y pruebe **Heredado** solo como corrección condicional. La Skill importada debe además asociarse al modelo; **no equipare una respuesta con fuente con ausencia de alucinaciones**. Guarde copias de los archivos en `scripts/`.
+
+
 La configuración de Open WebUI y la ejecución del puente son **dos entornos distintos**. En Open WebUI diseñará el System Prompt, la base Knowledge, Notes y una skill; para utilizar esas mismas instrucciones durante la automatización, prepare una copia local de trabajo.
 
 **Carpeta descargable:** descargue el repositorio desde **Code → Download ZIP** y abra la carpeta `scripts/`. Consulte la [guía del puente](../scripts/GUIA_CONTEXTO_SKILLS.md).
