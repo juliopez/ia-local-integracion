@@ -33,6 +33,8 @@ Cada etapa del itinerario combina recursos con funciones distintas. Utilice cada
 
 **Apoyo visual:** consulte las capturas de pantalla disponibles en los capítulos del Manual Técnico cuando necesite identificar una opción de la interfaz.
 
+**Sesión 5 — optimización y evaluación:** [Guía autónoma con explicación, mejoras a elegir, procedimiento y comprobación](vol3_laboratorios/Guia_Autonoma_Sesion05_Windows.md). El laboratorio conserva las tres consultas iniciales para comparar resultados antes/después. La pauta de evidencias no sustituye al instrumento institucional de evaluación.
+
 ## Cómo seguir la ruta
 Cada etapa tiene **lectura → actividad → evidencia → comprobación → solución de dificultades**. Puede detenerse y volver a empezar usando sus evidencias y archivos locales. No pase a la siguiente etapa solo porque una pantalla abre: compruebe el producto esperado.
 
