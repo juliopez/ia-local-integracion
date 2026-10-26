@@ -172,6 +172,12 @@ Esta arquitectura permite estudiar cómo un modelo ejecutado localmente puede pa
 
 ---
 
+# Recursos interactivos y actividades de apoyo
+
+La colección transversal de [recursos interactivos](RECURSOS_INTERACTIVOS.md) permite explorar la tokenización, la atención, el diseño de instrucciones y la validación de asistentes, con orientaciones para observar resultados y advertencias sobre sus límites. Es complementaria a los cinco volúmenes.
+
+---
+
 # Tecnologías utilizadas
 
 La obra utiliza principalmente:
