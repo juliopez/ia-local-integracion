@@ -18,7 +18,7 @@ Código, comandos, solución de problemas, glosario, recursos complementarios y 
 - [Capítulo 6 — Recursos complementarios](cap06_mr.md)
 - [Capítulo 7 — Versiones de software utilizadas](cap07_mr.md)
 
-Los recursos visuales y las actividades de exploración se encuentran ahora en la colección transversal de [Recursos interactivos y actividades de apoyo](../RECURSOS_INTERACTIVOS.md), disponible para toda la obra.
+Para complementar el estudio de los cinco volúmenes, consulte la colección de [Recursos interactivos y actividades de apoyo](../RECURSOS_INTERACTIVOS.md), que reúne herramientas de exploración y actividades didácticas vinculadas con los contenidos de la obra.
 
 
 [Volver a la ruta de aprendizaje](../EMPEZAR_AQUI.md) · [Biblioteca de cinco volúmenes](https://juliopez.github.io/ia-local-integracion/biblioteca.html)
