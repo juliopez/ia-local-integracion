@@ -382,3 +382,8 @@ Esta obra busca contribuir al aprendizaje práctico y responsable de la Intelige
 El objetivo final es proporcionar una ruta reproducible para pasar desde la experimentación con un modelo local hasta el diseño, integración, evaluación y documentación de una solución funcional.
 
 
+
+
+### Relación entre cinco sesiones y seis laboratorios
+
+El itinerario intensivo reorganiza las actividades sin eliminar laboratorios: **sesión 1 → Lab01; sesión 2 → Lab02; sesiones 3 y 4 → Lab04; sesión 5 → Lab03**. Los [laboratorios 5](vol3_laboratorios/Lab05.md) y [6](vol3_laboratorios/Lab06.md) se conservan como profundización de consolidación, presentación y uso responsable. El punto de entrada recomendado para estudiantes es [la ruta de aprendizaje](https://juliopez.github.io/ia-local-integracion/aprendizaje.html).
