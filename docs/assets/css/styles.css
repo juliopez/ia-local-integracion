@@ -17,3 +17,11 @@
 .final-session{grid-column:1/-1;background:#f8fbff}
 .final-session .intensive-links{margin-top:10px!important}
 @media(max-width:640px){.final-session{grid-column:auto}.intensive-links.links-row{gap:4px 8px}}
+
+/* Tabla compacta para modos de ejecución en Recursos técnicos */
+.table-scroll{overflow-x:auto;margin:16px 0 20px}
+.mode-table{width:100%;border-collapse:collapse;background:#fff;font-size:.93rem;line-height:1.5}
+.mode-table th,.mode-table td{padding:12px 14px;text-align:left;vertical-align:top;border:1px solid var(--border)}
+.mode-table th{background:#e8f1fb;color:var(--ink);font-weight:750}
+.mode-table code{white-space:nowrap;font-size:.88em}
+@media(max-width:640px){.mode-table{min-width:600px}}
