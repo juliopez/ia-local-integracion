@@ -6,7 +6,7 @@
 
 > **Cómo utilizar esta guía:** lea un paso, realice exactamente la acción y confirme el resultado antes de continuar. No necesita abrir otro manual para completar el recorrido principal. Las explicaciones avanzadas y los métodos alternativos aparecen al final.
 >
-> **Importante sobre Open WebUI:** la opción más simple para comenzar es la **aplicación de escritorio**, distribuida como instalador de Windows. Esta opción abre una **aplicación**, no necesariamente `http://localhost:3000`. Si la actividad exige visitar exactamente **localhost:3000**, siga la **ruta alternativa con Docker** al final. Son procedimientos distintos: elija **solo uno**, sin mezclarlos. La aplicación de escritorio está catalogada como **alfa** por sus desarrolladores; si falla, registre el problema y consulte la alternativa.
+> **Importante sobre Open WebUI:** utilizaremos la **aplicación de escritorio para Windows**, sin Docker ni instalación manual mediante Python. El servidor local de la aplicación utiliza habitualmente **http://localhost:8080**; si el puerto está ocupado, puede utilizar otro. **http://localhost:3000** corresponde al ejemplo de instalación con Docker y no es la dirección de esta guía. La aplicación de escritorio se encuentra en etapa alfa: si falla, registre el mensaje y solicite apoyo.
 
 ## Antes de comenzar — Prepare el computador (5 minutos)
 
@@ -118,11 +118,11 @@ Presione **Enter**. Volverá al indicador habitual de PowerShell. Ollama puede c
 
 **Paso 20.** Abra **Descargas** y haga doble clic en el instalador. Complete la instalación siguiendo la ventana que aparezca. Si Windows o la institución bloquea la ejecución, no desactive protecciones ni fuerce la instalación: registre el mensaje y consulte al docente.
 
-**Paso 21.** Presione la tecla **Windows**, escriba **Open WebUI** y abra la aplicación. La primera ejecución puede requerir Internet y algunos minutos.
+**Paso 21.** Presione la tecla **Windows**, escriba **Open WebUI** y abra la aplicación. En la primera ejecución se requiere conexión a Internet y la preparación del entorno puede tardar. Espere a que el servidor local termine de iniciarse; no cierre la aplicación.
 
-**Paso 22.** Siga la configuración inicial que muestre la aplicación. Si solicita configurar un motor o proveedor, seleccione la **conexión local con Ollama** cuando esté disponible. El servicio Ollama local utiliza habitualmente `http://localhost:11434`. **No descargue un segundo modelo dentro de otro motor** si el objetivo es utilizar el modelo ya instalado con Ollama.
+**Paso 22.** Abra **Chrome o Edge**. En la barra superior de direcciones (no en el buscador), escriba **http://localhost:8080** y presione **Enter**. Debe aparecer Open WebUI. Si la página no abre, revise en la aplicación de escritorio el **estado del servidor y el puerto configurado**: puede que no haya terminado de iniciar o haya elegido otro puerto. En ese caso, utilice la dirección que muestre la aplicación. No instale Docker solo para cambiar de puerto.
 
-**Paso 23.** En el selector de modelos, busque **`qwen2.5:1.5b`**. Si no aparece, compruebe que Ollama siga instalado y ejecutándose. Si necesita indicar la dirección del servidor Ollama, utilice la dirección local indicada en el paso anterior y confirme la conexión según las opciones de la versión instalada.
+**Paso 23.** Si es la primera visita, complete la creación de la cuenta administradora **local** que solicite Open WebUI. A continuación, compruebe la conexión con Ollama: su dirección habitual es **http://localhost:11434** (observe que **11434 es el puerto de Ollama**, no el de Open WebUI). En el selector de modelos, busque **`qwen2.5:1.5b`**. Si no aparece, confirme con `ollama list` que el modelo está descargado y verifique el estado de Ollama y la configuración de conexiones de Open WebUI.
 
 **Paso 24.** Abra una conversación nueva, seleccione el modelo y escriba:
 
@@ -132,36 +132,7 @@ Presione **Enter** o el botón de enviar.
 
 **Comprobación 5:** la interfaz de Open WebUI abre, permite seleccionar el modelo **de Ollama** y genera una respuesta. Guarde una captura.
 
-> **Nota sobre la dirección web:** este **instalador de escritorio no equivale a levantar un servidor accesible en `localhost:3000`**. Si su actividad exige esa dirección exacta, no intente adivinar un puerto: continúe con la ruta Docker descrita a continuación, preferiblemente con acompañamiento docente. No es necesario completar **ambos** procedimientos.
-
-## Ruta alternativa — Open WebUI en http://localhost:3000 (solo si es un requisito)
-
-Esta ruta utiliza **Docker Desktop**, una herramienta adicional, y se incluye exclusivamente para quienes necesitan acceder a Open WebUI desde el navegador en el puerto **3000**. Es más exigente que la aplicación de escritorio.
-
-1. Abra **https://www.docker.com/products/docker-desktop/**. Descargue Docker Desktop para su tipo de Windows. Instale siguiendo el asistente oficial; puede requerir WSL 2, virtualización y reiniciar Windows. Si el equipo está administrado, consulte a TI.
-2. Abra **Docker Desktop** desde Inicio. Espere hasta que indique que el motor está funcionando.
-3. Abra **PowerShell** desde Inicio y compruebe:
-
-   ```powershell
-   docker --version
-   ```
-
-4. Cree una clave local para Open WebUI, que debe mantenerse privada. Escriba en PowerShell:
-
-   ```powershell
-   $webuiKey = [guid]::NewGuid().ToString("N") + [guid]::NewGuid().ToString("N")
-   ```
-
-5. Inicie el contenedor con **una sola instrucción** (pegue el bloque completo en PowerShell). Se descarga una imagen; la primera ejecución puede tardar:
-
-   ```powershell
-   docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data -e "WEBUI_SECRET_KEY=$webuiKey" -e "OLLAMA_BASE_URL=http://host.docker.internal:11434" --name open-webui --restart always ghcr.io/open-webui/open-webui:main
-   ```
-
-6. Abra Chrome o Edge y escriba **http://localhost:3000**. Presione **Enter**. Complete el alta inicial del usuario local cuando corresponda.
-7. Seleccione el modelo Ollama ya descargado. Si no aparece, compruebe que Ollama esté ejecutándose en Windows. Si ya existe un contenedor llamado `open-webui`, **no repita el comando de creación**; consulte al docente para iniciar o revisar el contenedor existente.
-
-**Comprobación alternativa:** el navegador abre Open WebUI en `localhost:3000` y puede conversar con el modelo descargado. Para detener temporalmente el contenedor, use `docker stop open-webui`; para volver a iniciarlo, `docker start open-webui`. No elimine el volumen de datos.
+> **Recuerde:** en esta instalación, el acceso habitual desde el navegador es **http://localhost:8080**. **No necesita Docker** para utilizar Open WebUI ni para abrirlo en el navegador. Si el puerto 8080 está ocupado, consulte el puerto real en la aplicación de escritorio.
 
 ## Evidencias al terminar la sesión
 
@@ -171,7 +142,7 @@ Esta ruta utiliza **Docker Desktop**, una herramienta adicional, y se incluye ex
 - [ ] Conversé con el modelo en PowerShell.
 - [ ] Abrí Open WebUI y obtuve una respuesta **utilizando Ollama**.
 - [ ] Guardé las capturas en **Documentos/Taller-IA-Local**.
-- [ ] Registré qué tipo de Open WebUI utilicé: **escritorio** o **Docker / localhost:3000**.
+- [ ] Accedí desde el navegador a **http://localhost:8080** (o al puerto indicado por la aplicación).
 
 ## Si aparece un problema
 
@@ -183,7 +154,7 @@ Esta ruta utiliza **Docker Desktop**, una herramienta adicional, y se incluye ex
 | La respuesta tarda | Espere; el rendimiento depende del equipo. Evite ejecutar varias descargas o modelos simultáneamente. |
 | Open WebUI abre pero no ve Ollama | Compruebe la ejecución de Ollama, el proveedor configurado y la conexión local al puerto 11434. |
 | Open WebUI Desktop no instala | Registre el error y consúltelo con el docente. Es una aplicación en etapa alfa. |
-| `localhost:3000` no responde | Esa dirección corresponde a la ruta Docker; verifique que eligió Docker y que el contenedor está en ejecución. |
+| `localhost:8080` no responde | Compruebe que Open WebUI Desktop esté abierto y que su servidor local esté iniciado. Consulte el puerto indicado por la aplicación; no instale Docker para resolverlo. |
 | Equipo institucional bloquea la instalación | Solicite soporte TI; no desactive antivirus, restricciones ni políticas de la institución. |
 
 ## Para profundizar después de la práctica
