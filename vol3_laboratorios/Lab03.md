@@ -11,10 +11,10 @@
 
 Esta actividad se desarrolla **después** de haber implementado el flujo Google Workspace ↔ Ollama en las sesiones 3 y 4. El bloque completo de la jornada contempla **15 minutos de contextualización, 60 minutos de mejora del asistente y 45 minutos de evaluación** (el instrumento evaluativo se definirá por separado).
 
-1. **10 min:** escoger tres consultas representativas, incluida una cuya respuesta no figure en los documentos.
-2. **15 min:** registrar respuestas iniciales del asistente (actividad 1–3); comparar exactitud, pertinencia y reconocimiento de límites.
-3. **20 min:** modificar una variable cada vez: `system_prompt.txt`, `contexto/*.md` o `SKILL.md` (actividad 4; Manual Técnico cap. 6, §§6.2–6.3). Reinicie el puente si modifica el System Prompt.
-4. **15 min:** repetir exactamente las consultas, registrar diferencias y conclusiones (actividades 5–6; Manual Técnico cap. 6, §§6.4–6.6).
+1. **10 min — Diagnóstico:** elegir tres consultas representativas, incluida una cuya respuesta no esté documentada; registrar respuestas iniciales y al menos dos problemas.
+2. **15 min — Selección:** elegir dos mejoras pertinentes del catálogo de System Prompt, fuentes, Skills, formato, restricciones, parámetros o preguntas, sin repetir necesariamente lo ya realizado.
+3. **25 min — Implementación:** guardar configuración original, modificar un componente por vez y comprobar sus efectos.
+4. **10 min — Comparación:** repetir las tres consultas originales, registrar diferencias, reconocer límites y elaborar conclusiones.
 
 **Evidencia:** tabla antes/después, cambios documentados en bitácora y archivos locales actualizados. No confunda mayor extensión de la respuesta con mayor calidad ni envíe pruebas a direcciones externas reales.
 
@@ -37,8 +37,6 @@ Esta actividad se desarrolla **después** de haber implementado el flujo Google 
 1. Presentación del laboratorio
 2. Información general
 3. Antes de comenzar
-
-> **Nota:** El desarrollo del laboratorio, el Proyecto Integrador y el cierre se incorporarán en las siguientes entregas.
 
 ---
 
