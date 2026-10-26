@@ -34,7 +34,7 @@ Esta ruta **no reemplaza** el recorrido original de seis laboratorios: utiliza L
 
 | Sesión | Producto de cierre | Manual Técnico | Trabajo práctico |
 |---|---|---|---|
-| 1 — Instalación (70 min de práctica) | Ollama y Open WebUI funcionando | Cap. 1, §§1.3–1.11; cap. 2, §§2.2–2.7; cap. 3, §§3.2–3.7; cap. 4, §§4.2–4.7 | [Guía autónoma Windows](vol3_laboratorios/Guia_Autonoma_Windows_Sesiones01_02.md) · [Laboratorio 1](vol3_laboratorios/Lab01.md) |
+| 1 — Instalación (70 min de práctica) | Ollama y Open WebUI funcionando | Cap. 1, §§1.3–1.11; cap. 2, §§2.2–2.7; cap. 3, §§3.2–3.7; cap. 4, §§4.2–4.7 | [Guía paso a paso Windows — Sesión 1](vol3_laboratorios/Guia_Autonoma_Sesion01_Windows_Paso_a_Paso.md) · [Laboratorio 1](vol3_laboratorios/Lab01.md) |
 | 2 — Asistente (40 min de práctica) | System Prompt, documento y bitácora; skill preparada | Cap. 5, §§5.2–5.6 y 5.9–5.12 | [Guía autónoma Windows](vol3_laboratorios/Guia_Autonoma_Windows_Sesiones01_02.md) · [Laboratorio 2](vol3_laboratorios/Lab02.md) |
 | 3 — Captura (80 min de práctica) | Forms, Sheets, Apps Script y puente capaces de leer solicitudes | Cap. 7, §§7.1–7.6 y cap. 8, §§8.1–8.6 | [Guía autónoma Windows](vol3_laboratorios/Guia_Autonoma_Sesion03_Windows.md) · [Laboratorio 4](vol3_laboratorios/Lab04.md), primera etapa |
 | 4 — Respuesta (60 min de práctica) | Ollama procesa la consulta; Sheets registra y Gmail envía | Cap. 8, §§8.6–8.8 | [Guía autónoma Windows](vol3_laboratorios/Guia_Autonoma_Sesion04_Windows.md) · [Laboratorio 4](vol3_laboratorios/Lab04.md), segunda etapa |
