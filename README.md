@@ -13,6 +13,20 @@
 ---
 
 
+## Sistemas operativos y guías disponibles
+
+Los ejercicios pueden desarrollarse con **Windows** o **Ubuntu**, teniendo en cuenta las diferencias de instalación, terminal y configuración de cada sistema. La ruta autónoma utiliza **Windows como referencia principal**, pero no es un requisito exclusivo para estudiar la obra.
+
+| Sistema | Material disponible | Alcance |
+|---|---|---|
+| **Windows** | [Guía de sesiones 1 y 2](vol3_laboratorios/Guia_Autonoma_Windows_Sesiones01_02.md) y guías de [sesión 3](vol3_laboratorios/Guia_Autonoma_Sesion03_Windows.md), [sesión 4](vol3_laboratorios/Guia_Autonoma_Sesion04_Windows.md) y [sesión 5](vol3_laboratorios/Guia_Autonoma_Sesion05_Windows.md) | Itinerario paso a paso, con Windows como plataforma prioritaria. |
+| **Ubuntu** | [Instalación y validación de la sesión 1](vol3_laboratorios/Guia_Ubuntu_Sesion01_Validacion_2026.md) y [configuración de Knowledge y Skills en la sesión 2](vol3_laboratorios/Guia_Sesion02_Knowledge_Skills_Windows_Ubuntu.md) | Guías específicas y complementarias; para las sesiones 3–5 consulte las prácticas generales y adapte comandos y rutas al entorno Linux. |
+| **Otros sistemas** | [Manual Técnico](vol2_manual_tecnico/) y [Manual de Referencia](vol5_manual_referencia/) | Referencia conceptual y técnica; no equivale a una guía autónoma verificada para cada sistema. |
+
+Las herramientas y objetivos formativos son los mismos, pero **no todos los procedimientos se han verificado de forma independiente en cada sistema operativo**. En particular, el flujo completo del puente local se comprobó en Ubuntu con datos ficticios; su reproducción en Windows requiere validación en el equipo correspondiente.
+
+---
+
 ## Ruta intensiva de cinco sesiones (120 minutos cada una)
 
 Esta ruta **no reemplaza** el recorrido original de seis laboratorios: utiliza Lab01 (sesión 1), Lab02 (sesión 2), Lab04 (sesiones 3 y 4) y Lab03 (sesión 5). Lab05 y Lab06 permanecen como actividades de profundización. Descargue el repositorio completo mediante **Code → Download ZIP** y, antes de integrar servicios, consulte [los archivos del puente local](scripts/GUIA_CONTEXTO_SKILLS.md). Mantenga juntos `scripts/puente_local.py`, `scripts/system_prompt.txt`, `scripts/contexto/` y `scripts/skills/`.
