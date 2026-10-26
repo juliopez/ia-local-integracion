@@ -23,14 +23,13 @@ Cada etapa del itinerario combina recursos con funciones distintas. Utilice cada
 | **Volumen 4 — Proyecto Integrador** | Documentar progresivamente el producto de cada etapa | [Manual del Proyecto Integrador](vol4_proyecto_integrador/) |
 | **Volumen 5 — Manual de Referencia Técnica** | Resolver dudas sobre arquitectura y componentes | [Manual de Referencia](vol5_manual_referencia/) |
 
-**Lecturas y recursos de las primeras etapas:**
+**Lecturas y recursos de las cinco sesiones:**
 
 | Etapa | Practique aquí | Amplíe aquí | Registre aquí |
 |---|---|---|---|
 | **1** | [Guía Windows sesiones 1–2](vol3_laboratorios/Guia_Autonoma_Windows_Sesiones01_02.md) y [Lab01](vol3_laboratorios/Lab01.md) | [Manual Técnico cap. 4 — imágenes de instalación](vol2_manual_tecnico/cap04_mt.md); [Manual del Participante](vol1_manual_participante/) | [Proyecto Integrador](vol4_proyecto_integrador/) |
 | **2** | [Guía Windows sesiones 1–2](vol3_laboratorios/Guia_Autonoma_Windows_Sesiones01_02.md) y [Lab02](vol3_laboratorios/Lab02.md) | [Manual Técnico cap. 5 — imágenes de configuración](vol2_manual_tecnico/cap05_mt.md); [Referencia Técnica](vol5_manual_referencia/) | [Proyecto Integrador](vol4_proyecto_integrador/) |
 | **3** | [Guía autónoma Windows sesión 3](vol3_laboratorios/Guia_Autonoma_Sesion03_Windows.md) y [Lab04](vol3_laboratorios/Lab04.md) | [Manual Técnico cap. 7 — imágenes de Forms](vol2_manual_tecnico/cap07_mt.md); [cap. 8](vol2_manual_tecnico/cap08_mt.md); [Referencia Técnica](vol5_manual_referencia/) | [Proyecto Integrador](vol4_proyecto_integrador/) |
-
 | **4** | [Guía Windows sesión 4](vol3_laboratorios/Guia_Autonoma_Sesion04_Windows.md) y [Lab04](vol3_laboratorios/Lab04.md) | [Manual Técnico cap. 8](vol2_manual_tecnico/cap08_mt.md); [Referencia Técnica](vol5_manual_referencia/) | [Proyecto Integrador](vol4_proyecto_integrador/) |
 | **5** | [Guía Windows sesión 5](vol3_laboratorios/Guia_Autonoma_Sesion05_Windows.md) y [Lab03](vol3_laboratorios/Lab03.md) | [Manual Técnico cap. 6](vol2_manual_tecnico/cap06_mt.md) y [cap. 10](vol2_manual_tecnico/cap10_mt.md) | [Proyecto Integrador](vol4_proyecto_integrador/) |
 
