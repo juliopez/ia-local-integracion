@@ -6,16 +6,16 @@
 
 # Inteligencia Artificial Local: Diseño, Integración y Automatización de Soluciones con LLM
 
-> **¿Primera vez aquí?** **[EMPEZAR AQUÍ — itinerario autónomo de cinco etapas](EMPEZAR_AQUI.md)**. Es el punto de entrada único para estudiar **a su ritmo**, con Windows como ruta prioritaria. No es necesario leer los manuales completos antes de comenzar. [GitHub Pages](https://juliopez.github.io/ia-local-integracion/) ofrece la navegación visual.
+> **¿Primera vez aquí?** Comience por la [Ruta de aprendizaje de cinco sesiones](https://juliopez.github.io/ia-local-integracion/aprendizaje.html) (10 horas) o consulte [EMPEZAR AQUÍ](EMPEZAR_AQUI.md) para seguir el itinerario autónomo detallado, con Windows como plataforma prioritaria. Los [seis laboratorios originales](vol3_laboratorios/) y los [cinco volúmenes](https://juliopez.github.io/ia-local-integracion/biblioteca.html) se mantienen disponibles para ampliar el estudio.
 
 > Una guía teórico-práctica para aprender a diseñar, implementar, integrar y evaluar soluciones basadas en modelos de lenguaje ejecutados localmente, utilizando Ollama, Open WebUI, Python y Google Workspace.
 
 ---
 
 
-## Ruta intensiva de cinco jornadas (120 minutos cada una)
+## Ruta intensiva de cinco sesiones (120 minutos cada una)
 
-Esta ruta **complementa** el recorrido original de seis laboratorios. Para ejecutar las prácticas, consulte primero la guía de [carpeta local y archivos de integración](scripts/GUIA_CONTEXTO_SKILLS.md) y descargue el repositorio completo mediante **Code → Download ZIP**. Mantenga juntos `scripts/puente_local.py`, `scripts/system_prompt.txt`, `scripts/contexto/` y `scripts/skills/`.
+Esta ruta **no reemplaza** el recorrido original de seis laboratorios: utiliza Lab01 (sesión 1), Lab02 (sesión 2), Lab04 (sesiones 3 y 4) y Lab03 (sesión 5). Lab05 y Lab06 permanecen como actividades de profundización. Descargue el repositorio completo mediante **Code → Download ZIP** y, antes de integrar servicios, consulte [los archivos del puente local](scripts/GUIA_CONTEXTO_SKILLS.md). Mantenga juntos `scripts/puente_local.py`, `scripts/system_prompt.txt`, `scripts/contexto/` y `scripts/skills/`.
 
 | Sesión | Producto de cierre | Manual Técnico | Trabajo práctico |
 |---|---|---|---|
@@ -27,7 +27,7 @@ Esta ruta **complementa** el recorrido original de seis laboratorios. Para ejecu
 
 **Arquitectura de referencia:** Open WebUI sirve para diseñar y ensayar el asistente. El puente utiliza directamente la API de Ollama y, por ello, **no sincroniza automáticamente** sus Notes, Knowledge y Skills: deben mantenerse copias autorizadas de los contenidos en archivos locales. El contenido de la carpeta `contexto/` se añade completo a la consulta, sin búsqueda vectorial (no es RAG).
 
-**Seguridad:** usar solo datos ficticios en el taller. Sustituya la dirección del Web App de ejemplo antes de ejecutar el puente, mantenga sus credenciales fuera del repositorio y verifique quién puede acceder al despliegue. Las funciones de envío Gmail ya forman parte del Apps Script; no las active con destinatarios reales hasta haber probado el flujo.
+**Seguridad:** utilice únicamente datos ficticios y una dirección de correo propia autorizada para el ensayo. Configure la URL personal del Web App en la copia local del puente, nunca en un commit público. El modo `--modo completo --una-vez` puede actualizar Sheets y enviar Gmail: compruebe antes el estado de la solicitud y no repita ejecuciones ante errores sin revisar la hoja y el correo. El flujo integral se comprobó en Ubuntu; su ejecución independiente en Windows debe verificarse en cada equipo.
 
 ---
 
@@ -64,7 +64,7 @@ A lo largo de la obra aprenderás a:
 
 # Contenidos
 
-La obra se organiza en seis capítulos teóricos acompañados por seis laboratorios prácticos.
+El **Manual del Participante (volumen 1)** contiene seis capítulos teóricos vinculados con seis laboratorios prácticos (volumen 3). La obra completa comprende **cinco volúmenes** y el Manual Técnico incorpora **diez capítulos**. Para el taller de 10 horas, consulte la [ruta intensiva de cinco sesiones](https://juliopez.github.io/ia-local-integracion/aprendizaje.html).
 
 ## Capítulos teóricos
 
@@ -175,15 +175,15 @@ La obra utiliza principalmente:
 
 # Materiales de la obra
 
-El repositorio se organiza en cinco documentos complementarios.
+El repositorio contiene cinco volúmenes complementarios, además de guías autónomas, scripts y recursos de consulta.
 
 | Documento                             | Propósito                                                                               |
 | ------------------------------------- | --------------------------------------------------------------------------------------- |
 | 📘 [**Manual del Participante**](https://github.com/juliopez/ia-local-integracion/tree/main/vol1_manual_participante)      | Fundamentos conceptuales y metodológicos organizados en seis capítulos.                 |
 | 📗 [**Manual Técnico**](https://github.com/juliopez/ia-local-integracion/tree/main/vol2_manual_tecnico)                 | Instalación, configuración, integración, operación y evaluación técnica de la solución. |
-| 📙 [**Cuaderno de Laboratorios**](https://github.com/juliopez/ia-local-integracion/tree/main/vol3_laboratorios )      | Seis laboratorios prácticos para aplicar progresivamente los contenidos.                |
-| 📕 [**Manual del Proyecto Integrador**](https://github.com/juliopez/ia-local-integracion/tree/main/vol4_proyecto_integrador ) | Plantillas y orientaciones para documentar el desarrollo de una solución propia.        |
-| 📓 [**Manual de Referencia Técnica**]( https://github.com/juliopez/ia-local-integracion/tree/main/vol5_manual_referencia)   | Arquitecturas, diagramas, comandos y recursos técnicos de consulta.                     |
+| 📙 [**Cuaderno de Laboratorios**](https://github.com/juliopez/ia-local-integracion/tree/main/vol3_laboratorios)      | Seis laboratorios prácticos para aplicar progresivamente los contenidos.                |
+| 📕 [**Manual del Proyecto Integrador**](https://github.com/juliopez/ia-local-integracion/tree/main/vol4_proyecto_integrador) | Plantillas y orientaciones para documentar el desarrollo de una solución propia.        |
+| 📓 [**Manual de Referencia Técnica**](https://github.com/juliopez/ia-local-integracion/tree/main/vol5_manual_referencia)   | Arquitecturas, diagramas, comandos y recursos técnicos de consulta.                     |
 
 Los documentos pueden consultarse individualmente, aunque su utilización conjunta permite seguir el recorrido completo propuesto por la obra.
 
@@ -293,20 +293,23 @@ Las decisiones, configuraciones, pruebas y resultados forman parte del proceso d
 
 # Estructura del repositorio
 
+Las carpetas principales emplean los siguientes nombres reales, que permiten localizar materiales, imágenes y archivos reproducibles:
+
 ```text
-/
-├── Volumen 1 - Manual del Participante/
-├── Volumen 2 - Manual Técnico/
-├── Volumen 3 - Cuaderno de Laboratorios/
-├── Volumen 4 - Manual del Proyecto Integrador/
-├── Volumen 5 - Manual de Referencia Técnica/
-├── Presentaciones/
-├── Scripts/
-├── Images/
+ia-local-integracion/
+├── vol1_manual_participante/    # Seis capítulos teóricos
+├── vol2_manual_tecnico/         # Diez capítulos técnicos
+├── vol3_laboratorios/           # Seis laboratorios y guías autónomas
+├── vol4_proyecto_integrador/    # Manual y documentos del proyecto
+├── vol5_manual_referencia/      # Referencia técnica y comandos
+├── scripts/                     # Python, Apps Script, contexto y Skill
+├── docs/                        # Sitio público de GitHub Pages
+├── images/                      # Imágenes de apoyo
+├── EMPEZAR_AQUI.md              # Itinerario detallado
 └── README.md
 ```
 
-La estructura puede evolucionar a medida que se incorporen nuevos recursos, ejemplos y materiales complementarios.
+Las presentaciones y los materiales complementarios se organizan dentro de los directorios de cada volumen y del sitio. Consulte los enlaces de [Biblioteca](https://juliopez.github.io/ia-local-integracion/biblioteca.html), [Laboratorios](https://juliopez.github.io/ia-local-integracion/laboratorios.html) y [Recursos técnicos](https://juliopez.github.io/ia-local-integracion/recursos.html) para acceder a ellos.
 
 ---
 
@@ -380,10 +383,3 @@ Las contribuciones que permitan mejorar ejemplos, documentación o compatibilida
 Esta obra busca contribuir al aprendizaje práctico y responsable de la Inteligencia Artificial Local, mostrando que los modelos de lenguaje pueden estudiarse no solo como herramientas de conversación, sino como componentes capaces de integrarse con aplicaciones, datos y procesos digitales.
 
 El objetivo final es proporcionar una ruta reproducible para pasar desde la experimentación con un modelo local hasta el diseño, integración, evaluación y documentación de una solución funcional.
-
-
-
-
-### Relación entre cinco sesiones y seis laboratorios
-
-El itinerario intensivo reorganiza las actividades sin eliminar laboratorios: **sesión 1 → Lab01; sesión 2 → Lab02; sesiones 3 y 4 → Lab04; sesión 5 → Lab03**. Los [laboratorios 5](vol3_laboratorios/Lab05.md) y [6](vol3_laboratorios/Lab06.md) se conservan como profundización de consolidación, presentación y uso responsable. El punto de entrada recomendado para estudiantes es [la ruta de aprendizaje](https://juliopez.github.io/ia-local-integracion/aprendizaje.html).
