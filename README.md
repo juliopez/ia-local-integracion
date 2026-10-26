@@ -22,7 +22,7 @@ Esta ruta **complementa** el recorrido original de seis laboratorios. Para ejecu
 | 1 — Instalación (70 min de práctica) | Ollama y Open WebUI funcionando | Cap. 1, §§1.3–1.11; cap. 2, §§2.2–2.7; cap. 3, §§3.2–3.7; cap. 4, §§4.2–4.7 | [Laboratorio 1](vol3_laboratorios/Lab01.md) |
 | 2 — Asistente (40 min de práctica) | System Prompt, documento y bitácora; skill preparada | Cap. 5, §§5.2–5.6 y 5.9–5.12 | [Laboratorio 2](vol3_laboratorios/Lab02.md) |
 | 3 — Captura (80 min de práctica) | Forms, Sheets, Apps Script y puente capaces de leer solicitudes | Cap. 7, §§7.1–7.6 y cap. 8, §§8.1–8.6 | [Guía autónoma Windows](vol3_laboratorios/Guia_Autonoma_Sesion03_Windows.md) · [Laboratorio 4](vol3_laboratorios/Lab04.md), primera etapa |
-| 4 — Respuesta (60 min de práctica) | Ollama procesa la consulta; Sheets registra y Gmail envía | Cap. 8, §§8.6–8.8 | [Laboratorio 4](vol3_laboratorios/Lab04.md), segunda etapa |
+| 4 — Respuesta (60 min de práctica) | Ollama procesa la consulta; Sheets registra y Gmail envía | Cap. 8, §§8.6–8.8 | [Guía autónoma Windows](vol3_laboratorios/Guia_Autonoma_Sesion04_Windows.md) · [Laboratorio 4](vol3_laboratorios/Lab04.md), segunda etapa |
 | 5 — Optimización y evaluación | 15 min contexto, 60 min mejora, 45 min evaluación | Cap. 6, §§6.1–6.6; cap. 10, §§10.1–10.6 | [Laboratorio 3](vol3_laboratorios/Lab03.md) |
 
 **Arquitectura de referencia:** Open WebUI sirve para diseñar y ensayar el asistente. El puente utiliza directamente la API de Ollama y, por ello, **no sincroniza automáticamente** sus Notes, Knowledge y Skills: deben mantenerse copias autorizadas de los contenidos en archivos locales. El contenido de la carpeta `contexto/` se añade completo a la consulta, sin búsqueda vectorial (no es RAG).
