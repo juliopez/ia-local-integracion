@@ -1,6 +1,6 @@
-# Normativa de ejemplo ampliada — datos completamente ficticios
+# Normativa de ejemplo
 
-**Uso exclusivo para actividades formativas de IA local.** Esta normativa pertenece a una institución imaginaria y **no corresponde a INACAP, UDLA ni ninguna institución real**. No constituye asesoría académica ni un reglamento vigente.
+**Uso exclusivo para actividades formativas de IA local.** 
 
 ## 1. Finalidad y alcance
 
