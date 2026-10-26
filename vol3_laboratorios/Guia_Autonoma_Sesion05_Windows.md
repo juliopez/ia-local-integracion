@@ -139,10 +139,10 @@ La evaluación comienza **después** del laboratorio de mejora. El instrumento i
 
 ## Ejemplo didáctico (no copiar como respuesta propia)
 
-En un asistente académico con normativa ficticia, la pregunta «¿qué documentos adicionales son obligatorios para revisar una evaluación?» produjo requisitos inventados, pese a mostrar el archivo de normativa como fuente. Una pregunta mucho más restrictiva obtuvo la respuesta correcta. **Eso indica que la formulación puede afectar el resultado, pero no demuestra que el asistente haya mejorado para consultas reales abiertas.**
+Un ejemplo para analizar es el siguiente: ante la pregunta «¿qué documentos adicionales son obligatorios para revisar una evaluación?» produjo requisitos inventados, pese a mostrar el archivo de normativa como fuente. Una pregunta mucho más restrictiva obtuvo la respuesta correcta. **Eso indica que la formulación puede afectar el resultado, pero no demuestra que el asistente haya mejorado para consultas reales abiertas.**
 
 ## Cierre de la jornada
 
 Al finalizar, usted debería poder **diagnosticar, ajustar, comprobar y comunicar** el desempeño de un asistente local, distinguiendo una mejora verificada de una mejora supuesta. Si usa el puente Python de la sesión 4, recuerde que sus instrucciones y documentos locales son independientes de la configuración de Open WebUI.
 
-**Estado de esta guía:** secuencia didáctica preparada a partir de las pruebas realizadas en Ubuntu. Las optimizaciones demostraron resultados mixtos; la actividad completa de 60 + 45 minutos todavía requiere aplicación con participantes y definición institucional del instrumento evaluativo final.
+**Alcance del aprendizaje:** esta guía establece el trabajo práctico y las evidencias para el portafolio. La pauta descrita no sustituye el instrumento de evaluación oficial que establezca cada curso.
