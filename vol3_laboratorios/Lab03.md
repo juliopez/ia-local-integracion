@@ -3,6 +3,9 @@
 
 ## Ruta intensiva — sesión 5 (60 minutos de optimización)
 
+> **Guía autónoma vigente:** [Sesión 5 — explicación breve, catálogo de mejoras, paso a paso, comparación y evaluación final](Guia_Autonoma_Sesion05_Windows.md). El estudiante selecciona **al menos dos mejoras pertinentes** sin repetir obligatoriamente cambios ya realizados. No se requiere descargar otro modelo. La guía distingue 15 minutos de introducción, 60 de optimización y 45 de evaluación; el instrumento institucional final debe definirse por separado.
+
+
 Esta actividad se desarrolla **después** de haber implementado el flujo Google Workspace ↔ Ollama en las sesiones 3 y 4. El bloque completo de la jornada contempla **15 minutos de contextualización, 60 minutos de mejora del asistente y 45 minutos de evaluación** (el instrumento evaluativo se definirá por separado).
 
 1. **10 min:** escoger tres consultas representativas, incluida una cuya respuesta no figure en los documentos.
