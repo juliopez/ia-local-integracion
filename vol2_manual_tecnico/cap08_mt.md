@@ -1,4 +1,6 @@
-# Capítulo 8 — Automatización del asistente inteligente mediante Google Apps Script y Ollama
+# Capítulo 8
+
+> **Práctica guiada de automatización:** [Sesión 4 — guía autónoma para Windows](../vol3_laboratorios/Guia_Autonoma_Sesion04_Windows.md). El flujo del ejemplo termina en estado **`ENVIADA`** y requiere comprobar tanto la hoja como la recepción del correo. — Automatización del asistente inteligente mediante Google Apps Script y Ollama
 
 > **Versión operativa del taller (octubre de 2026).** Este capítulo utiliza una única implementación de referencia: [`scripts/Code.gs`](../scripts/Code.gs) y [`scripts/puente_local.py`](../scripts/puente_local.py). Los archivos completos son la fuente de código vigente; no es necesario reconstruirlos copiando fragmentos dispersos. Las explicaciones pedagógicas y los procedimientos de laboratorio se desarrollan aquí, mientras que el [Laboratorio 4](../vol3_laboratorios/Lab04.md) recoge las evidencias. Utilice únicamente información ficticia. **Las verificaciones de integración en un equipo real aún están pendientes.**
 
