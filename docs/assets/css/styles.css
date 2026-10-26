@@ -10,3 +10,10 @@
 .intensive-links span{color:#63758a}
 .intensive-footnote{font-size:.93rem;color:#596a80}
 @media(max-width:640px){.intensive-grid{grid-template-columns:1fr}.intensive-card{padding:17px}}
+
+/* Mejoras de navegación y presentación del itinerario */
+.intensive-links.links-row{display:flex;flex-flow:row wrap;align-items:center;gap:5px 9px}
+.links-row .link-sep{color:#8494a9}
+.final-session{grid-column:1/-1;background:#f8fbff}
+.final-session .intensive-links{margin-top:10px!important}
+@media(max-width:640px){.final-session{grid-column:auto}.intensive-links.links-row{gap:4px 8px}}
