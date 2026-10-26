@@ -19,7 +19,7 @@ Los ejercicios pueden desarrollarse con **Windows** o **Ubuntu**, teniendo en cu
 
 | Sistema | Material disponible | Alcance |
 |---|---|---|
-| **Windows** | [Guía de sesiones 1 y 2](vol3_laboratorios/Guia_Autonoma_Windows_Sesiones01_02.md) y guías de [sesión 3](vol3_laboratorios/Guia_Autonoma_Sesion03_Windows.md), [sesión 4](vol3_laboratorios/Guia_Autonoma_Sesion04_Windows.md) y [sesión 5](vol3_laboratorios/Guia_Autonoma_Sesion05_Windows.md) | Itinerario paso a paso, con Windows como plataforma prioritaria. |
+| **Windows** | [Guía de sesión 1](vol3_laboratorios/Guia_Autonoma_Sesion01_Windows_Paso_a_Paso.md) y [guía de sesión 2](vol3_laboratorios/Guia_Autonoma_Sesion02_Windows_Paso_a_Paso.md) y guías de [sesión 3](vol3_laboratorios/Guia_Autonoma_Sesion03_Windows.md), [sesión 4](vol3_laboratorios/Guia_Autonoma_Sesion04_Windows.md) y [sesión 5](vol3_laboratorios/Guia_Autonoma_Sesion05_Windows.md) | Itinerario paso a paso, con Windows como plataforma prioritaria. |
 | **Ubuntu · Sesión 1** | [Instalación, validación y solución de problemas](vol3_laboratorios/Guia_Ubuntu_Sesion01_Validacion_2026.md) | Preparación del entorno local, Ollama y Open WebUI; incidencias y comprobaciones documentadas. |
 | **Ubuntu · Sesión 2** | [Configuración de Knowledge y Skills (Windows/Ubuntu)](vol3_laboratorios/Guia_Sesion02_Knowledge_Skills_Windows_Ubuntu.md) | Asociación de conocimiento y habilidades al asistente. Para las sesiones 3–5 consulte las prácticas generales y adapte comandos y rutas a Linux. |
 | **Otros sistemas** | [Manual Técnico](vol2_manual_tecnico/) y [Manual de Referencia](vol5_manual_referencia/) | Referencia conceptual y técnica; no equivale a una guía autónoma verificada para cada sistema. |
@@ -35,7 +35,7 @@ Esta ruta **no reemplaza** el recorrido original de seis laboratorios: utiliza L
 | Sesión | Producto de cierre | Manual Técnico | Trabajo práctico |
 |---|---|---|---|
 | 1 — Instalación (70 min de práctica) | Ollama y Open WebUI funcionando | Cap. 1, §§1.3–1.11; cap. 2, §§2.2–2.7; cap. 3, §§3.2–3.7; cap. 4, §§4.2–4.7 | [Guía paso a paso Windows — Sesión 1](vol3_laboratorios/Guia_Autonoma_Sesion01_Windows_Paso_a_Paso.md) · [Laboratorio 1](vol3_laboratorios/Lab01.md) |
-| 2 — Asistente (40 min de práctica) | System Prompt, documento y bitácora; skill preparada | Cap. 5, §§5.2–5.6 y 5.9–5.12 | [Guía autónoma Windows](vol3_laboratorios/Guia_Autonoma_Windows_Sesiones01_02.md) · [Laboratorio 2](vol3_laboratorios/Lab02.md) |
+| 2 — Asistente (40 min de práctica) | System Prompt, documento y bitácora; skill preparada | Cap. 5, §§5.2–5.6 y 5.9–5.12 | [Guía paso a paso Windows — Sesión 2](vol3_laboratorios/Guia_Autonoma_Sesion02_Windows_Paso_a_Paso.md) · [Laboratorio 2](vol3_laboratorios/Lab02.md) |
 | 3 — Captura (80 min de práctica) | Forms, Sheets, Apps Script y puente capaces de leer solicitudes | Cap. 7, §§7.1–7.6 y cap. 8, §§8.1–8.6 | [Guía autónoma Windows](vol3_laboratorios/Guia_Autonoma_Sesion03_Windows.md) · [Laboratorio 4](vol3_laboratorios/Lab04.md), primera etapa |
 | 4 — Respuesta (60 min de práctica) | Ollama procesa la consulta; Sheets registra y Gmail envía | Cap. 8, §§8.6–8.8 | [Guía autónoma Windows](vol3_laboratorios/Guia_Autonoma_Sesion04_Windows.md) · [Laboratorio 4](vol3_laboratorios/Lab04.md), segunda etapa |
 | 5 — Optimización y evaluación | 15 min contexto, 60 min mejora, 45 min evaluación | Cap. 6, §§6.1–6.6; cap. 10, §§10.1–10.6 | [Guía autónoma Windows](vol3_laboratorios/Guia_Autonoma_Sesion05_Windows.md) · [Laboratorio 3](vol3_laboratorios/Lab03.md) |
