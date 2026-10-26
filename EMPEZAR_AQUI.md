@@ -31,6 +31,9 @@ Cada etapa del itinerario combina recursos con funciones distintas. Utilice cada
 | **2** | [Guía Windows sesiones 1–2](vol3_laboratorios/Guia_Autonoma_Windows_Sesiones01_02.md) y [Lab02](vol3_laboratorios/Lab02.md) | [Manual Técnico cap. 5 — imágenes de configuración](vol2_manual_tecnico/cap05_mt.md); [Referencia Técnica](vol5_manual_referencia/) | [Proyecto Integrador](vol4_proyecto_integrador/) |
 | **3** | [Guía autónoma Windows sesión 3](vol3_laboratorios/Guia_Autonoma_Sesion03_Windows.md) y [Lab04](vol3_laboratorios/Lab04.md) | [Manual Técnico cap. 7 — imágenes de Forms](vol2_manual_tecnico/cap07_mt.md); [cap. 8](vol2_manual_tecnico/cap08_mt.md); [Referencia Técnica](vol5_manual_referencia/) | [Proyecto Integrador](vol4_proyecto_integrador/) |
 
+| **4** | [Guía Windows sesión 4](vol3_laboratorios/Guia_Autonoma_Sesion04_Windows.md) y [Lab04](vol3_laboratorios/Lab04.md) | [Manual Técnico cap. 8](vol2_manual_tecnico/cap08_mt.md); [Referencia Técnica](vol5_manual_referencia/) | [Proyecto Integrador](vol4_proyecto_integrador/) |
+| **5** | [Guía Windows sesión 5](vol3_laboratorios/Guia_Autonoma_Sesion05_Windows.md) y [Lab03](vol3_laboratorios/Lab03.md) | [Manual Técnico cap. 6](vol2_manual_tecnico/cap06_mt.md) y [cap. 10](vol2_manual_tecnico/cap10_mt.md) | [Proyecto Integrador](vol4_proyecto_integrador/) |
+
 **Apoyo visual:** consulte las capturas de pantalla disponibles en los capítulos del Manual Técnico cuando necesite identificar una opción de la interfaz.
 
 **Sesión 5 — optimización y evaluación:** [Guía autónoma con explicación, mejoras a elegir, procedimiento y comprobación](vol3_laboratorios/Guia_Autonoma_Sesion05_Windows.md). El laboratorio conserva las tres consultas iniciales para comparar resultados antes/después. La pauta de evidencias no sustituye al instrumento institucional de evaluación.
@@ -90,3 +93,8 @@ Cada etapa tiene **lectura → actividad → evidencia → comprobación → sol
 Al terminar, su portafolio debe contener: verificación de modelo local; asistente y prueba de Knowledge; copia local de `system_prompt.txt`, documento y `SKILL.md`; formulario y hoja de cálculo de prueba; ejecución del puente y respuesta ficticia; comparación y reflexión final. Organice cada evidencia con el nombre de la etapa, fecha y resultado.
 
 **¿Listo para comenzar?** Si usa Windows, vaya a la [primera comprobación de la ruta autónoma](vol3_laboratorios/Guia_Autonoma_Windows_Sesiones01_02.md#antes-de-comenzar-comprobación-autónoma-windows).
+
+
+## Laboratorios complementarios y continuidad de la obra
+
+La ruta intensiva conserva los **seis laboratorios** del cuaderno original. Su secuencia de ejecución de cinco sesiones es: [Lab01](vol3_laboratorios/Lab01.md) → [Lab02](vol3_laboratorios/Lab02.md) → [Lab04, parte 1](vol3_laboratorios/Lab04.md) → [Lab04, parte 2](vol3_laboratorios/Lab04.md) → [Lab03](vol3_laboratorios/Lab03.md). Después puede ampliar la experiencia con [Lab05 — consolidación](vol3_laboratorios/Lab05.md) y [Lab06 — presentación y uso responsable](vol3_laboratorios/Lab06.md). La ruta intensiva no sustituye los contenidos de profundización.
