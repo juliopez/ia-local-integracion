@@ -24,6 +24,35 @@ Revisará críticamente las respuestas de **su propio asistente**, elegirá las 
 
 **Regla del experimento:** conserve la pregunta original, guarde la respuesta y cambie **un componente por vez** cuando sea posible. No confunda una respuesta más larga con una respuesta mejor.
 
+### Qué es una alucinación en un modelo de lenguaje
+
+Una **alucinación** es una respuesta que presenta información inventada, incorrecta o no respaldada como si fuera válida. Puede parecer convincente e incluso citar un archivo, pero la cita no prueba que el contenido esté realmente en esa fuente.
+
+**Ejemplo del taller:** cuando el documento no exige certificados para revisar una evaluación, el asistente puede afirmar que «debe presentar una identificación oficial». Ese requisito es una alucinación **normativa**: convierte información inexistente en una obligación. Una recomendación general como «puede consultar al docente» no constituye por sí sola una alucinación si se identifica claramente como consejo, y no como norma obligatoria.
+
+**Por qué ocurre:** el modelo genera texto probable y no verifica automáticamente cada afirmación; influyen la formulación de la consulta, el contenido recuperado, la calidad y suficiencia de la fuente, las instrucciones y los límites del modelo. **Un documento escaso puede reducir la utilidad de las respuestas, pero no autoriza inventar lo que falta.**
+
+**Cómo detectarla y reducir su impacto, paso a paso:**
+
+1. Localice en la respuesta toda afirmación sobre plazos, requisitos, responsables, procedimientos o resultados garantizados.
+2. Abra la fuente citada y compruebe si **cada afirmación importante** aparece explícitamente allí.
+3. Clasifique: **respaldada / recomendación general / no documentada o contradictoria**.
+4. Si falta información, registre el error y mejore el documento, las instrucciones o la forma de presentar incertidumbre, según corresponda.
+5. Repita **la misma pregunta original** y compare; incluya otra consulta no documentada para comprobar que el modelo sigue reconociendo límites.
+
+**No confunda corrección de una respuesta con eliminación de alucinaciones:** una sola prueba favorable no demuestra fiabilidad general.
+
+### Ejercicio opcional: fuente breve frente a fuente ampliada
+
+El repositorio incluye la [versión breve original](../scripts/referencias/normativa_ejemplo_version_breve.md) y la [normativa ficticia ampliada](../scripts/contexto/normativa_ejemplo.md). Si su problema es la insuficiencia del contexto, puede comparar ambas **sin cambiar el modelo ni el System Prompt**:
+
+1. Guarde la pregunta y la respuesta utilizando su documento actual.
+2. Descargue la versión ampliada desde GitHub y asóciela al asistente en **Conocimiento**, evitando conservar simultáneamente dos versiones contradictorias de la misma fuente.
+3. Abra otra conversación y repita exactamente la pregunta.
+4. Verifique qué afirmaciones están documentadas, cuáles son recomendaciones y cuáles son invenciones.
+
+**Nota:** esta comparación cambia deliberadamente el *contenido documental*; si también modifica el prompt, ya no podrá atribuir con claridad la diferencia a la ampliación del documento. La versión actualizada del repositorio **no reemplaza automáticamente** el archivo o conocimiento ya cargado en Open WebUI, ni la copia local instalada en cada equipo.
+
 ## B. Laboratorio de optimización (60 min)
 
 ### Paso 1 · Diagnosticar su asistente (10 min)
