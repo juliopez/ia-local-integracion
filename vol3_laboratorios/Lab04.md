@@ -30,6 +30,8 @@ python scripts/puente_local.py --modo completo --una-vez
 
 > **Ruta autónoma para la sesión 3 (Windows):** [guía de principio a fin con capturas sustituidas por checkpoints, Apps Script y PowerShell](Guia_Autonoma_Sesion03_Windows.md). La práctica fue ensayada en Ubuntu y su compatibilidad Windows queda documentada, pero no probada de extremo a extremo.
 
+> **Sesión 4 · procedimiento completo para Windows:** [Guía paso a paso con pruebas, comprobaciones en Sheets y recepción de Gmail](Guia_Autonoma_Sesion04_Windows.md). El estado final correcto de este código es **`ENVIADA`**. No repita el modo completo ante un error sin revisar la fila y Gmail.
+
 ## Ruta intensiva — sesiones 3 y 4
 
 El Laboratorio 4 se ejecuta en **dos jornadas**, utilizando una sola carpeta de ejemplo: `scripts/puente_local.py`, `scripts/system_prompt.txt`, `scripts/contexto/` y `scripts/skills/`. Consulte la [guía de preparación](../scripts/GUIA_CONTEXTO_SKILLS.md) y el [Manual Técnico, capítulo 7](../vol2_manual_tecnico/cap07_mt.md) y [capítulo 8](../vol2_manual_tecnico/cap08_mt.md).
