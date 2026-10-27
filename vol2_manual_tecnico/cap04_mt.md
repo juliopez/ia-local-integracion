@@ -1,12 +1,13 @@
 # Capítulo 4
 
+# Instalación y configuración de Open WebUI
+
 > **Navegación autónoma y referencias cruzadas:** [Volver al itinerario de cinco etapas](../EMPEZAR_AQUI.md) · [Volumen 1 — conceptos](../vol1_manual_participante/) · [Volumen 4 — portafolio](../vol4_proyecto_integrador/) · [Volumen 5 — consulta técnica](../vol5_manual_referencia/). Los procedimientos con capturas originales permanecen en el **Manual Técnico (volumen 2)**; la guía autónoma indica el orden, no sustituye las imágenes.
 
 
 
 > **Guía operativa de la sesión 1:** [Guía paso a paso en Windows](../vol3_laboratorios/Guia_Autonoma_Sesion01_Windows_Paso_a_Paso.md). La guía práctica describe la instalación de Open WebUI Desktop; este capítulo también conserva los procedimientos técnicos originales de instalación con Python/pip como alternativa de consulta.
 
-# Instalación y configuración de Open WebUI
 
 ## 4.1 ¿Qué es Open WebUI?
 
