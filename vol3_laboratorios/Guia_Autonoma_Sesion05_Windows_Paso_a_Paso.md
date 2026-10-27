@@ -145,18 +145,6 @@ Este texto es **un ejemplo**: adáptelo al problema real diagnosticado, sin alte
 
 **Comprobación final:** dispone de evidencia para explicar no solo qué cambió, sino **si realmente mejoró y con qué límites**.
 
-## Lista final de verificación
-
-- [ ] Seleccioné mi asistente original, no únicamente el modelo base.
-- [ ] Consulté el texto de la normativa ficticia.
-- [ ] Conservé las tres preguntas y sus tres respuestas iniciales.
-- [ ] Registré **dos problemas** respaldados por evidencia.
-- [ ] Apliqué y guardé **dos mejoras pertinentes**.
-- [ ] Repetí las **mismas tres preguntas** con la configuración final.
-- [ ] Comparé las respuestas con la documentación, no solo con su apariencia.
-- [ ] Registré resultados favorables, desfavorables e inciertos.
-- [ ] Documenté los cambios y la conclusión crítica.
-
 ## Si aparece un problema
 
 | Situación | Qué hacer |
@@ -169,11 +157,29 @@ Este texto es **un ejemplo**: adáptelo al problema real diagnosticado, sin alte
 | Una Skill está importada pero no asociada | Verifique la asociación al asistente y guarde. No dé por probada su aplicación. |
 | No puede demostrar una mejora | Describa con precisión la ausencia de cambio o el empeoramiento; también es evidencia válida. |
 
-## Para profundizar después de la práctica
+## 1. Comprobación final de la sesión
+
+- [ ] Seleccioné mi asistente original, no únicamente el modelo base.
+- [ ] Consulté el texto de la normativa ficticia.
+- [ ] Conservé las tres preguntas y sus tres respuestas iniciales.
+- [ ] Registré **dos problemas** respaldados por evidencia.
+- [ ] Apliqué y guardé **dos mejoras pertinentes**.
+- [ ] Repetí las **mismas tres preguntas** con la configuración final.
+- [ ] Comparé las respuestas con la documentación, no solo con su apariencia.
+- [ ] Registré resultados favorables, desfavorables e inciertos.
+- [ ] Documenté los cambios y la conclusión crítica.
+
+## 2. Material complementario (opcional)
+
+Estos recursos permiten ampliar el trabajo, pero no son necesarios para completar la práctica.
 
 - [Laboratorio 3 — Validación y optimización](Lab03.md).
 - [Manual Técnico — Capítulo 6](../vol2_manual_tecnico/cap06_mt.md): mejora continua.
 - [Manual Técnico — Capítulo 10](../vol2_manual_tecnico/cap10_mt.md): evaluación.
 - [Normativa ficticia ampliada](../scripts/contexto/normativa_ejemplo.md) y [versión breve original](../scripts/referencias/normativa_ejemplo_version_breve.md): actividad opcional de comparación documental.
 
-**Fin de la sesión 5.** El resultado principal es una **evaluación argumentada del desempeño**, no la afirmación de que el asistente está libre de errores.
+## 3. Cierre y siguiente sesión
+
+**Sesión 5 completada:** el resultado es una evaluación argumentada del desempeño, con mejoras documentadas y sus limitaciones, no la afirmación de que el asistente esté libre de errores.
+
+**Continuación opcional:** consulte el [Proyecto Integrador](../vol4_proyecto_integrador/), el [Laboratorio 5](Lab05.md) y el [Laboratorio 6](Lab06.md) para consolidar y presentar la solución.
