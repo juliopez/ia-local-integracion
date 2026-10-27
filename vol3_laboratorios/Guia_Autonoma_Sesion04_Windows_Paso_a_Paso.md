@@ -162,18 +162,6 @@ El número de fila puede variar. **No ejecute nuevamente el comando** para inten
 
 **Comprobación final:** la fila está marcada **ENVIADA**, Sheets conserva respuesta y fecha, Gmail muestra el mensaje y dispone de evidencias.
 
-## Checklist de la sesión
-
-- [ ] Encontré una solicitud **ficticia** y el destinatario es una cuenta propia autorizada.
-- [ ] Revisé la URL local de Apps Script y el nombre del modelo Ollama.
-- [ ] Confirmé que existen System Prompt, normativa y Skill locales.
-- [ ] Ejecuté `--modo prueba` y Ollama respondió sin modificar Sheets.
-- [ ] Confirmé el estado **PENDIENTE** antes del procesamiento.
-- [ ] Ejecuté `--modo completo --una-vez` **una sola vez**.
-- [ ] Sheets registra **ENVIADA**, respuesta y fecha.
-- [ ] El destinatario recibió el mensaje en Gmail.
-- [ ] Registré aciertos, errores y limitaciones sin divulgar datos privados.
-
 ## Qué hacer si aparece un problema
 
 | Problema | Acción inicial segura |
@@ -187,11 +175,30 @@ El número de fila puede variar. **No ejecute nuevamente el comando** para inten
 | No llega el correo | Revise la cuenta correcta, Spam y enviados de la cuenta ejecutora del Apps Script. No reprocese hasta aclarar el estado. |
 | Respuesta inventada o incorrecta | Conserve la evidencia para la sesión 5, sin afirmar que el modelo está validado. |
 
-## Material de consulta (opcional)
+**Nota de validación:** el flujo completo se comprobó previamente en **Ubuntu** con datos ficticios. Los procedimientos Windows están documentados, pero todavía no se han validado de extremo a extremo en un computador Windows independiente.
+
+## 1. Comprobación final de la sesión
+
+- [ ] Encontré una solicitud **ficticia** y el destinatario es una cuenta propia autorizada.
+- [ ] Revisé la URL local de Apps Script y el nombre del modelo Ollama.
+- [ ] Confirmé que existen System Prompt, normativa y Skill locales.
+- [ ] Ejecuté `--modo prueba` y Ollama respondió sin modificar Sheets.
+- [ ] Confirmé el estado **PENDIENTE** antes del procesamiento.
+- [ ] Ejecuté `--modo completo --una-vez` **una sola vez**.
+- [ ] Sheets registra **ENVIADA**, respuesta y fecha.
+- [ ] El destinatario recibió el mensaje en Gmail.
+- [ ] Registré aciertos, errores y limitaciones sin divulgar datos privados.
+
+## 2. Material complementario (opcional)
+
+Las lecturas complementan la práctica; no son necesarias para completar sus pasos.
 
 - [Laboratorio 4](Lab04.md): fundamentos y arquitectura.
 - [Manual Técnico — Capítulo 8](../vol2_manual_tecnico/cap08_mt.md): integración y procedimientos ampliados.
 - [Guía original de la sesión 4](Guia_Autonoma_Sesion04_Windows.md): referencia técnica y validaciones.
-- [Sesión 5](Guia_Autonoma_Sesion05_Windows.md): evaluación de respuestas y mejora continua.
 
-**Nota de validación:** el flujo completo se comprobó previamente en **Ubuntu** con datos ficticios. Los procedimientos Windows están documentados, pero todavía no se han validado de extremo a extremo en un computador Windows independiente.
+## 3. Cierre y siguiente sesión
+
+**Sesión 4 completada:** la respuesta quedó registrada con fecha y estado **ENVIADA**, y el destinatario recibió el correo de prueba. Si alguna comprobación falla, conserve la evidencia y no repita automáticamente el envío.
+
+**Siguiente sesión:** [guía paso a paso de la sesión 5](Guia_Autonoma_Sesion05_Windows_Paso_a_Paso.md): evaluar respuestas y justificar mejoras.
