@@ -3681,7 +3681,7 @@ Fuentes oficiales: [versión estable](https://github.com/open-webui/open-webui/r
 
 ---
 
-# Resumen del capítulo
+## Resumen del capítulo
 
 En este capítulo usted:
 
