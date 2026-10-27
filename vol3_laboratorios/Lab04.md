@@ -30,7 +30,7 @@ python scripts/puente_local.py --modo completo --una-vez
 
 > **Ruta autónoma para la sesión 3 (Windows):** [guía autónoma paso a paso con instrucciones para principiantes, Apps Script, Python y comprobaciones](Guia_Autonoma_Sesion03_Windows_Paso_a_Paso.md). La práctica fue ensayada en Ubuntu y su compatibilidad Windows queda documentada, pero no probada de extremo a extremo.
 
-> **Sesión 4 · procedimiento completo para Windows:** [Guía paso a paso con pruebas, comprobaciones en Sheets y recepción de Gmail](Guia_Autonoma_Sesion04_Windows.md). El estado final correcto de este código es **`ENVIADA`**. No repita el modo completo ante un error sin revisar la fila y Gmail.
+> **Sesión 4 · procedimiento completo para Windows:** [Guía paso a paso con pruebas, comprobaciones en Sheets y recepción de Gmail](Guia_Autonoma_Sesion04_Windows_Paso_a_Paso.md). El estado final correcto de este código es **`ENVIADA`**. No repita el modo completo ante un error sin revisar la fila y Gmail.
 
 ## Ruta intensiva — sesiones 3 y 4
 
