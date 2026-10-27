@@ -1,33 +1,5 @@
 # Parte II
 
-> **Navegación autónoma y referencias cruzadas:** [Volver al itinerario de cinco etapas](../EMPEZAR_AQUI.md) · [Volumen 1 — conceptos](../vol1_manual_participante/) · [Volumen 4 — portafolio](../vol4_proyecto_integrador/) · [Volumen 5 — consulta técnica](../vol5_manual_referencia/). Los procedimientos con capturas originales permanecen en el **Manual Técnico (volumen 2)**; la guía autónoma indica el orden, no sustituye las imágenes.
-
-
-
-### Ruta intensiva de la sesión 2: asistente y archivos locales
-
-> **Ejecución autónoma en Windows:** [guía paso a paso de sesiones 1 y 2](../vol3_laboratorios/Guia_Autonoma_Windows_Sesiones01_02.md), con preparación, verificaciones, manejo de fallos y evidencias. Siga esta ruta antes de la profundización del capítulo.
-
-> **Validación del taller (25-10-2026):** consulte la [Guía de validación de sesión 2 (Windows principal, Ubuntu anexo)](../vol3_laboratorios/Guia_Sesion02_Knowledge_Skills_Windows_Ubuntu.md). La ruta prioritaria es **Windows**; las incidencias de Ubuntu son un **anexo**. Guarde el asistente antes de cargar Knowledge; si falla la recuperación, revise el modo de llamadas a funciones y pruebe **Heredado** solo como corrección condicional. La Skill importada debe además asociarse al modelo; **no equipare una respuesta con fuente con ausencia de alucinaciones**. Guarde copias de los archivos en `scripts/`.
-
-
-La configuración de Open WebUI y la ejecución del puente son **dos entornos distintos**. En Open WebUI diseñará el System Prompt, la base Knowledge, Notes y una skill; para utilizar esas mismas instrucciones durante la automatización, prepare una copia local de trabajo.
-
-**Carpeta descargable:** descargue el repositorio desde **Code → Download ZIP** y abra la carpeta `scripts/`. Consulte la [guía del puente](../scripts/GUIA_CONTEXTO_SKILLS.md).
-
-| Archivo | Uso |
-|---|---|
-| `scripts/system_prompt.txt` | Instrucciones permanentes. El puente lo carga al iniciar; se requiere reiniciar tras modificarlo |
-| `scripts/contexto/*.md` o `*.txt` | Textos breves y autorizados que se incorporan íntegramente en cada consulta |
-| `scripts/skills/retroalimentacion-formativa/SKILL.md` | Procedimiento reusable en Markdown, interpretado como instrucciones y no como código |
-| `scripts/puente_local.py` | Consulta Apps Script y conecta con Ollama; su ejecución se aborda en sesiones 3 y 4 |
-
-**Práctica autónoma (40 min):** (1) Defina rol, propósito y restricciones (§§5.2–5.6); (2) pruebe un documento ficticio en Knowledge (§5.9) y copie su contenido a `contexto/`; (3) registre decisiones en Notes o `bitacora_asistente.md` (§5.10); (4) prepare `SKILL.md` (§5.11) y conserve su versión local; (5) compruebe el resultado (§5.12). La optimización detallada corresponde a la sesión 5.
-
-**Evidencia:** carpeta local con el prompt, un documento ficticio, skill en Markdown y bitácora. No incluya antecedentes reales ni datos personales.
-
----
-
 # Diseño e implementación de asistentes inteligentes
 
 ---
@@ -35,6 +7,8 @@ La configuración de Open WebUI y la ejecución del puente son **dos entornos di
 # Capítulo 5
 
 # Diseño de asistentes inteligentes
+
+> **Guía práctica de la sesión 2:** [Crear y comprobar un asistente académico en Open WebUI — paso a paso](../vol3_laboratorios/Guia_Autonoma_Sesion02_Windows_Paso_a_Paso.md). Este capítulo desarrolla los fundamentos y procedimientos técnicos del diseño del asistente; la guía presenta la secuencia operativa para el taller.
 
 ## 5.1 ¿Qué es un asistente inteligente?
 
