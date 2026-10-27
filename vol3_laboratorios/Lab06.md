@@ -2,6 +2,10 @@
 
 # Laboratorio 6
 
+
+
+**Profundización:** laboratorio terminal de la secuencia original de seis actividades.
+
 # Presentación profesional del Proyecto Integrador y defensa de la solución
 
 **Capítulo asociado:** Capítulo 6. Presentación, evaluación y proyección de soluciones basadas en Inteligencia Artificial
@@ -12,17 +16,18 @@
 
 ---
 
-# Índice
+## Índice
 
 1. Presentación del laboratorio
 2. Información general
 3. Antes de comenzar
-
-> **Nota:** El desarrollo del laboratorio, la preparación de la presentación, el Proyecto Integrador y el cierre final del taller se incorporarán en las siguientes entregas.
+4. Desarrollo del laboratorio guiado
+5. Proyecto Integrador
+6. Cierre del laboratorio
 
 ---
 
-# 1. Presentación del laboratorio
+## 1. Presentación del laboratorio
 
 ## ¿Qué aprenderá en este laboratorio?
 
@@ -49,7 +54,7 @@ Al finalizar este laboratorio habrá consolidado todos los productos generados d
 
 ---
 
-# 2. Información general
+## 2. Información general
 
 ## 2.1 Propósito
 
@@ -142,7 +147,7 @@ Antes de comenzar este laboratorio se espera que el participante:
 
 ---
 
-# 3. Antes de comenzar
+## 3. Antes de comenzar
 
 ## Lista de verificación
 
@@ -228,7 +233,7 @@ Documento 6  ███░░░░░░░ En desarrollo
 
 > La **Parte 2** estará dedicada a la preparación de la presentación ejecutiva. Los participantes organizarán la información del Proyecto Integrador, seleccionarán las evidencias más relevantes y prepararán la demostración funcional del asistente inteligente que presentarán durante este último laboratorio.
 
-# 4. Desarrollo del laboratorio guiado
+## 4. Desarrollo del laboratorio guiado
 
 Durante este laboratorio asumirá el rol de un consultor que debe presentar una propuesta de solución basada en Inteligencia Artificial.
 
@@ -826,7 +831,7 @@ En la siguiente parte realizará la consolidación final del Proyecto Integrador
 
 **Fin de la Parte 3 del Laboratorio 6**
 
-# 5. Proyecto Integrador
+## 5. Proyecto Integrador
 
 Durante los laboratorios anteriores desarrolló progresivamente una solución basada en Inteligencia Artificial.
 
@@ -1152,7 +1157,7 @@ Documento 6  ██████████ ✔
 
 > En la **Parte 5** se realizará el cierre oficial del taller. Se revisará el recorrido desarrollado durante los laboratorios, se reflexionará sobre la evolución profesional del participante y se concluirá formalmente el Proyecto Integrador.
 
-# 6. Cierre del laboratorio
+## 6. Cierre del laboratorio
 
 Durante este laboratorio realizó la presentación final de su Proyecto Integrador.
 
