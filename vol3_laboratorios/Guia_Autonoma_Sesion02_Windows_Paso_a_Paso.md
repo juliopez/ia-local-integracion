@@ -165,18 +165,6 @@ https://raw.githubusercontent.com/juliopez/ia-local-integracion/main/scripts/ski
 
 **Comprobación F:** la habilidad fue **importada y asociada**. Si la versión de Open WebUI no muestra el menú Habilidades o no admite la importación por enlace, registre una captura y conserve el archivo `SKILL.md` para seguimiento; **no improvise una instalación alternativa**.
 
-## Cierre de la sesión — Verifique su trabajo (10 minutos)
-
-- [ ] Puedo abrir Open WebUI y seleccionar el modelo de Ollama.
-- [ ] Tengo los archivos `system_prompt.txt`, `normativa_ejemplo.md` y `SKILL.md`.
-- [ ] Mi asistente **Asistente Académico de Apoyo** está guardado.
-- [ ] El System Prompt está copiado íntegramente.
-- [ ] Knowledge contiene el documento ficticio y guardé los cambios.
-- [ ] Hice la pregunta del plazo y la pregunta sobre documentos adicionales.
-- [ ] Registré aciertos, errores y fuentes, si aparecieron.
-- [ ] Guardé una nota o bitácora.
-- [ ] Importé **y** asocié la Skill, o documenté por qué no fue posible.
-
 ## Si aparece un problema
 
 | Problema | Qué hacer primero |
@@ -192,11 +180,29 @@ https://raw.githubusercontent.com/juliopez/ia-local-integracion/main/scripts/ski
 
 **Recuerde:** Open WebUI permite diseñar y probar el asistente, pero no sincroniza automáticamente su Knowledge, sus Notes ni sus Skills con el puente Python de las sesiones 3 y 4. Por eso es importante conservar **los archivos originales**.
 
-### Material para profundizar (opcional)
+## 1. Comprobación final de la sesión
+
+- [ ] Puedo abrir Open WebUI y seleccionar el modelo de Ollama.
+- [ ] Tengo los archivos `system_prompt.txt`, `normativa_ejemplo.md` y `SKILL.md`.
+- [ ] Mi asistente **Asistente Académico de Apoyo** está guardado.
+- [ ] El System Prompt está copiado íntegramente.
+- [ ] Knowledge contiene el documento ficticio y guardé los cambios.
+- [ ] Hice la pregunta del plazo y la pregunta sobre documentos adicionales.
+- [ ] Registré aciertos, errores y fuentes, si aparecieron.
+- [ ] Guardé una nota o bitácora.
+- [ ] Importé **y** asocié la Skill, o documenté por qué no fue posible.
+
+## 2. Material complementario (opcional)
+
+Estas lecturas amplían el aprendizaje y **no son necesarias para completar los pasos de la sesión**.
 
 - [Laboratorio 2](Lab02.md): actividades de diseño y fundamento pedagógico.
 - [Manual Técnico — capítulo 5](../vol2_manual_tecnico/cap05_mt.md): asistentes, configuración y pruebas.
 - [Manual del Participante — capítulo 2](../vol1_manual_participante/cap02.md): propósito, rol y restricciones.
 - [Registro de incidencias Windows y Ubuntu](Guia_Sesion02_Knowledge_Skills_Windows_Ubuntu.md): diagnóstico avanzado.
 
-**Fin de la sesión 2.** En la sesión 3 comenzará la captura de solicitudes mediante Google Forms, Sheets y Apps Script.
+## 3. Cierre y siguiente sesión
+
+**Sesión 2 completada:** el asistente está guardado con System Prompt, Knowledge y Skill asociados, y su bitácora conserva los resultados, incluidos posibles errores.
+
+**Siguiente sesión:** [guía paso a paso de la sesión 3](Guia_Autonoma_Sesion03_Windows_Paso_a_Paso.md): capturar consultas con Forms y Sheets y leerlas mediante Python.
