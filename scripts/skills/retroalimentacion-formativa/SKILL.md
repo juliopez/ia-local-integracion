@@ -1,6 +1,9 @@
 ---
 name: retroalimentacion-formativa
-description: Procedimiento didáctico para analizar trabajos académicos ficticios y entregar retroalimentación basada en evidencias, con fortalezas, mejoras y próximos pasos.
+description: >
+  Utilizar cuando un usuario solicite retroalimentación sobre un trabajo,
+  respuesta o desempeño académico. Analiza evidencias, identifica fortalezas
+  y oportunidades de mejora, y propone acciones formativas concretas.
 ---
 
 # Retroalimentación formativa
