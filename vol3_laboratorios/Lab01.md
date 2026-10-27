@@ -1,14 +1,14 @@
 # Cuaderno de Laboratorios
 
-> **Para orientarse:** [Ruta de aprendizaje](../EMPEZAR_AQUI.md) · [Volumen 1 — conceptos](../vol1_manual_participante/) · [Volumen 4 — portafolio](../vol4_proyecto_integrador/) · [Volumen 5 — consulta técnica](../vol5_manual_referencia/). Consulte el Manual Técnico para ver las instrucciones ilustradas.
-
-
 # Laboratorio 1
 
 # Instalación de Ollama y Open WebUI, exploración de un LLM y primeros prompts
 
+> **Para orientarse:** [Ruta de aprendizaje](../EMPEZAR_AQUI.md) · [Volumen 1 — conceptos](../vol1_manual_participante/) · [Volumen 4 — portafolio](../vol4_proyecto_integrador/) · [Volumen 5 — consulta técnica](../vol5_manual_referencia/). Consulte el Manual Técnico para ver las instrucciones ilustradas.
 
-> **Para participantes que trabajan de manera independiente en Windows:** comience por la [Ruta autónoma de sesiones 1 y 2](Guia_Autonoma_Windows_Sesiones01_02.md), con comandos PowerShell, evidencias, checkpoints y soluciones condicionales. El Manual Técnico mantiene el procedimiento principal Windows; Ubuntu queda como anexo.
+**Ruta intensiva:** [sesión 1 — guía paso a paso](Guia_Autonoma_Sesion01_Windows_Paso_a_Paso.md).
+
+> **Para participantes que trabajan de manera independiente en Windows:** comience por la [Ruta autónoma de sesiones 1 y 2](Guia_Autonoma_Sesion01_Windows_Paso_a_Paso.md), con comandos PowerShell, evidencias, checkpoints y soluciones condicionales. El Manual Técnico mantiene el procedimiento principal Windows; Ubuntu queda como anexo.
 
 > **Instrucciones complementarias para Ubuntu:** [Guía paso a paso de la sesión 1, solución de problemas y selección de modelo con llmfit](Guia_Ubuntu_Sesion01_Validacion_2026.md). Esta guía complementaria no reemplaza la ruta principal del Manual Técnico para Windows.
 
@@ -20,17 +20,18 @@
 
 ---
 
-# Índice
+## Índice
 
 1. Presentación del laboratorio
 2. Información general
 3. Antes de comenzar
-
-> **Nota:** El desarrollo del laboratorio, el Proyecto Integrador y el cierre se incorporarán en las siguientes entregas.
+4. Desarrollo del laboratorio guiado
+5. Proyecto Integrador
+6. Cierre del laboratorio
 
 ---
 
-# 1. Presentación del laboratorio
+## 1. Presentación del laboratorio
 
 ## ¿Qué aprenderá en este laboratorio?
 
@@ -62,7 +63,7 @@ Este trabajo constituirá la base sobre la cual se desarrollarán todas las acti
 
 ---
 
-# 2. Información general
+## 2. Información general
 
 ## 2.1 Propósito
 
@@ -171,7 +172,7 @@ No se requiere experiencia previa en programación ni en el desarrollo de asiste
 
 ---
 
-# 3. Antes de comenzar
+## 3. Antes de comenzar
 
 ## Lista de verificación
 
@@ -230,7 +231,7 @@ Este documento será el primer componente del Portafolio que se desarrollará pr
 
 > La **Parte 2** desarrollará el inicio del laboratorio guiado, incluyendo las primeras actividades prácticas: verificación del entorno, exploración del modelo de lenguaje y construcción de los primeros prompts, siguiendo la estructura metodológica aprobada para el Cuaderno de Laboratorios.
 
-# 4. Desarrollo del laboratorio guiado
+## 4. Desarrollo del laboratorio guiado
 
 En esta sección comenzará el trabajo práctico del laboratorio.
 
@@ -969,7 +970,7 @@ En la siguiente parte del laboratorio comenzará formalmente el **Proyecto Integ
 
 **Fin de la Parte 3 del Laboratorio 1**
 
-# 5. Proyecto Integrador
+## 5. Proyecto Integrador
 
 Hasta este momento del laboratorio ha explorado el funcionamiento de un modelo de lenguaje, ha comprobado que el entorno local se encuentra operativo y ha experimentado con distintos tipos de *prompts*.
 
@@ -1373,7 +1374,7 @@ Lo importante es que el problema sea auténtico, tenga sentido dentro de su cont
 
 > En la **Parte 5** se desarrollará el cierre del laboratorio, incluyendo la síntesis de los aprendizajes, la autoevaluación, los entregables, la preparación para el Laboratorio 2 y la vinculación con la siguiente etapa del Proyecto Integrador.
 
-# 6. Cierre del laboratorio
+## 6. Cierre del laboratorio
 
 Ha finalizado el primer laboratorio del taller.
 
