@@ -134,16 +134,6 @@ Presione **Enter** o el botón de enviar.
 
 > **Recuerde:** en esta instalación, el acceso habitual desde el navegador es **http://localhost:8080**. **No necesita Docker** para utilizar Open WebUI ni para abrirlo en el navegador. Si el puerto 8080 está ocupado, consulte el puerto real en la aplicación de escritorio.
 
-## Evidencias al terminar la sesión
-
-- [ ] Abrí LLMFit y registré una recomendación o su error.
-- [ ] Comprobé Ollama con `ollama --version`.
-- [ ] Descargué el modelo y aparece en `ollama list`.
-- [ ] Conversé con el modelo en PowerShell.
-- [ ] Abrí Open WebUI y obtuve una respuesta **utilizando Ollama**.
-- [ ] Guardé las capturas en **Documentos/Taller-IA-Local**.
-- [ ] Accedí desde el navegador a **http://localhost:8080** (o al puerto indicado por la aplicación).
-
 ## Si aparece un problema
 
 | Situación | Qué debe hacer |
@@ -157,7 +147,19 @@ Presione **Enter** o el botón de enviar.
 | `localhost:8080` no responde | Compruebe que Open WebUI Desktop esté abierto y que su servidor local esté iniciado. Consulte el puerto indicado por la aplicación; no instale Docker para resolverlo. |
 | Equipo institucional bloquea la instalación | Solicite soporte TI; no desactive antivirus, restricciones ni políticas de la institución. |
 
-## Para profundizar después de la práctica
+## 1. Comprobación final de la sesión
+
+- [ ] Abrí LLMFit y registré una recomendación o su error.
+- [ ] Comprobé Ollama con `ollama --version`.
+- [ ] Descargué el modelo y aparece en `ollama list`.
+- [ ] Conversé con el modelo en PowerShell.
+- [ ] Abrí Open WebUI y obtuve una respuesta **utilizando Ollama**.
+- [ ] Guardé las capturas en **Documentos/Taller-IA-Local**.
+- [ ] Accedí desde el navegador a **http://localhost:8080** (o al puerto indicado por la aplicación).
+
+## 2. Material complementario (opcional)
+
+Estos recursos amplían la explicación, pero **no son necesarios para seguir los pasos de esta sesión**.
 
 - [Laboratorio 1 original](Lab01.md): fundamentación y actividades ampliadas.
 - [Manual Técnico](../vol2_manual_tecnico/): procedimientos avanzados y alternativas de instalación.
@@ -165,4 +167,8 @@ Presione **Enter** o el botón de enviar.
 - [Recursos interactivos](../RECURSOS_INTERACTIVOS.md): tokenización y visualización didáctica de modelos.
 - Documentación oficial: [LLMFit](https://github.com/AlexsJones/llmfit), [Ollama](https://ollama.com/download/windows), [Open WebUI Desktop](https://github.com/open-webui/desktop) y [Open WebUI Quick Start](https://docs.openwebui.com/getting-started/quick-start/).
 
-**Fin de la sesión 1.** La configuración de asistentes, System Prompts, Knowledge y Skills se realiza en la **sesión 2**.
+## 3. Cierre y siguiente sesión
+
+**Sesión 1 completada:** identificó un modelo adecuado, lo ejecutó mediante Ollama y mantuvo una conversación en PowerShell y Open WebUI.
+
+**Siguiente sesión:** [guía paso a paso de la sesión 2](Guia_Autonoma_Sesion02_Windows_Paso_a_Paso.md): configurar System Prompt, Knowledge, Notes y Skills.
