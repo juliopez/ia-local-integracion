@@ -195,7 +195,6 @@ Las lecturas complementan la práctica; no son necesarias para completar sus pas
 
 - [Laboratorio 4](Lab04.md): fundamentos y arquitectura.
 - [Manual Técnico — Capítulo 8](../vol2_manual_tecnico/cap08_mt.md): integración y procedimientos ampliados.
-- [Guía original de la sesión 4](Guia_Autonoma_Sesion04_Windows.md): referencia técnica y validaciones.
 
 ## 3. Cierre y siguiente sesión
 
