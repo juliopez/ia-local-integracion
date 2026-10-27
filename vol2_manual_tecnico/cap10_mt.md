@@ -5751,7 +5751,7 @@ Antes de finalizar confirme que:
 
 ---
 
-# Resumen del capítulo
+## Resumen del capítulo
 
 En este capítulo usted:
 
