@@ -1,12 +1,15 @@
 # Cuaderno de Laboratorios
 
+# Laboratorio 3
+
+# Validación y optimización del asistente inteligente mediante casos de prueba
 
 ## Ruta intensiva — sesión 5 (60 minutos de optimización)
 
-> **Alucinaciones y fuentes:** consulte en la [guía autónoma de sesión 5](Guia_Autonoma_Sesion05_Windows.md) la explicación conceptual, el procedimiento para verificar afirmaciones y la comparación opcional entre la normativa breve y la ampliada. Que aparezca una fuente no garantiza que respalde cada afirmación.
+> **Alucinaciones y fuentes:** consulte en la [guía autónoma de sesión 5](Guia_Autonoma_Sesion05_Windows_Paso_a_Paso.md) la explicación conceptual, el procedimiento para verificar afirmaciones y la comparación opcional entre la normativa breve y la ampliada. Que aparezca una fuente no garantiza que respalde cada afirmación.
 
 
-> **Guía autónoma vigente:** [Sesión 5 — explicación breve, catálogo de mejoras, paso a paso, comparación y evaluación final](Guia_Autonoma_Sesion05_Windows.md). El estudiante selecciona **al menos dos mejoras pertinentes** sin repetir obligatoriamente cambios ya realizados. No se requiere descargar otro modelo. La guía distingue 15 minutos de introducción, 60 de optimización y 45 de evaluación; el instrumento institucional final debe definirse por separado.
+> **Guía autónoma vigente:** [Sesión 5 — explicación breve, catálogo de mejoras, paso a paso, comparación y evaluación final](Guia_Autonoma_Sesion05_Windows_Paso_a_Paso.md). El estudiante selecciona **al menos dos mejoras pertinentes** sin repetir obligatoriamente cambios ya realizados. No se requiere descargar otro modelo. La guía distingue 15 minutos de introducción, 60 de optimización y 45 de evaluación; el instrumento institucional final debe definirse por separado.
 
 
 Esta actividad se desarrolla **después** de haber implementado el flujo Google Workspace ↔ Ollama en las sesiones 3 y 4. El bloque completo de la jornada contempla **15 minutos de contextualización, 60 minutos de mejora del asistente y 45 minutos de evaluación** (el instrumento evaluativo se definirá por separado).
@@ -20,9 +23,7 @@ Esta actividad se desarrolla **después** de haber implementado el flujo Google 
 
 ---
 
-# Laboratorio 3
-
-# Validación y optimización del asistente inteligente mediante casos de prueba
+**Ruta intensiva:** [sesión 5 — guía paso a paso](Guia_Autonoma_Sesion05_Windows_Paso_a_Paso.md).
 
 **Capítulo asociado:** Capítulo 3. Validación y optimización de asistentes inteligentes
 
@@ -32,15 +33,18 @@ Esta actividad se desarrolla **después** de haber implementado el flujo Google 
 
 ---
 
-# Índice
+## Índice
 
 1. Presentación del laboratorio
 2. Información general
 3. Antes de comenzar
+4. Desarrollo del laboratorio guiado
+5. Proyecto Integrador
+6. Cierre del laboratorio
 
 ---
 
-# 1. Presentación del laboratorio
+## 1. Presentación del laboratorio
 
 ## ¿Qué aprenderá en este laboratorio?
 
@@ -76,7 +80,7 @@ Al finalizar este laboratorio dispondrá de un asistente optimizado y de un regi
 
 ---
 
-# 2. Información general
+## 2. Información general
 
 ## 2.1 Propósito
 
@@ -174,7 +178,7 @@ Antes de comenzar este laboratorio se espera que el participante:
 
 ---
 
-# 3. Antes de comenzar
+## 3. Antes de comenzar
 
 ## Lista de verificación
 
@@ -246,7 +250,7 @@ Documento 6  ░░░░░░░░░░
 
 > La **Parte 2** desarrollará un caso guiado de validación donde todos los participantes aprenderán a construir casos de prueba, evaluar objetivamente las respuestas del asistente e identificar oportunidades de optimización antes de aplicar la metodología a su propio Proyecto Integrador.
 
-# 4. Desarrollo del laboratorio guiado
+## 4. Desarrollo del laboratorio guiado
 
 En este laboratorio aprenderá una metodología sistemática para validar asistentes inteligentes.
 
@@ -878,7 +882,7 @@ En la siguiente parte del laboratorio aplicará exactamente la misma metodologí
 
 **Fin de la Parte 3 del Laboratorio 3**
 
-# 5. Proyecto Integrador
+## 5. Proyecto Integrador
 
 Durante el caso guiado aprendió una metodología para validar y optimizar asistentes inteligentes utilizando casos de prueba.
 
@@ -1286,7 +1290,7 @@ Documento 6  ░░░░░░░░░░
 
 > En la **Parte 5** realizará el cierre del laboratorio, sintetizará los principales aprendizajes obtenidos durante el proceso de validación, verificará los productos incorporados al Portafolio y preparará el trabajo que desarrollará en el **Laboratorio 4**, donde el asistente inteligente será integrado con herramientas del ecosistema Google Workspace mediante Google Apps Script.
 
-# 6. Cierre del laboratorio
+## 6. Cierre del laboratorio
 
 Durante este laboratorio completó la primera etapa formal de aseguramiento de la calidad de su asistente inteligente.
 
