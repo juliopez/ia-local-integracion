@@ -1,8 +1,9 @@
 # Capítulo 6
 
+# Optimización y mejora continua del asistente
+
 > **Complemento práctico:** en la [guía autónoma de la sesión 5](../vol3_laboratorios/Guia_Autonoma_Sesion05_Windows_Paso_a_Paso.md) se explican las alucinaciones, su detección mediante contraste documental y la comparación entre un documento ficticio breve y otro ampliado. Las citas visibles por sí solas no verifican el contenido.
 
-# Optimización y mejora continua del asistente
 
 ## 6.1 ¿Por qué optimizar un asistente inteligente?
 
