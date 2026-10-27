@@ -2,11 +2,9 @@
 
 # Laboratorio 6
 
-
+# Presentación profesional del Proyecto Integrador y defensa de la solución
 
 **Profundización:** laboratorio terminal de la secuencia original de seis actividades.
-
-# Presentación profesional del Proyecto Integrador y defensa de la solución
 
 **Capítulo asociado:** Capítulo 6. Presentación, evaluación y proyección de soluciones basadas en Inteligencia Artificial
 
