@@ -41,6 +41,16 @@ flowchart LR
 Explique cuál componente procesa el lenguaje, cuál gestiona estados y cuál realiza el envío de correo.
 
 ---
+### Buenas prácticas
+
+Trabaje exclusivamente con solicitudes ficticias, compruebe la implementación y registre los resultados antes de avanzar. No comparta la URL privada del Web App; no repita envíos completos sin confirmar su estado.
+
+### Checklist
+
+- [ ] Realicé las acciones correspondientes a esta sección.
+- [ ] Comprobé el resultado esperado.
+- [ ] Registré las incidencias y mantuve protegidos los datos de prueba.
+
 
 ## 8.2 Diseño del proceso de integración
 
@@ -73,6 +83,21 @@ En la versión actual, **GET no modifica estados**. La reserva solo ocurre cuand
 Se utilizarán nombres y consultas ficticios. Los participantes deben verificar que el Web App corresponde a su propio entorno y que la cuenta receptora está autorizada. El ejemplo no incluye autenticación específica puente-servidor; no es apto para uso institucional abierto.
 
 ---
+
+### Verificación
+
+Compruebe que las ocho columnas y los estados de trabajo coinciden con el esquema del servicio.
+
+### Buenas prácticas
+
+Trabaje exclusivamente con solicitudes ficticias, compruebe la implementación y registre los resultados antes de avanzar. No comparta la URL privada del Web App; no repita envíos completos sin confirmar su estado.
+
+### Checklist
+
+- [ ] Realicé las acciones correspondientes a esta sección.
+- [ ] Comprobé el resultado esperado.
+- [ ] Registré las incidencias y mantuve protegidos los datos de prueba.
+
 
 ## 8.3 Preparación del entorno de automatización
 
@@ -110,6 +135,21 @@ Abra `puente_local.py` y ajuste **`MODELO_OLLAMA`** con el nombre exacto del mod
 
 ---
 
+### Verificación
+
+Compruebe que cuenta con Ollama, Python, los archivos locales y acceso a los servicios de prueba.
+
+### Buenas prácticas
+
+Trabaje exclusivamente con solicitudes ficticias, compruebe la implementación y registre los resultados antes de avanzar. No comparta la URL privada del Web App; no repita envíos completos sin confirmar su estado.
+
+### Checklist
+
+- [ ] Realicé las acciones correspondientes a esta sección.
+- [ ] Comprobé el resultado esperado.
+- [ ] Registré las incidencias y mantuve protegidos los datos de prueba.
+
+
 ## 8.4 Implementación modular del proceso de integración
 
 ### Objetivo
@@ -138,6 +178,21 @@ En Apps Script, utilice **Implementar → Nueva implementación → Aplicación 
 El envío de Gmail y la actualización de Sheets **no son una transacción atómica**; ante errores, compruebe el estado y el correo enviado antes de repetir.
 
 ---
+
+### Verificación
+
+Confirme que el Web App responde desde su implementación vigente y que la hoja utilizada es la correcta.
+
+### Buenas prácticas
+
+Trabaje exclusivamente con solicitudes ficticias, compruebe la implementación y registre los resultados antes de avanzar. No comparta la URL privada del Web App; no repita envíos completos sin confirmar su estado.
+
+### Checklist
+
+- [ ] Realicé las acciones correspondientes a esta sección.
+- [ ] Comprobé el resultado esperado.
+- [ ] Registré las incidencias y mantuve protegidos los datos de prueba.
+
 
 ## 8.5 Lectura de solicitudes desde Google Sheets — sesión 3
 
@@ -168,6 +223,21 @@ El modo `lectura` realiza GET, no consulta Ollama, no escribe en Sheets y no env
 
 ---
 
+### Verificación
+
+Confirme que la fila conserva el estado `PENDIENTE` después de la lectura.
+
+### Buenas prácticas
+
+Trabaje exclusivamente con solicitudes ficticias, compruebe la implementación y registre los resultados antes de avanzar. No comparta la URL privada del Web App; no repita envíos completos sin confirmar su estado.
+
+### Checklist
+
+- [ ] Realicé las acciones correspondientes a esta sección.
+- [ ] Comprobé el resultado esperado.
+- [ ] Registré las incidencias y mantuve protegidos los datos de prueba.
+
+
 ## 8.6 Comunicación con el asistente mediante un puente local — sesión 4
 
 ### Objetivo
@@ -194,6 +264,21 @@ El puente solicita a Ollama una respuesta a una consulta ficticia; el mensaje in
 La skill se interpreta como texto instructivo, **no ejecuta código** ni concede acceso a herramientas. El puente incorpora documentos completos con límites de caracteres; no implementa indexación, búsqueda semántica ni RAG. La calidad de las respuestas depende del modelo seleccionado y debe comprobarse.
 
 ---
+
+### Verificación
+
+Confirme que Ollama respondió localmente y que Sheets y Gmail permanecen sin cambios.
+
+### Buenas prácticas
+
+Trabaje exclusivamente con solicitudes ficticias, compruebe la implementación y registre los resultados antes de avanzar. No comparta la URL privada del Web App; no repita envíos completos sin confirmar su estado.
+
+### Checklist
+
+- [ ] Realicé las acciones correspondientes a esta sección.
+- [ ] Comprobé el resultado esperado.
+- [ ] Registré las incidencias y mantuve protegidos los datos de prueba.
+
 
 ## 8.7 Envío automático de respuestas y actualización del estado — sesión 4
 
@@ -223,6 +308,21 @@ No cambie automáticamente una fila `PROCESANDO` o `ERROR` a `PENDIENTE`. Si la 
 La implementación se utiliza como **prototipo pedagógico**: no garantiza entrega efectiva en el buzón del destinatario, reintentos seguros ni autenticación independiente del despliegue.
 
 ---
+
+### Verificación
+
+Compruebe estado `ENVIADA`, texto, fecha y recepción del correo; si falla, no reintente sin revisar los registros.
+
+### Buenas prácticas
+
+Trabaje exclusivamente con solicitudes ficticias, compruebe la implementación y registre los resultados antes de avanzar. No comparta la URL privada del Web App; no repita envíos completos sin confirmar su estado.
+
+### Checklist
+
+- [ ] Realicé las acciones correspondientes a esta sección.
+- [ ] Comprobé el resultado esperado.
+- [ ] Registré las incidencias y mantuve protegidos los datos de prueba.
+
 
 ## 8.8 Validación integral del servicio inteligente
 
@@ -260,8 +360,29 @@ Este ejemplo no implementa autenticación dedicada entre Python y Web App, ni re
 
 ---
 
+### Verificación
+
+Conserve las evidencias de cada fase, incluidos los errores y límites observados.
+
+### Buenas prácticas
+
+Trabaje exclusivamente con solicitudes ficticias, compruebe la implementación y registre los resultados antes de avanzar. No comparta la URL privada del Web App; no repita envíos completos sin confirmar su estado.
+
+### Checklist
+
+- [ ] Realicé las acciones correspondientes a esta sección.
+- [ ] Comprobé el resultado esperado.
+- [ ] Registré las incidencias y mantuve protegidos los datos de prueba.
+
+
 ## Resumen del capítulo
 
 En este capítulo se distinguieron tres operaciones: **leer**, **probar** y **procesar**. La separación protege las solicitudes durante la sesión 3 y permite que la sesión 4 utilice el mismo puente junto a un modelo local, archivos de contexto y una skill. La evidencia de ejecución real se completará cuando se validen los servicios en el equipo de referencia.
 
-**Capítulo siguiente:** [Capítulo 9 — Operación y mantenimiento del servicio inteligente](cap09_mt.md).
+## Próximo capítulo
+
+Continúe con el [Capítulo 9 — Consolidación y operación del servicio inteligente](cap09_mt.md), que aborda su funcionamiento y mantenimiento.
+
+---
+
+# Fin del Capítulo 8
