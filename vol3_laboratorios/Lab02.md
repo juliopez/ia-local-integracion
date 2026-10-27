@@ -1,12 +1,16 @@
 # Cuaderno de Laboratorios
 
+# Laboratorio 2
+
+# Diseño de un asistente inteligente utilizando un caso guiado
+
 > **Para orientarse:** [Ruta de aprendizaje](../EMPEZAR_AQUI.md) · [Volumen 1 — conceptos](../vol1_manual_participante/) · [Volumen 4 — portafolio](../vol4_proyecto_integrador/) · [Volumen 5 — consulta técnica](../vol5_manual_referencia/). Consulte el Manual Técnico para ver las instrucciones ilustradas.
 
 
 
 ## Ruta intensiva — sesión 2 (40 minutos de práctica)
 
-> **Para comenzar en Windows:** siga la [Ruta autónoma de sesiones 1 y 2](Guia_Autonoma_Windows_Sesiones01_02.md) antes de esta versión extensa del laboratorio. Incluye guardado preventivo del asistente, carga y verificación de Knowledge, Skills y bitácora.
+> **Para comenzar en Windows:** siga la [Guía paso a paso de la sesión 2](Guia_Autonoma_Sesion02_Windows_Paso_a_Paso.md) antes de esta versión extensa del laboratorio. Incluye guardado preventivo del asistente, carga y verificación de Knowledge, Skills y bitácora.
 
 
 > **Ayuda para configurar el asistente:** consulte la [Guía complementaria de validación: Windows y anexo Ubuntu](Guia_Sesion02_Knowledge_Skills_Windows_Ubuntu.md). La ruta prioritaria es **Windows**; las incidencias de Ubuntu son un **anexo**. Guarde el asistente antes de cargar Knowledge; si falla la recuperación, revise el modo de llamadas a funciones y pruebe **Heredado** solo como corrección condicional. La Skill importada debe además asociarse al modelo; **no equipare una respuesta con fuente con ausencia de alucinaciones**. Guarde copias de los archivos en `scripts/`.
@@ -25,9 +29,7 @@ Para el taller de cinco sesiones, las actividades completas de este laboratorio 
 
 ---
 
-# Laboratorio 2
-
-# Diseño de un asistente inteligente utilizando un caso guiado
+**Ruta intensiva:** [sesión 2 — guía paso a paso](Guia_Autonoma_Sesion02_Windows_Paso_a_Paso.md).
 
 **Capítulo asociado:** Capítulo 2. Diseño de asistentes inteligentes
 
@@ -37,17 +39,18 @@ Para el taller de cinco sesiones, las actividades completas de este laboratorio 
 
 ---
 
-# Índice
+## Índice
 
 1. Presentación del laboratorio
 2. Información general
 3. Antes de comenzar
-
-> **Nota:** El desarrollo del laboratorio, el Proyecto Integrador y el cierre se incorporarán en las siguientes entregas.
+4. Desarrollo del laboratorio guiado
+5. Proyecto Integrador
+6. Cierre del laboratorio
 
 ---
 
-# 1. Presentación del laboratorio
+## 1. Presentación del laboratorio
 
 ## ¿Qué aprenderá en este laboratorio?
 
@@ -78,7 +81,7 @@ Al finalizar este laboratorio dispondrá de una especificación completa del asi
 
 ---
 
-# 2. Información general
+## 2. Información general
 
 ## 2.1 Propósito
 
@@ -177,7 +180,7 @@ Antes de iniciar este laboratorio se espera que el participante:
 
 ---
 
-# 3. Antes de comenzar
+## 3. Antes de comenzar
 
 ## Lista de verificación
 
@@ -237,7 +240,7 @@ Este documento describirá las características fundamentales del asistente y co
 
 > La **Parte 2** desarrollará el caso guiado para el diseño de un asistente inteligente, donde todos los participantes construirán una primera solución utilizando una metodología común antes de aplicar el proceso a su propio Proyecto Integrador.
 
-# 4. Desarrollo del laboratorio guiado
+## 4. Desarrollo del laboratorio guiado
 
 En este laboratorio comenzará el diseño de un asistente inteligente especializado.
 
@@ -930,7 +933,7 @@ En la siguiente parte del laboratorio aplicará exactamente la misma metodologí
 
 **Fin de la Parte 3 del Laboratorio 2**
 
-# 5. Proyecto Integrador
+## 5. Proyecto Integrador
 
 Durante el caso guiado desarrolló un asistente inteligente siguiendo una metodología estructurada.
 
@@ -1345,7 +1348,7 @@ Lo importante es que la estructura metodológica ya se encuentra definida.
 
 > En la **Parte 5** realizará el cierre del laboratorio, reflexionará sobre las decisiones adoptadas durante el diseño del asistente, verificará los productos obtenidos y preparará el trabajo que desarrollará en el **Laboratorio 3**, donde comenzará la validación y optimización del asistente inteligente mediante casos de prueba.
 
-# 6. Cierre del laboratorio
+## 6. Cierre del laboratorio
 
 Durante este laboratorio dio un paso decisivo en el desarrollo del Proyecto Integrador.
 
