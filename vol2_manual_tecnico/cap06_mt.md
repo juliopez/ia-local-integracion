@@ -1,6 +1,6 @@
 # Capítulo 6
 
-> **Complemento práctico:** en la [guía autónoma de la sesión 5](../vol3_laboratorios/Guia_Autonoma_Sesion05_Windows.md) se explican las alucinaciones, su detección mediante contraste documental y la comparación entre un documento ficticio breve y otro ampliado. Las citas visibles por sí solas no verifican el contenido.
+> **Complemento práctico:** en la [guía autónoma de la sesión 5](../vol3_laboratorios/Guia_Autonoma_Sesion05_Windows_Paso_a_Paso.md) se explican las alucinaciones, su detección mediante contraste documental y la comparación entre un documento ficticio breve y otro ampliado. Las citas visibles por sí solas no verifican el contenido.
 
 # Optimización y mejora continua del asistente
 
@@ -1041,7 +1041,7 @@ Antes de finalizar el capítulo confirme que:
 
 ---
 
-# Resumen del capítulo
+## Resumen del capítulo
 
 En este capítulo usted:
 
