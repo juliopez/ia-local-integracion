@@ -187,18 +187,6 @@ Presione **Enter**. El programa debe mostrar la consulta ficticia recuperada de 
 
 **Comprobación F:** Python puede leer la misma solicitud que vio en el navegador, pero la fila no cambia y no se envía Gmail. **Este es el resultado final de la sesión 3.**
 
-## Cierre — Evidencias de aprendizaje (10 minutos, integradas en las etapas)
-
-- [ ] Descargué el repositorio y identifiqué los tres archivos.
-- [ ] Confirmé que Python funciona y ejecuté comandos en PowerShell.
-- [ ] Creé Forms y Sheets mediante el primer proyecto de Apps Script.
-- [ ] Envié una consulta ficticia y comprobé **PENDIENTE**.
-- [ ] Publiqué la Web App desde un segundo proyecto vinculado a Sheets.
-- [ ] Comprobé la respuesta JSON desde el navegador.
-- [ ] Ejecuté `py scripts/puente_local.py --modo lectura`.
-- [ ] Volví a Sheets: **PENDIENTE**, sin respuesta IA ni fecha de procesamiento.
-- [ ] Registré dificultades y resultados sin publicar URLs o correos.
-
 ## Si aparece un error
 
 | Qué observa | Qué comprobar | Cómo continuar |
@@ -214,10 +202,30 @@ Presione **Enter**. El programa debe mostrar la consulta ficticia recuperada de 
 | Python lee otra consulta | Varias filas `PENDIENTE` | El script selecciona la primera pendiente; revise la hoja. |
 | Un comando modificó la hoja | Modo ejecutado | Deténgase y confirme que usó únicamente `--modo lectura`. |
 
-## Continuación y consulta opcional
-
-En la **sesión 4** se utilizarán los modos de prueba y procesamiento completo, el modelo local de Ollama, la actualización de Sheets y el envío de Gmail. **No adelante esas acciones durante esta sesión.**
-
-Para profundizar, consulte el [Laboratorio 4](Lab04.md), el [Manual Técnico — capítulo 7](../vol2_manual_tecnico/cap07_mt.md) y el [capítulo 8](../vol2_manual_tecnico/cap08_mt.md).
-
 **Nota de validación:** la lectura integral fue probada con Ubuntu y datos ficticios. Los pasos de Windows están documentados, pero **la ejecución completa en un equipo Windows independiente aún debe comprobarse**.
+
+## 1. Comprobación final de la sesión
+
+- [ ] Descargué el repositorio y identifiqué los tres archivos.
+- [ ] Confirmé que Python funciona y ejecuté comandos en PowerShell.
+- [ ] Creé Forms y Sheets mediante el primer proyecto de Apps Script.
+- [ ] Envié una consulta ficticia y comprobé **PENDIENTE**.
+- [ ] Publiqué la Web App desde un segundo proyecto vinculado a Sheets.
+- [ ] Comprobé la respuesta JSON desde el navegador.
+- [ ] Ejecuté `py scripts/puente_local.py --modo lectura`.
+- [ ] Volví a Sheets: **PENDIENTE**, sin respuesta IA ni fecha de procesamiento.
+- [ ] Registré dificultades y resultados sin publicar URLs o correos.
+
+## 2. Material complementario (opcional)
+
+Estos recursos amplían el aprendizaje; no son necesarios para realizar el recorrido principal.
+
+- [Laboratorio 4](Lab04.md): ampliación de la actividad.
+- [Manual Técnico — capítulo 7](../vol2_manual_tecnico/cap07_mt.md): Forms y Sheets.
+- [Manual Técnico — capítulo 8](../vol2_manual_tecnico/cap08_mt.md): Apps Script y Python.
+
+## 3. Cierre y siguiente sesión
+
+**Sesión 3 completada:** recuperó una consulta ficticia desde Python sin cambiar su estado **PENDIENTE** ni enviar un correo.
+
+**Siguiente sesión:** [guía paso a paso de la sesión 4](Guia_Autonoma_Sesion04_Windows_Paso_a_Paso.md): procesamiento con Ollama, registro en Sheets y comprobación de Gmail. No ejecute el modo completo antes de esa actividad.
