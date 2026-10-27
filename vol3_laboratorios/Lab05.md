@@ -4,6 +4,8 @@
 
 # Diseño de un proceso organizacional apoyado por un asistente inteligente
 
+**Profundización:** este laboratorio conserva la secuencia original del Cuaderno y amplía las actividades del itinerario intensivo.
+
 **Capítulo asociado:** Capítulo 5. Diseño de procesos organizacionales apoyados por asistentes inteligentes
 
 **Duración estimada:** 100 minutos
@@ -12,17 +14,18 @@
 
 ---
 
-# Índice
+## Índice
 
 1. Presentación del laboratorio
 2. Información general
 3. Antes de comenzar
-
-> **Nota:** El desarrollo del laboratorio, el Proyecto Integrador y el cierre se incorporarán en las siguientes entregas.
+4. Desarrollo del laboratorio guiado
+5. Proyecto Integrador
+6. Cierre del laboratorio
 
 ---
 
-# 1. Presentación del laboratorio
+## 1. Presentación del laboratorio
 
 ## ¿Qué aprenderá en este laboratorio?
 
@@ -54,7 +57,7 @@ Al finalizar este laboratorio dispondrá de una representación completa del pro
 
 ---
 
-# 2. Información general
+## 2. Información general
 
 ## 2.1 Propósito
 
@@ -145,7 +148,7 @@ Antes de comenzar este laboratorio se espera que el participante:
 
 ---
 
-# 3. Antes de comenzar
+## 3. Antes de comenzar
 
 ## Lista de verificación
 
@@ -228,7 +231,7 @@ Documento 6  ░░░░░░░░░░
 
 > La **Parte 2** desarrollará un caso guiado donde todos los participantes analizarán un proceso organizacional completo, identificarán las actividades que lo componen y determinarán el punto donde la Inteligencia Artificial genera mayor valor antes de aplicar esta metodología a su propio Proyecto Integrador.
 
-# 4. Desarrollo del laboratorio guiado
+## 4. Desarrollo del laboratorio guiado
 
 Durante este laboratorio analizará un proceso organizacional completo.
 
@@ -831,7 +834,7 @@ En la siguiente parte aplicará esta metodología al **Proyecto Integrador**, an
 
 **Fin de la Parte 3 del Laboratorio 5**
 
-# 5. Proyecto Integrador
+## 5. Proyecto Integrador
 
 Durante el caso guiado analizó un proceso organizacional e identificó las actividades donde un asistente inteligente puede aportar valor.
 
@@ -1204,7 +1207,7 @@ Documento 6  ░░░░░░░░░░
 
 > En la **Parte 5** realizará el cierre del laboratorio, consolidará los aprendizajes obtenidos durante el análisis del proceso organizacional, verificará el estado del Portafolio y preparará el trabajo que desarrollará en el **Laboratorio 6**, donde presentará y defenderá su Proyecto Integrador como una propuesta de solución para una organización.
 
-# 6. Cierre del laboratorio
+## 6. Cierre del laboratorio
 
 Durante este laboratorio completó la consolidación de su Proyecto Integrador.
 
