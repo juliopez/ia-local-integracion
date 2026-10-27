@@ -7,6 +7,17 @@
 
 > **Cómo seguirla:** realice cada paso por orden. Al finalizar una etapa, compruebe el resultado antes de continuar. Los manuales enlazados al final son para profundizar, **no son necesarios para completar esta práctica**. Use únicamente información ficticia.
 
+## Antes de configurar: cuatro componentes, cuatro funciones
+
+| Componente | Pregunta que responde | Uso en esta sesión |
+|---|---|---|
+| **System Prompt** | ¿Cómo debe comportarse el asistente? | Define su rol y sus límites generales. |
+| **Knowledge** | ¿Qué documentos puede consultar? | Aporta la normativa académica ficticia. |
+| **Notes** | ¿Qué observó y decidió el participante? | Conserva resultados, dificultades y decisiones. |
+| **Skills** | ¿Cómo realizar una tarea especializada? | Aporta instrucciones para retroalimentación formativa. |
+
+Estos elementos **no se sustituyen entre sí**. Configurarlos es distinto de demostrar que el modelo los utiliza correctamente; por eso la guía incluye comprobaciones y pruebas.
+
 ## Etapa 1 — Abrir Open WebUI y comprobar el modelo (10 minutos)
 
 **Paso 1.** Encienda el computador. Presione la tecla **Windows**, escriba **Ollama** y abra la aplicación si no está funcionando.
@@ -41,6 +52,13 @@
 
 ## Etapa 3 — Crear y guardar el asistente (25 minutos)
 
+### ¿Qué es un System Prompt y para qué sirve?
+
+El **System Prompt** es el conjunto de instrucciones generales que orienta el comportamiento del asistente: qué rol cumple, a quién ayuda, cómo debe expresarse y qué límites debe respetar. **No es un documento de consulta ni aporta por sí solo la normativa académica.** En esta actividad utilizaremos `system_prompt.txt` para configurar un asistente que orienta consultas de estudiantes sin inventar reglas institucionales.
+
+**Cómo reconocer su función:** después de crear el asistente, compare su propósito y tono con las instrucciones copiadas. Que el texto aparezca guardado confirma la configuración, pero todavía no demuestra que todas sus respuestas sean correctas.
+
+
 **Paso 10.** Regrese a Open WebUI en el navegador. En la navegación lateral busque **Espacio de trabajo** (*Workspace*) y haga clic.
 
 **Paso 11.** Ingrese a **Modelos** (*Models*) y seleccione **Crear** (*Create* o el botón **+**). Según la versión, se mostrará un formulario para crear un modelo/asistente personalizado.
@@ -60,6 +78,13 @@
 **Comprobación C:** el asistente está en la lista de Modelos, con su modelo base y System Prompt. Guarde una captura con **Windows + Shift + S**.
 
 ## Etapa 4 — Asociar Knowledge y comprobar una respuesta con evidencia (25 minutos)
+
+### ¿Qué es Knowledge y para qué sirve?
+
+**Knowledge (conocimiento)** permite vincular documentos que Open WebUI puede recuperar o incorporar como contexto al responder. A diferencia del **System Prompt**, que indica **cómo comportarse**, Knowledge aporta **información sobre la cual responder**. Aquí utilizaremos `normativa_ejemplo.md`, un documento **ficticio** que establece, entre otras reglas, un plazo de cinco días hábiles para solicitar revisión de una evaluación.
+
+**Ejemplo:** ante «¿Cuántos días tengo para pedir revisión?», el asistente debería fundamentarse en esa normativa, no inventar una fecha. **Cómo comprobarlo:** confirme que el documento está asociado, examine las fuentes si aparecen y contraste la respuesta con el texto original. Subir un archivo no garantiza que se recupere ni que el modelo lo interprete correctamente.
+
 
 **Paso 16.** En **Espacio de trabajo → Modelos**, abra **Asistente Académico de Apoyo** para **Editar**.
 
@@ -87,6 +112,13 @@
 
 ## Etapa 5 — Registrar una nota o bitácora (15 minutos)
 
+### ¿Qué es una Note y para qué sirve?
+
+Una **Note (nota)** es un espacio donde puede escribir y conservar observaciones de su trabajo. En nuestro taller funcionará como **bitácora del participante**: registrará el modelo utilizado, la pregunta, la respuesta, las fuentes observadas y los posibles errores. Puede utilizar la función Notes de Open WebUI **o** guardar un archivo Markdown en su computador.
+
+**Ejemplo:** «La primera respuesta indicó cinco días y citó el documento; la segunda inventó un requisito». **Cómo comprobarlo:** vuelva a abrir la nota o el archivo y revise que conserva el registro. **Importante:** escribir algo en Notes **no hace que el asistente lo utilice automáticamente como Knowledge**.
+
+
 **Paso 23.** En Open WebUI, busque **Notas** (*Notes*) en el espacio de trabajo. Si está disponible, seleccione **Crear**. Si no aparece en su instalación, abra **Bloc de notas** desde el menú Inicio y cree un archivo local llamado `bitacora_asistente.md`.
 
 **Paso 24.** Escriba:
@@ -107,6 +139,13 @@ Observaciones: [dificultades y posibles mejoras]
 **Comprobación E:** dispone de una bitácora que conserva decisiones y resultados. **Notas no es automáticamente una base Knowledge**.
 
 ## Etapa 6 — Importar y asociar una Skill (20 minutos)
+
+### ¿Qué es una Skill y para qué sirve?
+
+Una **Skill (habilidad)** reúne instrucciones reutilizables para realizar una **tarea especializada**. No es lo mismo que Knowledge: **Knowledge aporta datos o documentos**, mientras que una Skill describe **cómo abordar un tipo de trabajo**. Tampoco sustituye al System Prompt, que establece el comportamiento general del asistente.
+
+**Ejemplo del taller:** `retroalimentacion-formativa/SKILL.md` ofrece pautas para organizar retroalimentación educativa. **Cómo comprobarlo:** revise primero que la Skill fue **importada** y luego que quedó **asociada** al asistente. Estas dos comprobaciones acreditan la configuración, **no su aplicación efectiva**; la calidad de la respuesta se evaluará posteriormente.
+
 
 **¿Qué es una Skill?** Es un conjunto de instrucciones reutilizables para una tarea específica. **Importarla y asociarla no demuestra automáticamente que el modelo la utilice correctamente.**
 
