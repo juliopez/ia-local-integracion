@@ -4788,7 +4788,7 @@ Antes de finalizar el capítulo confirme que:
 
 ---
 
-# Resumen del capítulo
+## Resumen del capítulo
 
 En este capítulo usted:
 
