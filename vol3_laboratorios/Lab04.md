@@ -1,5 +1,9 @@
 # Cuaderno de Laboratorios
 
+# Laboratorio 4
+
+# Integración del asistente inteligente con Google Workspace y un modelo de IA local
+
 > **Para orientarse:** [Ruta de aprendizaje](../EMPEZAR_AQUI.md) · [Volumen 1 — conceptos](../vol1_manual_participante/) · [Volumen 4 — portafolio](../vol4_proyecto_integrador/) · [Volumen 5 — consulta técnica](../vol5_manual_referencia/). Consulte el Manual Técnico para ver las instrucciones ilustradas.
 
 
@@ -44,9 +48,7 @@ El System Prompt, los documentos y la skill deben existir localmente porque el p
 
 ---
 
-# Laboratorio 4
-
-# Integración del asistente inteligente con Google Workspace y un modelo de IA local
+**Ruta intensiva:** [sesión 3](Guia_Autonoma_Sesion03_Windows_Paso_a_Paso.md) y [sesión 4](Guia_Autonoma_Sesion04_Windows_Paso_a_Paso.md), con dos etapas del mismo laboratorio.
 
 **Capítulo asociado:** Capítulo 4. Integración del asistente inteligente con herramientas de productividad
 
@@ -56,17 +58,18 @@ El System Prompt, los documentos y la skill deben existir localmente porque el p
 
 ---
 
-# Índice
+## Índice
 
 1. Presentación del laboratorio
 2. Información general
 3. Antes de comenzar
-
-> **Nota:** El desarrollo del laboratorio, el Proyecto Integrador y el cierre se incorporarán en las siguientes entregas.
+4. Desarrollo del laboratorio guiado
+5. Proyecto Integrador
+6. Cierre del laboratorio
 
 ---
 
-# 1. Presentación del laboratorio
+## 1. Presentación del laboratorio
 
 ## ¿Qué aprenderá en este laboratorio?
 
@@ -96,7 +99,7 @@ Esta integración constituye uno de los principales objetivos del taller, ya que
 
 ---
 
-# 2. Información general
+## 2. Información general
 
 ## 2.1 Propósito
 
@@ -195,7 +198,7 @@ Antes de comenzar este laboratorio se espera que el participante:
 
 ---
 
-# 3. Antes de comenzar
+## 3. Antes de comenzar
 
 ## Lista de verificación
 
@@ -277,7 +280,7 @@ Documento 6  ░░░░░░░░░░
 
 > La **Parte 2** desarrollará un caso guiado donde todos los participantes construirán un flujo completo utilizando Google Forms, Google Sheets, Google Apps Script y el asistente inteligente local, comprendiendo el recorrido de la información desde su captura hasta la generación de la respuesta.
 
-# 4. Desarrollo del laboratorio guiado
+## 4. Desarrollo del laboratorio guiado
 
 Durante este laboratorio integrará, por primera vez, el asistente inteligente desarrollado en los laboratorios anteriores con un proceso de trabajo basado en Google Workspace.
 
@@ -978,7 +981,7 @@ En la siguiente parte aplicará exactamente esta metodología al **Proyecto Inte
 
 **Fin de la Parte 3 del Laboratorio 4**
 
-# 5. Proyecto Integrador
+## 5. Proyecto Integrador
 
 Durante el caso guiado aprendió cómo integrar un asistente inteligente con un proceso sencillo utilizando herramientas del ecosistema Google Workspace.
 
@@ -1431,7 +1434,7 @@ Documento 6  ░░░░░░░░░░
 
 > En la **Parte 5** realizará el cierre del laboratorio, reflexionará sobre la integración desarrollada, verificará los productos incorporados al Portafolio y preparará el trabajo que desarrollará en el **Laboratorio 5**, donde el asistente inteligente dejará de ser una integración aislada para convertirse en un componente de un proceso organizacional completo.
 
-# 6. Cierre del laboratorio
+## 6. Cierre del laboratorio
 
 Durante este laboratorio su asistente inteligente dio un paso decisivo hacia un escenario de aplicación profesional.
 
