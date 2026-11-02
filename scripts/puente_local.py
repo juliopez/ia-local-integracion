@@ -22,7 +22,7 @@ BASE = Path(__file__).resolve().parent
 RUTA_SYSTEM_PROMPT = BASE / "system_prompt.txt"
 
 # Opcionales: no modifican el flujo de Apps Script.
-RUTA_SKILL = BASE / "skills" / "retroalimentacion-formativa" / "SKILL.md"
+CARPETA_SKILLS = BASE / "skills"
 CARPETA_CONTEXTO = BASE / "contexto"
 MAX_CARACTERES_DOCUMENTO = 12000
 MAX_CARACTERES_TOTALES = 24000
@@ -55,15 +55,32 @@ def cargar_system_prompt() -> str:
 # Contexto documental y skill local (sin API de Open WebUI)
 # ---------------------------------------------------------
 
-def cargar_skill() -> str:
-    """Carga una skill Markdown como procedimiento, si existe."""
-    if not RUTA_SKILL.is_file():
+def cargar_skills() -> str:
+    """Carga todas las Skills locales declarativas desde scripts/skills/*/SKILL.md.
+
+    Solo lee Markdown; no ejecuta scripts ni instala dependencias. El modelo recibe
+    los procedimientos como instrucciones, sin selección automática garantizada.
+    """
+    if not CARPETA_SKILLS.is_dir():
         return ""
-    texto = RUTA_SKILL.read_text(encoding="utf-8").strip()
-    if len(texto) > 12000:
-        raise ValueError("SKILL.md supera el límite didáctico de 12000 caracteres.")
-    # El encabezado YAML se conserva como metadato, no ejecuta comandos.
-    return texto
+    partes = []
+    total = 0
+    for carpeta in sorted(CARPETA_SKILLS.iterdir()):
+        if not carpeta.is_dir() or carpeta.is_symlink():
+            continue
+        archivo = carpeta / "SKILL.md"
+        if not archivo.is_file() or archivo.is_symlink():
+            continue
+        contenido = archivo.read_text(encoding="utf-8").strip()
+        if not contenido:
+            continue
+        if len(contenido) > 12000:
+            raise ValueError(f"Skill demasiado extensa: {carpeta.name}")
+        total += len(contenido)
+        if total > 24000:
+            raise ValueError("Las Skills exceden el límite didáctico de 24000 caracteres.")
+        partes.append(f"SKILL LOCAL: {carpeta.name}\\n{contenido}")
+    return "\\n\\n---\\n\\n".join(partes)
 
 
 def cargar_contexto() -> str:
@@ -91,14 +108,16 @@ def cargar_contexto() -> str:
 
 def construir_instrucciones(system_prompt: str) -> str:
     """Suma la skill sin atribuirle acciones ejecutables ni acceso web."""
-    skill = cargar_skill()
-    if not skill:
+    skills = cargar_skills()
+    if not skills:
         return system_prompt
     return (
         system_prompt
-        + "\n\nPROCEDIMIENTO ADICIONAL (SKILL LOCAL):\n"
-        + skill
-        + "\nLa skill define pautas de respuesta, no permisos ni acciones."
+        + "\n\nPROCEDIMIENTOS ADICIONALES (SKILLS LOCALES):\n"
+        + skills
+        + "\nAplique solo el procedimiento pertinente a la consulta. "
+          "Estas Skills son instrucciones, no permisos, herramientas ni acciones. "
+          "Las afirmaciones institucionales requieren respaldo del contexto aportado."
     )
 
 
@@ -279,13 +298,13 @@ def modo_lectura() -> None:
         print("Consulta:", solicitud.get("consulta"))
 
 
-def modo_prueba() -> None:
+def modo_prueba(pregunta: str | None = None) -> None:
     """Prueba local: no contacta Google Workspace ni envía correos."""
     system_prompt = cargar_system_prompt()
     solicitud = {
         "nombre": "Usuario ficticio",
         "tipo": "Prueba local",
-        "consulta": "¿Cuál es el plazo para solicitar revisión según el documento de ejemplo?",
+        "consulta": pregunta or "¿Cuál es el plazo para solicitar revisión según el documento de ejemplo?",
     }
     texto = consultar_ollama(system_prompt, construir_mensaje(solicitud))
     print("Respuesta de prueba (sin cambios en Sheets):")
@@ -314,12 +333,14 @@ def main() -> None:
     )
     parser.add_argument("--una-vez", action="store_true",
                         help="Ejecutar un solo ciclo en modo completo")
+    parser.add_argument("--pregunta", default=None,
+                        help="Pregunta ficticia personalizada para --modo prueba")
     args = parser.parse_args()
     if args.modo == "lectura":
         modo_lectura()
         return
     if args.modo == "prueba":
-        modo_prueba()
+        modo_prueba(args.pregunta)
         return
     system_prompt = cargar_system_prompt()
     print("Modo COMPLETO: se procesarán solicitudes y Apps Script enviará correos.")
