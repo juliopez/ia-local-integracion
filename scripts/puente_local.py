@@ -252,7 +252,7 @@ def validar_respuesta_documental(pregunta: str, respuesta: str) -> str:
     pregunta_normalizada = pregunta.casefold()
     contexto = cargar_contexto().casefold()
 
-    if re.fullmatch(r"\\s*(hola|buenas|buenos días|buenas tardes|buenas noches)[!¡.,\\s]*", pregunta_normalizada):
+    if re.fullmatch(r"\s*(hola|buenas|buenos días|buenas tardes|buenas noches)[!¡.,\s]*", pregunta_normalizada):
         return "Hola, ¿en qué consulta académica puedo ayudarte?"
 
     # Solo contestar el plazo cuando la pregunta trata de revisión de notas.
