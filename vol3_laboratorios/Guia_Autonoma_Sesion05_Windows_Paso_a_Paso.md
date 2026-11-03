@@ -157,6 +157,36 @@ ia-local-integracion-main/
 
 **Paso B3.** Abra `scripts/skills/respuesta-basada-en-evidencias/SKILL.md` con Bloc de notas. Compruebe que explica **cuándo utilizarla**, la búsqueda de fundamento en documentos y la respuesta cuando no hay evidencia. Para agregar otras Skills, cree carpetas independientes dentro de `scripts/skills/` con su `SKILL.md`; **revise su procedencia antes de copiarlas**. El puente actual lee estos archivos Markdown como texto; **no ejecuta** el código de terceros.
 
+### Práctica guiada: descubrir y descargar una Skill desde Skills.sh
+
+En esta práctica utilizaremos una Skill real llamada **PDF Document Analysis** (`pdf`), publicada por `phodal/auto-dev`. Su archivo contiene instrucciones para comprender una solicitud, extraer información y estructurar la respuesta. **No lee archivos PDF automáticamente**: el puente sigue utilizando el texto de `scripts/contexto/normativa_ejemplo.md`. La finalidad es practicar el descubrimiento, la descarga y la incorporación de instrucciones externas.
+
+**Paso S1. Entrar al catálogo.** Abra el navegador y visite [Skills.sh](https://skills.sh/). Localice el buscador de Skills.
+
+**Paso S2. Buscar la Skill.** Escriba `pdf` y busque el resultado **`pdf`**, asociado al repositorio **`phodal/auto-dev`**. Si hay muchos resultados, compruebe el nombre del repositorio antes de seleccionar. Puede verificar la ficha exacta en [Skills.sh — pdf](https://skills.sh/phodal/auto-dev/pdf).
+
+**Paso S3. Reconocer la ficha.** Abra el resultado y observe tres elementos: **INSTALLATION** (comando de instalación para entornos compatibles), **SKILL.md** (contenido de las instrucciones) y **REPOSITORY** (enlace al repositorio original). **En este laboratorio no ejecute el comando de INSTALLATION**: descargaremos manualmente el archivo de instrucciones.
+
+**Paso S4. Abrir GitHub desde Skills.sh.** En el costado derecho de la ficha, bajo **REPOSITORY**, haga clic en **`phodal/auto-dev`**. Debe abrirse el repositorio público de GitHub. Si aparece un error 404, no descargue archivos desde enlaces no verificados: comuníquelo y elija otra Skill.
+
+**Paso S5. Localizar el archivo.** En GitHub, sobre el listado de carpetas, haga clic en **Go to file**. Escriba `SKILL.md` en el campo de búsqueda. Entre los resultados seleccione exactamente **`examples/skills/pdf/SKILL.md`**. No confunda este archivo con los `SKILL.md` de otras carpetas.
+
+**Paso S6. Comprobar el contenido.** Verifique que la página muestra el título **PDF Document Analysis** y las instrucciones de comprender la solicitud, extraer información, presentar resultados estructurados y comprobar que estén completos.
+
+**Paso S7. Descargar el archivo.** En la esquina superior derecha del visor del archivo, haga clic en el **ícono de descarga (flecha hacia abajo), junto a Raw**. GitHub descargará el archivo original. Alternativamente, haga clic en **Raw** y guárdelo con **Ctrl + S**. Compruebe que se llama exactamente **`SKILL.md`**, no `SKILL.md.txt`.
+
+**Paso S8. Guardar la Skill en el proyecto.** En el Explorador de Windows abra la carpeta del proyecto y entre a `scripts/skills/`. Cree una subcarpeta llamada **`pdf`** y coloque allí el archivo descargado. La ruta final debe ser:
+
+```text
+ia-local-integracion-main/
+└── scripts/
+    └── skills/
+        └── pdf/
+            └── SKILL.md
+```
+
+**Comprobación:** el archivo `scripts/skills/pdf/SKILL.md` existe y contiene las instrucciones originales. **No es necesario instalar Node.js, ejecutar `npx` ni modificar Python**. El puente leerá la Skill como texto en las próximas pruebas; no ejecutará herramientas ni extraerá contenido PDF. Para evaluar el efecto de esta Skill de forma aislada, respalde y retire temporalmente de `scripts/skills/` las otras carpetas de Skills y restáurelas al terminar.
+
 **Paso B4.** Abra `scripts/contexto/normativa_ejemplo.md`. Este es el documento de referencia que Python entrega al modelo a través de Ollama. No se consulta la base Knowledge de Open WebUI. El puente incorpora documentos `.md` y `.txt` de esta carpeta, con límites de tamaño didácticos; **no realiza RAG ni búsqueda vectorial**.
 
 **Paso B5.** Abra PowerShell desde la carpeta raíz (en el Explorador, haga clic en la barra de direcciones, escriba `powershell` y presione **Enter**). Verifique:
