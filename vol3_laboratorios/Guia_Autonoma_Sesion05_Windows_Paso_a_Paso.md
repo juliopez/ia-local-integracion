@@ -113,6 +113,12 @@ Este texto es **un ejemplo**: adáptelo al problema real diagnosticado, sin alte
 | 2. Requisitos no especificados | [Resumen] | [Resumen] | [Texto/fuente] | Mejoró / igual / empeoró |
 | 3. Orientación al estudiante | [Resumen] | [Resumen] | [Texto/fuente] | Mejoró / igual / empeoró |
 
+**Prueba de generalización (pregunta nueva).** Sin modificar nuevamente el asistente, ejecute una cuarta consulta que **no haya utilizado durante las mejoras**:
+
+> ¿Es obligatorio presentar un certificado digital para solicitar la revisión de una evaluación?
+
+Contraste la respuesta con `normativa_ejemplo.md`. Compruebe si distingue correctamente entre requisitos exigidos y requisitos que el documento no establece. Registre el resultado. Esta prueba complementa las tres comparaciones anteriores.
+
 **Paso 25.** Escriba dos o tres frases: ¿qué problema se redujo?, ¿qué problema continúa?, ¿qué evidencia respalda su conclusión? **Una única respuesta correcta no demuestra fiabilidad general.**
 
 **Comprobación E:** compara tres casos antes y después con la **misma redacción** y distingue observaciones de suposiciones.
@@ -181,6 +187,22 @@ El modelo genera una respuesta
 
 ---
 
+### ¿Por qué mi asistente sigue cometiendo errores después de optimizarlo?
+
+Aunque **System Prompt**, **Knowledge** y **Skills** estén alineados, sin contradicciones ni instrucciones redundantes, la calidad de las respuestas también depende del **modelo de lenguaje local**.
+
+- **Capacidad del modelo:** distintos modelos tienen diferente habilidad para seguir instrucciones, interpretar documentos, razonar y mantener respuestas coherentes. Un modelo pequeño puede fallar incluso cuando recibe información correcta.
+- **Ventana de contexto:** el modelo necesita recibir la información pertinente dentro del límite de contexto configurado. Un documento existente en la carpeta no garantiza que todo su contenido pueda procesarse eficazmente.
+- **Recursos disponibles:** memoria, procesador y aceleración disponible condicionan qué modelos pueden ejecutarse y con qué velocidad.
+
+**¿Qué hacer si persisten los errores?** Primero compruebe que el texto documental llega al modelo, que las instrucciones no se contradicen y que la Skill corresponde a la pregunta. Si el problema continúa, **considere la capacidad del modelo como una posible limitación**, sin atribuirle automáticamente todas las fallas. Un modelo más grande no garantiza mejores respuestas en todos los casos.
+
+**Para comparar correctamente:** durante las mejoras mantenga el mismo modelo y la misma configuración. Si después decide ensayar otro modelo, realice una **comparación separada**, con las mismas preguntas, y registre calidad, tiempo de respuesta y recursos utilizados. **No es obligatorio cambiar de modelo ni instalar otro para completar esta sesión.**
+
+**Idea clave:** optimizar las instrucciones y el conocimiento mejora las condiciones de respuesta, pero **no elimina las limitaciones del LLM**. El objetivo es obtener resultados comprobables, no prometer respuestas perfectas.
+
+---
+
 ## Bloque 3 — Evaluación y documentación del trabajo (45 minutos)
 
 **Nota:** este bloque sirve para organizar evidencias académicas. **No sustituye una pauta de evaluación institucional**, si su curso dispone de una.
@@ -189,7 +211,7 @@ El modelo genera una respuesta
 
 **Paso 26.** Abra su bitácora en Bloc de notas, Word o el editor utilizado. Cree estos apartados: **Propósito del asistente**, **Preguntas y respuestas iniciales**, **Problemas detectados**, **Dos mejoras**, **Resultados finales** y **Conclusión**.
 
-**Paso 27.** Incorpore las tres preguntas originales y las seis respuestas (tres antes y tres después). Incluya la tabla de comparación del paso 24 y su valoración.
+**Paso 27.** Incorpore las tres preguntas originales y las seis respuestas (tres antes y tres después), además de la cuarta pregunta de generalización y su resultado. Incluya la tabla de comparación del paso 24 y su valoración.
 
 **Paso 28.** Agregue una descripción de cada intervención: nombre del componente, estado anterior, cambio realizado y justificación. **No presente únicamente una captura del botón Guardar:** documente el efecto observado.
 
@@ -233,6 +255,7 @@ El modelo genera una respuesta
 - [ ] Registré **dos problemas** respaldados por evidencia.
 - [ ] Apliqué y guardé **dos mejoras pertinentes**.
 - [ ] Repetí las **mismas tres preguntas** con la configuración final.
+- [ ] Probé una **cuarta pregunta nueva** para evaluar si la mejora se mantiene ante otra consulta.
 - [ ] Comparé las respuestas con la documentación, no solo con su apariencia.
 - [ ] Registré resultados favorables, desfavorables e inciertos.
 - [ ] Distinguí System Prompt, documentos Knowledge/contexto y Skills; comprobé el puente local Python + Ollama sin enviar correos reales.
