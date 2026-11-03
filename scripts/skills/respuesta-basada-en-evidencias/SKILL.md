@@ -1,44 +1,23 @@
 ---
 name: respuesta-basada-en-evidencias
-description: >
-  Utilizar cuando el usuario pregunte por normas, requisitos, plazos o
-  procedimientos institucionales que deban sustentarse en documentos.
-  No reemplaza la recuperación del contexto documental.
+description: Responder consultas académicas usando únicamente información respaldada por los documentos de referencia recibidos.
 ---
 
-# Respuestas fundamentadas en evidencia documental
+# Respuesta basada en evidencias
 
-## Propósito
-
-Responder preguntas institucionales **solo cuando los documentos de referencia efectivamente disponibles** permitan respaldar las afirmaciones. Si el contexto es insuficiente, explicitar el límite. Una Skill no lee por sí misma archivos ni busca en Knowledge.
-
-## Cuándo utilizar
-
-Cuando se soliciten reglas, plazos, requisitos, responsables o procedimientos de una institución. No es una instrucción para inventar requisitos o extrapolar desde conocimientos generales.
+## Cuándo aplicar
+Ante preguntas académicas que requieren información institucional, como fechas, plazos, asignaturas, requisitos, evaluaciones, procedimientos o inscripción.
 
 ## Procedimiento
+1. Identifica la pregunta exacta del usuario.
+2. Busca en los documentos recibidos un dato que responda **esa misma pregunta**, no otra relacionada.
+3. Si existe respaldo explícito, responde brevemente con ese dato y nada más.
+4. Si no existe respaldo, responde: "No dispongo de información suficiente en los documentos proporcionados para responder esa consulta".
+5. No inventes fechas, asignaturas, nombres, correos, requisitos ni estados individuales.
+6. No traslades datos de un procedimiento a otro: un plazo de revisión de notas no es un plazo de matrícula ni una fecha de publicación de notas.
+7. No supongas que puedes acceder a registros personales ni enviar archivos.
 
-1. Identifique la pregunta y las afirmaciones documentales que exige.
-2. Compruebe que existe texto documental relevante **dentro del contexto recibido**. No suponga que un archivo fue consultado solo porque figura asociado en una interfaz.
-3. Localice el fragmento que respalda cada afirmación sustantiva.
-4. Formule la respuesta sin agregar plazos, requisitos ni responsabilidades que no estén sustentados.
-5. Si falta evidencia o el documento no cubre la consulta, responda: «No encuentro antecedentes suficientes en los documentos proporcionados para confirmar esa información».
-6. Identifique el nombre de archivo o sección **solo si consta realmente en el contexto**; no invente números de página, citas ni referencias.
-7. Distinga lo documentado de cualquier recomendación general; ante preguntas estrictamente documentales, omita recomendaciones no solicitadas.
+## Comprobación
+Antes de responder, verifica: ¿la respuesta corresponde exactamente a lo preguntado y cada dato institucional está respaldado por los documentos? Si no, reconoce que falta información.
 
-## Formato sugerido
-
-**Respuesta según los documentos:** [afirmaciones respaldadas o declaración de insuficiencia].
-
-**Fuente disponible:** [nombre del documento y apartado comprobable, o «No identificada»].
-
-**Alcance:** [qué aspecto no se puede determinar, si aplica].
-
-## Comprobación antes de responder
-
-- [ ] Cada norma, plazo y obligación tiene respaldo documental identificable.
-- [ ] No se presenta como obligatoria una condición ausente de las fuentes.
-- [ ] No se atribuye consulta a fuentes que el modelo no recibió.
-- [ ] Si el contexto no permite responder, se reconoce expresamente.
-
-**Alcance técnico:** estas instrucciones son Markdown, no herramientas ejecutables. En Open WebUI debe estar asociada la Knowledge correspondiente y funcionar su recuperación; en el puente Python los documentos se leen de `scripts/contexto/`. No sustituye controles técnicos ni garantiza ausencia de alucinaciones.
+Para saludos simples, responde cordialmente sin aplicar procedimientos documentales.
