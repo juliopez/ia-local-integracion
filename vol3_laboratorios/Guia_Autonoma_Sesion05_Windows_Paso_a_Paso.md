@@ -3,7 +3,7 @@
 
 **Objetivo:** identificar problemas reales en las respuestas de su asistente, aplicar **al menos dos mejoras justificadas**, repetir las mismas preguntas y comparar los resultados con evidencia. No necesita instalar otro modelo.
 
-**Antes de comenzar:** tenga funcionando Ollama y Open WebUI, y conserve el **Asistente Académico de Apoyo** creado en la [sesión 2](Guia_Autonoma_Sesion02_Windows_Paso_a_Paso.md), junto con `normativa_ejemplo.md` y su bitácora. Esta guía permite evaluar **dos rutas diferentes**: (A) el asistente configurado en Open WebUI, o (B) el **puente local Python + Ollama** utilizado en las sesiones 3 y 4. La ruta B se prueba con `--modo prueba`: **no se envían correos ni se modifica Sheets**. Para comparar antes/después, utilice **la misma ruta** durante cada experimento.
+**Antes de comenzar:** utilice el modelo local que haya elegido según su equipo; **no es obligatorio utilizar un modelo específico**. Tenga funcionando Ollama y Open WebUI, y conserve el **Asistente Académico de Apoyo** creado en la [sesión 2](Guia_Autonoma_Sesion02_Windows_Paso_a_Paso.md), junto con `normativa_ejemplo.md` y su bitácora. Esta guía permite evaluar **dos rutas diferentes**: (A) el asistente configurado en Open WebUI, o (B) el **puente local Python + Ollama** utilizado en las sesiones 3 y 4. La ruta B se prueba con `--modo prueba`: **no se envían correos ni se modifica Sheets**. Para comparar antes/después, utilice **la misma ruta** durante cada experimento.
 
 > **Cómo seguir la guía:** ejecute cada paso y compruebe el resultado antes de continuar. Puede apoyarse en los manuales al terminar, pero no necesita cambiar de documento para descubrir los pasos de la práctica. **Use solamente normativa y consultas ficticias.** No pruebe el envío de Gmail ni modifique datos reales.
 
@@ -64,9 +64,9 @@
 
 ### Etapa 2. Elegir y justificar dos mejoras (10 minutos)
 
-**Paso 13.** Revise las tres respuestas y anote **al menos dos problemas concretos**. Ejemplos: inventar un requisito, no reconocer límites, contestar sin consultar la fuente, entregar una respuesta confusa.
+**Paso 13.** Revise las tres respuestas y anote **al menos dos problemas concretos**. Ejemplos: inventar un requisito, no reconocer límites, contestar sin consultar la fuente, entregar una respuesta confusa o contradictoria. **Diagnóstico orientativo:** si el dato no existe en Knowledge, el problema es falta de evidencia; si el dato sí está, compruebe que llega al modelo y que las instrucciones no se contradicen; si la respuesta mezcla procedimientos, revise qué Skills recibe.
 
-**Paso 14.** Para cada problema elija **una intervención**: ajustar el **System Prompt**, revisar la asociación de **Knowledge**, corregir una copia autorizada de la normativa ficticia, mejorar la estructura de respuesta o comprobar la **Skill** asociada. No modifique todo simultáneamente.
+**Paso 14.** Para cada problema elija **una intervención**: ajustar el **System Prompt**, revisar la asociación de **Knowledge**, corregir una copia autorizada de la normativa ficticia, mejorar la estructura de respuesta o comprobar la **Skill** asociada. **Pista importante:** un prompt más largo no siempre es mejor; elimine instrucciones duplicadas antes de añadir otras. Una Skill no sustituye Knowledge, y cargar Skills ajenas a la pregunta puede confundir a algunos modelos. No modifique todo simultáneamente.
 
 **Paso 15.** Complete esta tabla en su bitácora:
 
@@ -79,7 +79,7 @@
 
 ### Etapa 3. Aplicar las mejoras y guardar versiones (25 minutos)
 
-**Paso 16.** **Ruta A:** vuelva a **Espacio de trabajo → Modelos → Asistente Académico de Apoyo → Editar**. **Ruta B:** abra `scripts/system_prompt.txt`, `scripts/contexto/` y `scripts/skills/` en el Explorador. **Antes de cambiar nada**, respalde las instrucciones y registre los documentos, las Skills y cualquier parámetro que vaya a modificar.
+**Paso 16.** **Ruta A:** vuelva a **Espacio de trabajo → Modelos → Asistente Académico de Apoyo → Editar**. **Ruta B:** abra `scripts/system_prompt.txt`, `scripts/contexto/` y `scripts/skills/` en el Explorador. **Antes de cambiar nada**, respalde las instrucciones y registre los documentos, las Skills, el nombre del modelo y cualquier parámetro que vaya a modificar. **Conserve el mismo modelo durante la comparación antes/después**; cambiarlo al mismo tiempo impide atribuir el resultado a la mejora aplicada.
 
 **Paso 17.** Aplique **solo la primera mejora** seleccionada. Ejemplo, si el problema es inventar obligaciones, agregue en el System Prompt una instrucción específica:
 
@@ -93,11 +93,13 @@ Este texto es **un ejemplo**: adáptelo al problema real diagnosticado, sin alte
 
 **Paso 20.** Aplique **la segunda mejora**, relacionada con el otro problema. Por ejemplo, verifique el documento que está asociado en **Conocimiento/Knowledge** y vuelva a guardarlo si la asociación faltaba, o ajuste una instrucción de formato. Si modifica el documento, trabaje sobre una copia autorizada y evite mantener dos versiones contradictorias.
 
-**Paso 21.** **Ruta A:** haga clic en **Guardar y Actualizar**; compruebe que la Skill está disponible y asociada. **Ruta B:** guarde el archivo `SKILL.md` modificado dentro de su carpeta en `scripts/skills/` y vuelva a ejecutar el modo prueba; el puente carga las Skills presentes en cada consulta. Registre exactamente qué modificó. Ver la Skill cargada no prueba por sí solo que el modelo la haya aplicado.
+**Paso 21.** **Ruta A:** haga clic en **Guardar y Actualizar**; compruebe que la Skill está disponible y asociada. **Ruta B:** guarde el archivo `SKILL.md` modificado dentro de su carpeta en `scripts/skills/` y vuelva a ejecutar el modo prueba; el puente **selecciona como máximo una de las Skills reconocidas mediante expresiones de la consulta**, y no carga automáticamente cualquier Skill nueva. Registre exactamente qué modificó. Ver una Skill disponible no prueba que el modelo la haya aplicado.
 
 **Paso 22.** **Ruta A:** inicie un chat nuevo; **Ruta B:** ejecute de nuevo `--modo prueba --pregunta "..."`. Repita **la pregunta original relacionada con la segunda mejora** y guarde el resultado como **Después de mejora 2**. Indique si mejoró, empeoró o no cambió. Si el resultado es peor, documente la posibilidad de revertir el cambio, pero no oculte la evidencia.
 
 **Comprobación D:** tiene dos cambios identificados y guardados, sus configuraciones anteriores y posteriores, y al menos una prueba por intervención. Cuando sea posible, modifique **una variable por vez**.
+
+**Pistas de optimización para cualquier modelo:** (1) formule una regla clara en vez de repetirla en tres lugares; (2) entregue únicamente documentos pertinentes y verifique que el modelo los recibe; (3) use una Skill adecuada al tipo de tarea, no todas por defecto; (4) pida reconocer información ausente, sin inventarla; (5) si la respuesta es confusa, ensaye una instrucción breve de formato. El tamaño del contexto y los resultados pueden variar según el modelo y el equipo. **No se exige cambiar de modelo, instalar herramientas ni modificar Python.**
 
 ### Etapa 4. Comparar resultados con las mismas preguntas (10 minutos)
 
@@ -155,7 +157,7 @@ ia-local-integracion-main/
             └── SKILL.md
 ```
 
-**Paso B3.** Abra `scripts/skills/respuesta-basada-en-evidencias/SKILL.md` con Bloc de notas. Compruebe que explica **cuándo utilizarla**, la búsqueda de fundamento en documentos y la respuesta cuando no hay evidencia. Para agregar otras Skills, cree carpetas independientes dentro de `scripts/skills/` con su `SKILL.md`; **revise su procedencia antes de copiarlas**. El puente actual lee estos archivos Markdown como texto; **no ejecuta** el código de terceros.
+**Paso B3.** Abra `scripts/skills/respuesta-basada-en-evidencias/SKILL.md` con Bloc de notas. Compruebe que explica **cuándo utilizarla**, la búsqueda de fundamento en documentos y la respuesta cuando no hay evidencia. Para almacenar otras Skills, puede crear carpetas independientes con su `SKILL.md`, pero **el selector del puente de referencia solo reconoce las Skills previstas en `seleccionar_skill()`**; copiar otra carpeta no basta para activarla. Revise la procedencia antes de copiar instrucciones externas. El puente lee Markdown como texto; **no ejecuta** el código de terceros.
 
 ### Práctica guiada: descubrir y descargar una Skill desde Skills.sh
 
@@ -185,7 +187,7 @@ ia-local-integracion-main/
             └── SKILL.md
 ```
 
-**Comprobación:** el archivo `scripts/skills/pdf/SKILL.md` existe y contiene las instrucciones originales. **No es necesario instalar Node.js, ejecutar `npx` ni modificar Python**. El puente leerá la Skill como texto en las próximas pruebas; no ejecutará herramientas ni extraerá contenido PDF. Para evaluar el efecto de esta Skill de forma aislada, respalde y retire temporalmente de `scripts/skills/` las otras carpetas de Skills y restáurelas al terminar.
+**Comprobación:** el archivo `scripts/skills/pdf/SKILL.md` existe y contiene las instrucciones originales. **No es necesario instalar Node.js ni ejecutar `npx`**. Esta práctica demuestra cómo localizar y examinar una Skill, **no su ejecución**: el puente actual no selecciona automáticamente `pdf`, aunque exista la carpeta. Para activarla haría falta adaptar explícitamente el selector, lo que **no forma parte de esta sesión**. Tampoco se extrae contenido PDF de manera automática.
 
 **Paso B4.** Abra `scripts/contexto/normativa_ejemplo.md`. Este es el documento de referencia que Python entrega al modelo a través de Ollama. No se consulta la base Knowledge de Open WebUI. El puente incorpora documentos `.md` y `.txt` de esta carpeta, con límites de tamaño didácticos; **no realiza RAG ni búsqueda vectorial**.
 
@@ -216,11 +218,11 @@ Espere el resultado y contrástelo con `normativa_ejemplo.md`. Para las otras pr
 | **Fuente documental** | Knowledge asociada y recuperada | Archivos de `scripts/contexto/` |
 | **Reglas generales** | System Prompt del asistente | `scripts/system_prompt.txt` |
 | **Skills** | Importadas/asociadas en Open WebUI | Subcarpetas `scripts/skills/*/SKILL.md` |
-| **Más de una Skill** | Sí, si la versión permite asociarlas | Sí, el puente actualizado las incorpora como instrucciones |
+| **Más de una Skill** | Sí, si la versión permite asociarlas | Puede almacenar varias, pero el selector actual incorpora como máximo una Skill reconocida por consulta |
 | **Forma de prueba** | Conversaciones nuevas | `--modo prueba --pregunta "…"` |
 | **Riesgo de correo real en esta prueba** | Ninguno | Ninguno en `--modo prueba` |
 
-**Limitación técnica importante:** en la ruta B, el puente **concatena** las instrucciones de todas las Skills locales en el mensaje de sistema; **no dispone de un selector automático de Skills** ni garantiza que el modelo respete todas las instrucciones. En la ruta A, la activación y recuperación efectivas dependen de la versión y configuración de Open WebUI. **Ninguna ruta garantiza respuestas sin alucinaciones**: deben comprobarse contra la fuente.
+**Limitación técnica importante:** en la ruta B, el puente **selecciona como máximo una Skill reconocida** mediante coincidencias de expresiones de la consulta; **no es un clasificador semántico general** y no activa automáticamente Skills descargadas de terceros. La selección no garantiza que el modelo siga correctamente sus instrucciones. En la ruta A, la activación y recuperación efectivas dependen de la versión y configuración de Open WebUI. **Ninguna ruta garantiza respuestas sin alucinaciones**: deben comprobarse contra la fuente.
 
 **Evidencia mínima para la evaluación:** registre el entorno utilizado, los archivos o componentes modificados, tres preguntas idénticas antes/después, las respuestas, la fuente documental comprobada y una conclusión que reconozca resultados y límites. Si no hay mejora, documente también ese resultado; no lo oculte.
 
@@ -248,7 +250,7 @@ Espere el resultado y contrástelo con `normativa_ejemplo.md`. Para las otras pr
 
 **Paso 31.** Compruebe que las afirmaciones sobre reglas académicas están respaldadas por `normativa_ejemplo.md`. Si el asistente inventó requisitos, **consérvelos como evidencia del problema**; no presente la respuesta como si fuera válida.
 
-**Paso 32.** Verifique que distinguió correctamente las dos rutas. **Knowledge, Notes y Skills configurados en Open WebUI no se sincronizan automáticamente con `scripts/`**. El puente actualizado carga sus propios documentos y varias Skills locales, pero no importa la configuración de Open WebUI. No afirme que probó ambas rutas si solo utilizó una.
+**Paso 32.** Verifique que distinguió correctamente las dos rutas. **Knowledge, Notes y Skills configurados en Open WebUI no se sincronizan automáticamente con `scripts/`**. El puente carga sus documentos locales y selecciona como máximo una Skill reconocida por consulta; no importa la configuración de Open WebUI. No afirme que probó ambas rutas si solo utilizó una.
 
 **Paso 33.** Realice una autoevaluación: ¿diagnosticó al menos dos problemas?, ¿justificó dos intervenciones?, ¿repitió las tres preguntas originales?, ¿comparó con documentos?, ¿registró errores y limitaciones?
 
