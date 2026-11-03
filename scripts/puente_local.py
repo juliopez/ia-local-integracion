@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import time
 import argparse
+import re
 from pathlib import Path
 from typing import Any
 
@@ -232,6 +233,50 @@ def consultar_ollama(
 
 
 # ---------------------------------------------------------
+# Validación conservadora antes de entregar respuestas
+# ---------------------------------------------------------
+
+RESPUESTA_SIN_EVIDENCIA = (
+    "No dispongo de información suficiente en los documentos "
+    "proporcionados para responder esa consulta."
+)
+
+
+def validar_respuesta_documental(pregunta: str, respuesta: str) -> str:
+    """Control mínimo verificable. Nunca presenta una respuesta no validada.
+
+    El caso de revisión se resuelve con evidencia textual exacta; para otros
+    hechos institucionales aún no verificables se usa una respuesta segura.
+    No equivale a un verificador semántico universal.
+    """
+    pregunta_normalizada = pregunta.casefold()
+    contexto = cargar_contexto().casefold()
+
+    if re.fullmatch(r"\\s*(hola|buenas|buenos días|buenas tardes|buenas noches)[!¡.,\\s]*", pregunta_normalizada):
+        return "Hola, ¿en qué consulta académica puedo ayudarte?"
+
+    # Solo contestar el plazo cuando la pregunta trata de revisión de notas.
+    consulta_revision = (
+        "revisi" in pregunta_normalizada
+        and any(t in pregunta_normalizada for t in ("evaluaci", "nota", "calificaci"))
+    )
+    respaldo_plazo = (
+        "cinco días hábiles desde la publicación de la nota" in contexto
+        and "coordinación académica" in contexto
+    )
+    if consulta_revision and respaldo_plazo:
+        return (
+            "Tienes cinco días hábiles desde la publicación de la nota "
+            "para solicitar una revisión de tu evaluación. "
+            "La solicitud debe dirigirse a coordinación académica."
+        )
+
+    # En ausencia de comprobación documental inequívoca, no enviar
+    # afirmaciones institucionales generadas libremente por el modelo.
+    return RESPUESTA_SIN_EVIDENCIA
+
+
+# ---------------------------------------------------------
 # Registrar la respuesta en Apps Script
 # ---------------------------------------------------------
 
@@ -308,7 +353,8 @@ def modo_prueba(pregunta: str | None = None) -> None:
     }
     texto = consultar_ollama(system_prompt, construir_mensaje(solicitud))
     print("Respuesta de prueba (sin cambios en Sheets):")
-    print(texto)
+    print("Respuesta validada:")
+    print(validar_respuesta_documental(solicitud["consulta"], texto))
 
 
 def procesar_una_solicitud(system_prompt: str) -> bool:
@@ -320,7 +366,8 @@ def procesar_una_solicitud(system_prompt: str) -> bool:
     print(f"Procesando fila {fila}...")
     mensaje = construir_mensaje(solicitud)
     respuesta_ia = consultar_ollama(system_prompt, mensaje)
-    registrar_respuesta(fila, respuesta_ia)
+    respuesta_validada = validar_respuesta_documental(str(solicitud.get("consulta", "")), respuesta_ia)
+    registrar_respuesta(fila, respuesta_validada)
     print(f"Fila {fila} procesada correctamente.")
     return True
 
