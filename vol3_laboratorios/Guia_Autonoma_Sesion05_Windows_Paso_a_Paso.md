@@ -3,7 +3,7 @@
 
 **Objetivo:** identificar problemas reales en las respuestas de su asistente, aplicar **al menos dos mejoras justificadas**, repetir las mismas preguntas y comparar los resultados con evidencia. No necesita instalar otro modelo.
 
-**Antes de comenzar:** utilice el modelo local elegido para su equipo, con Ollama y el puente Python configurados durante las sesiones 3 y 4. Conserve `scripts/system_prompt.txt`, `scripts/contexto/normativa_ejemplo.md`, las Skills y su bitácora. Open WebUI fue explorado en la sesión 2, pero **no es el entorno de ejecución de esta práctica**. Todas las pruebas se realizan mediante `--modo prueba`: no se envían correos ni se modifica Sheets. Compare siempre con el mismo modelo y la misma configuración, salvo el cambio deliberado que está evaluando.
+**Antes de comenzar:** utilice el modelo local elegido para su equipo, con Ollama y el puente Python configurados durante las sesiones 3 y 4. Conserve `scripts/system_prompt.txt`, `scripts/contexto/normativa_ejemplo.md`, las Skills y su bitácora. En esta sesión trabajará con el puente Python + Ollama; no necesita Open WebUI. Todas las pruebas se realizan mediante `--modo prueba`: no se envían correos ni se modifica Sheets. Compare siempre con el mismo modelo y la misma configuración, salvo el cambio deliberado que está evaluando.
 
 > **Cómo seguir la guía:** ejecute cada paso y compruebe el resultado antes de continuar. Puede apoyarse en los manuales al terminar, pero no necesita cambiar de documento para descubrir los pasos de la práctica. **Use solamente normativa y consultas ficticias.** No pruebe el envío de Gmail ni modifique datos reales.
 
@@ -20,11 +20,11 @@
 | **Alucinación** | El asistente presenta una afirmación inventada o no sustentada como si fuera verdadera. |
 | **Comparación antes/después** | Se repite la **misma pregunta** antes y después de modificar el asistente. |
 
-**Ejemplo:** si `normativa_ejemplo.md` no exige certificados adicionales, responder «debe adjuntar un certificado de matrícula» sería una afirmación no respaldada. Que Open WebUI muestre una fuente **no convierte automáticamente la respuesta en correcta**.
+**Ejemplo:** si `normativa_ejemplo.md` no exige certificados adicionales, responder «debe adjuntar un certificado de matrícula» sería una afirmación no respaldada. Que una respuesta mencione una fuente **no significa que esté respaldada por ella**.
 
 ## Bloque 1 — Comprender qué vamos a evaluar (15 minutos)
 
-**Paso 1.** Confirme que Ollama está ejecutándose y que su modelo local elegido está instalado. No necesita abrir Open WebUI.
+**Paso 1.** Confirme que Ollama está ejecutándose y que su modelo local elegido está instalado.
 
 **Paso 2.** Abra la carpeta del repositorio en el Explorador de archivos de Windows y localice `scripts/puente_local.py`.
 
@@ -34,7 +34,7 @@
 
 **Paso 5.** Abra su bitácora de trabajo y anote el objetivo: «Evaluar el asistente con tres preguntas, implementar dos mejoras y comparar las respuestas antes y después».
 
-**Comprobación A:** puede abrir el asistente y el texto normativo. Comprende que una respuesta bien redactada puede contener información inventada.
+**Comprobación A:** puede ejecutar el puente local y abrir el texto normativo. Comprende que una respuesta bien redactada puede contener información inventada.
 
 ## Bloque 2 — Diagnosticar y mejorar el asistente (60 minutos)
 
@@ -66,7 +66,7 @@
 
 **Paso 13.** Revise las tres respuestas y anote **al menos dos problemas concretos**. Ejemplos: inventar un requisito, no reconocer límites, contestar sin consultar la fuente, entregar una respuesta confusa o contradictoria. **Diagnóstico orientativo:** si el dato no existe en Knowledge, el problema es falta de evidencia; si el dato sí está, compruebe que llega al modelo y que las instrucciones no se contradicen; si la respuesta mezcla procedimientos, revise qué Skills recibe.
 
-**Paso 14.** Para cada problema elija **una intervención**: ajustar el **System Prompt**, revisar la asociación de **Knowledge**, corregir una copia autorizada de la normativa ficticia, mejorar la estructura de respuesta o comprobar la **Skill** asociada. **Pista importante:** un prompt más largo no siempre es mejor; elimine instrucciones duplicadas antes de añadir otras. Una Skill no sustituye Knowledge, y cargar Skills ajenas a la pregunta puede confundir a algunos modelos. No modifique todo simultáneamente.
+**Paso 14.** Para cada problema elija **una intervención**: ajustar el **System Prompt**, verificar los archivos de **Knowledge** en `scripts/contexto/`, corregir una copia autorizada de la normativa ficticia, mejorar la estructura de respuesta o comprobar la **Skill** asociada. **Pista importante:** un prompt más largo no siempre es mejor; elimine instrucciones duplicadas antes de añadir otras. Una Skill no sustituye Knowledge, y cargar Skills ajenas a la pregunta puede confundir a algunos modelos. No modifique todo simultáneamente.
 
 **Paso 15.** Complete esta tabla en su bitácora:
 
@@ -87,13 +87,13 @@
 
 Este texto es **un ejemplo**: adáptelo al problema real diagnosticado, sin alterar la normativa original.
 
-**Paso 18.** Guarde `scripts/system_prompt.txt` con **Ctrl + S** y compruebe que el cambio se conservó. No publique datos privados ni URLs de Apps Script.
+**Paso 18.** Guarde el archivo modificado con **Ctrl + S** y compruebe que el cambio se conservó. No publique datos privados ni URLs de Apps Script.
 
 **Paso 19.** Repita `--modo prueba --pregunta "…"` con la misma pregunta literal del caso elegido. Guarde el resultado como **Después de mejora 1** y contrástelo con el documento.
 
-**Paso 20.** Aplique **la segunda mejora**, relacionada con el otro problema. Por ejemplo, verifique el documento que está asociado en **Conocimiento/Knowledge** y vuelva a guardarlo si la asociación faltaba, o ajuste una instrucción de formato. Si modifica el documento, trabaje sobre una copia autorizada y evite mantener dos versiones contradictorias.
+**Paso 20.** Aplique **la segunda mejora**, relacionada con el otro problema. Por ejemplo, compruebe que el documento pertinente está guardado como `.md` o `.txt` en `scripts/contexto/` y que su contenido es legible, o ajuste una instrucción de formato. Si modifica el documento, trabaje sobre una copia autorizada y evite mantener dos versiones contradictorias.
 
-**Paso 21.** Guarde el `SKILL.md` o documento modificado y vuelva a ejecutar el modo prueba. El puente selecciona como máximo una Skill reconocida mediante expresiones de la consulta; añadir una carpeta nueva no la activa automáticamente. Registre exactamente qué cambió.
+**Paso 21.** Guarde el archivo que haya modificado (System Prompt, documento de conocimiento o `SKILL.md`) y vuelva a ejecutar el modo prueba. Si ha modificado una Skill, compruebe que se utiliza para esa pregunta: el puente solo activa las Skills que tiene configuradas. Registre exactamente qué cambió.
 
 **Paso 22.** Repita la pregunta original relacionada con la segunda mejora mediante `--modo prueba --pregunta "…"`. Guarde el resultado como **Después de mejora 2** e indique si mejoró, empeoró o no cambió. Si empeora, registre la evidencia y considere revertir el cambio.
 
@@ -125,15 +125,15 @@ Contraste la respuesta con `normativa_ejemplo.md`. Compruebe si distingue correc
 
 ## Taller guiado — System Prompt, Skills y Knowledge en el puente local
 
-**Propósito.** Reconocer tres componentes que influyen en la respuesta: **System Prompt** (reglas generales), **Knowledge** (información documental) y **Skill** (procedimiento aplicable a la consulta). En esta sesión se utiliza exclusivamente **Python + Ollama**. Open WebUI fue presentado en la sesión 2, pero no se requiere aquí.
+**Propósito.** Reconocer tres componentes que influyen en la respuesta: **System Prompt** (reglas generales), **Knowledge** (información documental) y **Skill** (procedimiento aplicable a la consulta).
 
 ### Reconocer los archivos utilizados
 
-**Paso B1.** Abra la carpeta `scripts/` del repositorio. Identifique `puente_local.py`, `system_prompt.txt`, `contexto/normativa_ejemplo.md` y las subcarpetas de `skills/`. El puente consulta directamente la API de Ollama y no recupera automáticamente configuraciones guardadas en Open WebUI.
+**Paso B1.** Abra la carpeta `scripts/` del repositorio. Identifique `puente_local.py`, `system_prompt.txt`, `contexto/normativa_ejemplo.md` y las subcarpetas de `skills/`. Estos son los componentes locales que utilizará durante la práctica.
 
 **Paso B2.** Abra las Skills `respuesta-basada-en-evidencias/SKILL.md` y `retroalimentacion-formativa/SKILL.md`. Compare sus propósitos: una orienta respuestas sobre normas y requisitos documentados; la otra sirve para retroalimentar un trabajo proporcionado. **No se necesitan ambas para la misma pregunta.**
 
-**Paso B3.** El puente utiliza `seleccionar_skill()` para elegir como máximo una Skill reconocida mediante expresiones presentes en la consulta. Este selector es sencillo y no equivale a comprender semánticamente todas las preguntas. Copiar un `SKILL.md` adicional no garantiza que el puente lo active.
+**Paso B3.** El puente selecciona como máximo una Skill configurada según las expresiones de la pregunta. No todas las Skills se utilizan a la vez. Copiar un `SKILL.md` adicional no significa que se active automáticamente.
 
 **Paso B4.** Compruebe que `normativa_ejemplo.md` contiene las reglas necesarias para responder. El puente lee archivos `.md` y `.txt` de `scripts/contexto/`; no utiliza RAG ni búsqueda vectorial.
 
@@ -160,10 +160,6 @@ El modelo genera una respuesta
 **¿Por qué no incorporamos esos formatos directamente?** Porque el objetivo de esta práctica es comprender cómo un asistente utiliza conocimiento externo sin agregar todavía la complejidad de procesar diferentes formatos documentales. El puente podría ampliarse posteriormente con bibliotecas de Python para extraer texto de PDF y Word, sin necesidad de cambiar el modelo.
 
 **Importante:** esta es una decisión de implementación del **puente Python del taller**, no una incapacidad general de Ollama o de los modelos de lenguaje. Convertir un documento tampoco garantiza respuestas correctas: compruebe que el texto esté completo, sea legible y que las afirmaciones del asistente estén respaldadas por él.
-
-### Pregunta frecuente: ¿puedo utilizar PDF o Word como Knowledge?
-
-**Sí, como fuente de información, pero no directamente en este puente.** El puente del taller lee `.md` y `.txt`; colocar un archivo `.pdf`, `.docx` o `.doc` en `scripts/contexto/` no hará que el modelo lo lea.
 
 **Paso B5.** Si desea utilizar información de un PDF o documento Word, abra el archivo con una herramienta apropiada, extraiga o copie su contenido textual y guarde una **copia autorizada** como `.txt` o `.md` dentro de `scripts/contexto/`. Revise encabezados, tablas, números y errores de conversión. Un PDF escaneado puede requerir OCR; copiar un archivo no equivale a extraer su texto.
 
@@ -205,8 +201,6 @@ Aunque **System Prompt**, **Knowledge** y **Skills** estén alineados, sin contr
 
 ## Bloque 3 — Evaluación y documentación del trabajo (45 minutos)
 
-**Nota:** este bloque sirve para organizar evidencias académicas. **No sustituye una pauta de evaluación institucional**, si su curso dispone de una.
-
 ### Etapa 5. Preparar evidencias (20 minutos)
 
 **Paso 26.** Abra su bitácora en Bloc de notas, Word o el editor utilizado. Cree estos apartados: **Propósito del asistente**, **Preguntas y respuestas iniciales**, **Problemas detectados**, **Dos mejoras**, **Resultados finales** y **Conclusión**.
@@ -225,11 +219,11 @@ Aunque **System Prompt**, **Knowledge** y **Skills** estén alineados, sin contr
 
 **Paso 31.** Compruebe que las afirmaciones sobre reglas académicas están respaldadas por `normativa_ejemplo.md`. Si el asistente inventó requisitos, **consérvelos como evidencia del problema**; no presente la respuesta como si fuera válida.
 
-**Paso 32.** Verifique que las pruebas se realizaron mediante el puente Python + Ollama y que los archivos locales utilizados corresponden a la configuración evaluada. Knowledge y Skills configurados previamente en Open WebUI no se sincronizan automáticamente con `scripts/`. No afirme que probó ambas rutas si solo utilizó una.
+**Paso 32.** Verifique que las pruebas se realizaron con el puente Python + Ollama y que utilizó los mismos archivos locales y la misma configuración del modelo durante la comparación.
 
 **Paso 33.** Realice una autoevaluación: ¿diagnosticó al menos dos problemas?, ¿justificó dos intervenciones?, ¿repitió las tres preguntas originales?, ¿comparó con documentos?, ¿registró errores y limitaciones?
 
-**Paso 34.** Guarde el documento y las capturas en la carpeta de trabajo. Si el docente solicita entrega, utilice el mecanismo y formato oficialmente indicados; esta guía **no establece una nueva fecha, rúbrica ni plataforma de evaluación**.
+**Paso 34.** Guarde el documento y las capturas en su carpeta de trabajo. Si corresponde entregar el trabajo, siga las indicaciones de su docente.
 
 **Comprobación final:** dispone de evidencia para explicar no solo qué cambió, sino **si realmente mejoró y con qué límites**.
 
@@ -249,7 +243,7 @@ Aunque **System Prompt**, **Knowledge** y **Skills** estén alineados, sin contr
 
 ## 1. Comprobación final de la sesión
 
-- [ ] Seleccioné mi asistente original, no únicamente el modelo base.
+- [ ] Utilicé el puente Python + Ollama y el modelo local elegido.
 - [ ] Consulté el texto de la normativa ficticia.
 - [ ] Conservé las tres preguntas y sus tres respuestas iniciales.
 - [ ] Registré **dos problemas** respaldados por evidencia.
@@ -258,7 +252,7 @@ Aunque **System Prompt**, **Knowledge** y **Skills** estén alineados, sin contr
 - [ ] Probé una **cuarta pregunta nueva** para evaluar si la mejora se mantiene ante otra consulta.
 - [ ] Comparé las respuestas con la documentación, no solo con su apariencia.
 - [ ] Registré resultados favorables, desfavorables e inciertos.
-- [ ] Distinguí System Prompt, documentos Knowledge/contexto y Skills; comprobé el puente local Python + Ollama sin enviar correos reales.
+- [ ] Distinguí System Prompt, documentos Knowledge/contexto y Skills; comprobé las respuestas sin enviar correos reales.
 - [ ] Documenté los cambios y la conclusión crítica.
 
 ## 2. Material complementario (opcional)
@@ -270,8 +264,8 @@ Estos recursos permiten ampliar el trabajo, pero no son necesarios para completa
 - [Manual Técnico — Capítulo 10](../vol2_manual_tecnico/cap10_mt.md): evaluación.
 - [Normativa ficticia ampliada](../scripts/contexto/normativa_ejemplo.md) y [versión breve original](../scripts/referencias/normativa_ejemplo_version_breve.md): actividad opcional de comparación documental.
 
-## 3. Cierre y siguiente sesión
+## 3. Cierre de la sesión
 
 **Sesión 5 completada:** el resultado es una evaluación argumentada del desempeño, con mejoras documentadas y sus limitaciones, no la afirmación de que el asistente esté libre de errores.
 
-**Continuación opcional:** consulte el [Proyecto Integrador](../vol4_proyecto_integrador/), el [Laboratorio 5](Lab05.md) y el [Laboratorio 6](Lab06.md) para consolidar y presentar la solución.
+**Para profundizar (opcional):** consulte el [Proyecto Integrador](../vol4_proyecto_integrador/), el [Laboratorio 5](Lab05.md) y el [Laboratorio 6](Lab06.md) para consolidar y presentar la solución.
