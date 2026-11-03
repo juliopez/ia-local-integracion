@@ -1,5 +1,5 @@
 # Sesión 5 — Mejorar y evaluar un asistente de IA local
-## Guía autónoma paso a paso · Windows 10/11 · 120 minutos
+## Guía autónoma paso a paso · Windows 10/11
 
 **Objetivo:** identificar problemas reales en las respuestas de su asistente, aplicar **al menos dos mejoras justificadas**, repetir las mismas preguntas y comparar los resultados con evidencia. No necesita instalar otro modelo.
 
@@ -22,7 +22,7 @@
 
 **Ejemplo:** si `normativa_ejemplo.md` no exige certificados adicionales, responder «debe adjuntar un certificado de matrícula» sería una afirmación no respaldada. Que una respuesta mencione una fuente **no significa que esté respaldada por ella**.
 
-## Bloque 1 — Comprender qué vamos a evaluar (15 minutos)
+## Bloque 1 — Comprender qué vamos a evaluar
 
 **Paso 1.** Confirme que Ollama está ejecutándose y que su modelo local elegido está instalado.
 
@@ -36,94 +36,7 @@
 
 **Comprobación A:** puede ejecutar el puente local y abrir el texto normativo. Comprende que una respuesta bien redactada puede contener información inventada.
 
-## Bloque 2 — Diagnosticar y mejorar el asistente (60 minutos)
-
-### Etapa 1. Registrar tres respuestas iniciales (15 minutos)
-
-**Paso 6.** En PowerShell, desde la raíz del repositorio, ejecute para cada pregunta `py scripts/puente_local.py --modo prueba --pregunta "TEXTO DE LA PREGUNTA"`, sustituyendo el texto entre comillas por las preguntas de los pasos 7, 9 y 11. En Ubuntu use `python3` en lugar de `py`. El modo prueba consulta Ollama y archivos locales; no modifica Sheets ni envía Gmail.
-
-**Paso 7.** Copie y envíe esta pregunta, basada en información del ejercicio:
-
-> Según la normativa de ejemplo, ¿cuántos días hábiles tengo para solicitar la revisión de una evaluación y a quién debo dirigir la solicitud?
-
-**Paso 8.** Guarde la respuesta íntegra en su bitácora bajo el título **Caso 1 — Antes**. Compare con la normativa ficticia; la referencia utilizada en el taller establece **cinco días hábiles desde la publicación de la nota** y **coordinación académica**. Si hay una cita o una indicación de fuente, ábrala y compruebe que respalda el contenido.
-
-**Paso 9.** Ejecute otra vez el modo prueba con la siguiente pregunta:
-
-> ¿Qué documentos adicionales son obligatorios para solicitar la revisión de una evaluación?
-
-**Paso 10.** Copie la respuesta como **Caso 2 — Antes**. Compruebe si afirma la existencia de certificados, aranceles o anexos que **no aparecen** en el documento. En ese caso, anote «requisito no respaldado», no «respuesta correcta».
-
-**Paso 11.** Ejecute el modo prueba con la tercera pregunta:
-
-> Soy estudiante y no entiendo cómo solicitar la revisión de una evaluación. ¿Puedes orientarme con pasos claros, distinguiendo los requisitos documentados de las recomendaciones generales?
-
-**Paso 12.** Guarde la respuesta como **Caso 3 — Antes**. Observe si el asistente diferencia reglas documentadas, consejos generales e información que no conoce.
-
-**Comprobación B:** tiene **tres preguntas literales**, tres respuestas originales y notas sobre exactitud, claridad y respaldo documental. Conserve exactamente las mismas preguntas para el resto de la práctica.
-
-### Etapa 2. Elegir y justificar dos mejoras (10 minutos)
-
-**Paso 13.** Revise las tres respuestas y anote **al menos dos problemas concretos**. Ejemplos: inventar un requisito, no reconocer límites, contestar sin consultar la fuente, entregar una respuesta confusa o contradictoria. **Diagnóstico orientativo:** si el dato no existe en Knowledge, el problema es falta de evidencia; si el dato sí está, compruebe que llega al modelo y que las instrucciones no se contradicen; si la respuesta mezcla procedimientos, revise qué Skills recibe.
-
-**Paso 14.** Para cada problema elija **una intervención**: ajustar el **System Prompt**, verificar los archivos de **Knowledge** en `scripts/contexto/`, corregir una copia autorizada de la normativa ficticia, mejorar la estructura de respuesta o comprobar la **Skill** asociada. **Pista importante:** un prompt más largo no siempre es mejor; elimine instrucciones duplicadas antes de añadir otras. Una Skill no sustituye Knowledge, y cargar Skills ajenas a la pregunta puede confundir a algunos modelos. No modifique todo simultáneamente.
-
-**Paso 15.** Complete esta tabla en su bitácora:
-
-| Problema observado | Componente que modificaré | Cambio previsto | Resultado que espero |
-|---|---|---|---|
-| [Escriba un problema real] | [System Prompt/Knowledge/etc.] | [Una modificación concreta] | [Un resultado comprobable] |
-| [Escriba otro problema] | [Componente] | [Segunda modificación] | [Un resultado comprobable] |
-
-**Comprobación C:** puede explicar por qué cada cambio está relacionado con una dificultad observada. No se exige cambiar una Skill solo para completar una lista.
-
-### Etapa 3. Aplicar las mejoras y guardar versiones (25 minutos)
-
-**Paso 16.** Abra `scripts/system_prompt.txt`, `scripts/contexto/` y `scripts/skills/` en el Explorador. Antes de modificar archivos, guarde una copia de las instrucciones y registre el nombre del modelo, los documentos y la Skill implicada. No modifique el código Python para esta actividad.
-
-**Paso 17.** Aplique **solo la primera mejora** seleccionada. Ejemplo, si el problema es inventar obligaciones, agregue en el System Prompt una instrucción específica:
-
-> Cuando el usuario pregunte por un requisito obligatorio, menciona solamente los que estén expresamente indicados en el documento disponible. Si no hay información suficiente, dilo claramente y no inventes requisitos.
-
-Este texto es **un ejemplo**: adáptelo al problema real diagnosticado, sin alterar la normativa original.
-
-**Paso 18.** Guarde el archivo modificado con **Ctrl + S** y compruebe que el cambio se conservó. No publique datos privados ni URLs de Apps Script.
-
-**Paso 19.** Repita `--modo prueba --pregunta "…"` con la misma pregunta literal del caso elegido. Guarde el resultado como **Después de mejora 1** y contrástelo con el documento.
-
-**Paso 20.** Aplique **la segunda mejora**, relacionada con el otro problema. Por ejemplo, compruebe que el documento pertinente está guardado como `.md` o `.txt` en `scripts/contexto/` y que su contenido es legible, o ajuste una instrucción de formato. Si modifica el documento, trabaje sobre una copia autorizada y evite mantener dos versiones contradictorias.
-
-**Paso 21.** Guarde el archivo que haya modificado (System Prompt, documento de conocimiento o `SKILL.md`) y vuelva a ejecutar el modo prueba. Si ha modificado una Skill, compruebe que se utiliza para esa pregunta: el puente solo activa las Skills que tiene configuradas. Registre exactamente qué cambió.
-
-**Paso 22.** Repita la pregunta original relacionada con la segunda mejora mediante `--modo prueba --pregunta "…"`. Guarde el resultado como **Después de mejora 2** e indique si mejoró, empeoró o no cambió. Si empeora, registre la evidencia y considere revertir el cambio.
-
-**Comprobación D:** tiene dos cambios identificados y guardados, sus configuraciones anteriores y posteriores, y al menos una prueba por intervención. Cuando sea posible, modifique **una variable por vez**.
-
-**Pistas de optimización para cualquier modelo:** (1) formule una regla clara en vez de repetirla en tres lugares; (2) entregue únicamente documentos pertinentes y verifique que el modelo los recibe; (3) use una Skill adecuada al tipo de tarea, no todas por defecto; (4) pida reconocer información ausente, sin inventarla; (5) si la respuesta es confusa, ensaye una instrucción breve de formato. El tamaño del contexto y los resultados pueden variar según el modelo y el equipo. **No se exige cambiar de modelo, instalar herramientas ni modificar Python.**
-
-### Etapa 4. Comparar resultados con las mismas preguntas (10 minutos)
-
-**Paso 23.** Con la configuración final, ejecute el modo prueba tres veces y repita exactamente las preguntas de los pasos **7, 9 y 11**, sin añadir pistas ni respuestas esperadas.
-
-**Paso 24.** Copie las tres respuestas finales y complete:
-
-| Caso | Resultado antes | Resultado después | Evidencia que lo respalda | Evaluación |
-|---|---|---|---|---|
-| 1. Plazo y responsable | [Resumen] | [Resumen] | [Texto/fuente] | Mejoró / igual / empeoró |
-| 2. Requisitos no especificados | [Resumen] | [Resumen] | [Texto/fuente] | Mejoró / igual / empeoró |
-| 3. Orientación al estudiante | [Resumen] | [Resumen] | [Texto/fuente] | Mejoró / igual / empeoró |
-
-**Prueba de generalización (pregunta nueva).** Sin modificar nuevamente el asistente, ejecute una cuarta consulta que **no haya utilizado durante las mejoras**:
-
-> ¿Es obligatorio presentar un certificado digital para solicitar la revisión de una evaluación?
-
-Contraste la respuesta con `normativa_ejemplo.md`. Compruebe si distingue correctamente entre requisitos exigidos y requisitos que el documento no establece. Registre el resultado. Esta prueba complementa las tres comparaciones anteriores.
-
-**Paso 25.** Escriba dos o tres frases: ¿qué problema se redujo?, ¿qué problema continúa?, ¿qué evidencia respalda su conclusión? **Una única respuesta correcta no demuestra fiabilidad general.**
-
-**Comprobación E:** compara tres casos antes y después con la **misma redacción** y distingue observaciones de suposiciones.
-
-## Taller guiado — System Prompt, Skills y Knowledge en el puente local
+## Preparación conceptual y práctica — System Prompt, Skills y Knowledge
 
 **Propósito.** Reconocer tres componentes que influyen en la respuesta: **System Prompt** (reglas generales), **Knowledge** (información documental) y **Skill** (procedimiento aplicable a la consulta).
 
@@ -135,9 +48,9 @@ Contraste la respuesta con `normativa_ejemplo.md`. Compruebe si distingue correc
 
 **Paso B3.** El puente selecciona como máximo una Skill configurada según las expresiones de la pregunta. No todas las Skills se utilizan a la vez. Copiar un `SKILL.md` adicional no significa que se active automáticamente.
 
-### Práctica guiada: descubrir y descargar una Skill desde Skills.sh (exploración)
+### Práctica guiada: descubrir y descargar una Skill desde Skills.sh
 
-En esta práctica utilizaremos una Skill real llamada **PDF Document Analysis** (`pdf`), publicada por `phodal/auto-dev`. Su archivo contiene instrucciones para comprender una solicitud, extraer información y estructurar la respuesta. **No lee archivos PDF automáticamente**: el puente sigue utilizando el texto de `scripts/contexto/normativa_ejemplo.md`. La finalidad es practicar el descubrimiento, la descarga y la incorporación de instrucciones externas.
+En esta práctica utilizaremos una Skill real llamada **PDF Document Analysis** (`pdf`), publicada por `phodal/auto-dev`. Su archivo contiene instrucciones para comprender una solicitud, extraer información y estructurar la respuesta. **No lee archivos PDF automáticamente**: el puente sigue utilizando el texto de `scripts/contexto/normativa_ejemplo.md`. La finalidad es practicar el descubrimiento, la descarga y el examen de instrucciones externas, sin activarlas en el puente.
 
 **Paso S1. Entrar al catálogo.** Abra el navegador y visite [Skills.sh](https://skills.sh/). Localice el buscador de Skills.
 
@@ -166,7 +79,7 @@ ia-local-integracion-main/
 **Comprobación:** el archivo `scripts/skills/pdf/SKILL.md` existe y contiene las instrucciones originales. **No es necesario instalar Node.js ni ejecutar `npx`**. Esta práctica demuestra cómo localizar y examinar una Skill, **no su ejecución**: el puente actual no selecciona automáticamente `pdf`, aunque exista la carpeta. Para activarla haría falta adaptar explícitamente el selector, lo que **no forma parte de esta sesión**. Tampoco se extrae contenido PDF de manera automática.
 
 
-**Paso B4.** Compruebe que `normativa_ejemplo.md` contiene las reglas necesarias para responder. El puente lee archivos `.md` y `.txt` de `scripts/contexto/`; no utiliza RAG ni búsqueda vectorial.
+**Paso B4.** Compruebe que `normativa_ejemplo.md` contiene las reglas necesarias para responder. El puente lee archivos `.md` y `.txt` de `scripts/contexto/`; no utiliza RAG ni búsqueda vectorial. **Límites de esta versión:** hasta **12.000 caracteres por documento** y **24.000 caracteres en total**. Si supera estos límites, el programa informa un error; seleccione y sintetice el contenido pertinente, sin eliminar condiciones importantes.
 
 ### ¿Por qué utilizamos archivos TXT o Markdown para Knowledge?
 
@@ -230,9 +143,96 @@ Aunque **System Prompt**, **Knowledge** y **Skills** estén alineados, sin contr
 
 ---
 
-## Bloque 3 — Evaluación y documentación del trabajo (45 minutos)
+## Bloque 2 — Diagnosticar y mejorar el asistente
 
-### Etapa 5. Preparar evidencias (20 minutos)
+### Etapa 1. Registrar tres respuestas iniciales
+
+**Paso 6.** En PowerShell, desde la raíz del repositorio, ejecute para cada pregunta `py scripts/puente_local.py --modo prueba --pregunta "TEXTO DE LA PREGUNTA"`, sustituyendo el texto entre comillas por las preguntas de los pasos 7, 9 y 11. En Ubuntu use `python3` en lugar de `py`. El modo prueba consulta Ollama y archivos locales; no modifica Sheets ni envía Gmail.
+
+**Paso 7.** Copie y envíe esta pregunta, basada en información del ejercicio:
+
+> Según la normativa de ejemplo, ¿cuántos días hábiles tengo para solicitar la revisión de una evaluación y a quién debo dirigir la solicitud?
+
+**Paso 8.** Guarde la respuesta íntegra en su bitácora bajo el título **Caso 1 — Antes**. Compare con la normativa ficticia; la referencia utilizada en el taller establece **cinco días hábiles desde la publicación de la nota** y **coordinación académica**. Si hay una cita o una indicación de fuente, ábrala y compruebe que respalda el contenido.
+
+**Paso 9.** Ejecute otra vez el modo prueba con la siguiente pregunta:
+
+> ¿Qué documentos adicionales son obligatorios para solicitar la revisión de una evaluación?
+
+**Paso 10.** Copie la respuesta como **Caso 2 — Antes**. Compruebe si afirma la existencia de certificados, aranceles o anexos que **no aparecen** en el documento. En ese caso, anote «requisito no respaldado», no «respuesta correcta».
+
+**Paso 11.** Ejecute el modo prueba con la tercera pregunta:
+
+> Soy estudiante y no entiendo cómo solicitar la revisión de una evaluación. ¿Puedes orientarme con pasos claros, distinguiendo los requisitos documentados de las recomendaciones generales?
+
+**Paso 12.** Guarde la respuesta como **Caso 3 — Antes**. Observe si el asistente diferencia reglas documentadas, consejos generales e información que no conoce.
+
+**Comprobación B:** tiene **tres preguntas literales**, tres respuestas originales y notas sobre exactitud, claridad y respaldo documental. Conserve exactamente las mismas preguntas para el resto de la práctica.
+
+### Etapa 2. Elegir y justificar dos mejoras
+
+**Paso 13.** Revise las tres respuestas y anote **al menos dos problemas concretos**. Ejemplos: inventar un requisito, no reconocer límites, contestar sin consultar la fuente, entregar una respuesta confusa o contradictoria. **Diagnóstico orientativo:** si el dato no existe en Knowledge, el problema es falta de evidencia; si el dato sí está, compruebe que llega al modelo y que las instrucciones no se contradicen; si la respuesta mezcla procedimientos, revise qué Skills recibe.
+
+**Paso 14.** Para cada problema elija **una intervención**: ajustar el **System Prompt**, verificar los archivos de **Knowledge** en `scripts/contexto/`, corregir una copia autorizada de la normativa ficticia, mejorar la estructura de respuesta o comprobar la **Skill** asociada. **Pista importante:** un prompt más largo no siempre es mejor; elimine instrucciones duplicadas antes de añadir otras. Una Skill no sustituye Knowledge, y cargar Skills ajenas a la pregunta puede confundir a algunos modelos. No modifique todo simultáneamente.
+
+**Paso 15.** Complete esta tabla en su bitácora:
+
+| Problema observado | Componente que modificaré | Cambio previsto | Resultado que espero |
+|---|---|---|---|
+| [Escriba un problema real] | [System Prompt/Knowledge/etc.] | [Una modificación concreta] | [Un resultado comprobable] |
+| [Escriba otro problema] | [Componente] | [Segunda modificación] | [Un resultado comprobable] |
+
+**Comprobación C:** puede explicar por qué cada cambio está relacionado con una dificultad observada. No se exige cambiar una Skill solo para completar una lista.
+
+### Etapa 3. Aplicar las mejoras y guardar versiones
+
+**Paso 16.** Abra `scripts/system_prompt.txt`, `scripts/contexto/` y `scripts/skills/` en el Explorador. Antes de modificar archivos, guarde una copia de las instrucciones y registre el nombre del modelo, los documentos y la Skill implicada. No modifique el código Python para esta actividad.
+
+**Paso 17.** Aplique **solo la primera mejora** seleccionada. Ejemplo, si el problema es inventar obligaciones, agregue en el System Prompt una instrucción específica:
+
+> Cuando el usuario pregunte por un requisito obligatorio, menciona solamente los que estén expresamente indicados en el documento disponible. Si no hay información suficiente, dilo claramente y no inventes requisitos.
+
+Este texto es **un ejemplo**: adáptelo al problema real diagnosticado, sin alterar la normativa original.
+
+**Paso 18.** Guarde el archivo modificado con **Ctrl + S** y compruebe que el cambio se conservó. No publique datos privados ni URLs de Apps Script.
+
+**Paso 19.** Repita `--modo prueba --pregunta "…"` con la misma pregunta literal del caso elegido. Guarde el resultado como **Después de mejora 1** y contrástelo con el documento.
+
+**Paso 20.** Aplique **la segunda mejora**, relacionada con el otro problema. Por ejemplo, compruebe que el documento pertinente está guardado como `.md` o `.txt` en `scripts/contexto/` y que su contenido es legible, o ajuste una instrucción de formato. Si modifica el documento, trabaje sobre una copia autorizada y evite mantener dos versiones contradictorias.
+
+**Paso 21.** Guarde el archivo que haya modificado (System Prompt, documento de conocimiento o `SKILL.md`) y vuelva a ejecutar el modo prueba. Si ha modificado una Skill, compruebe que se utiliza para esa pregunta: el puente solo activa las Skills que tiene configuradas. Registre exactamente qué cambió.
+
+**Paso 22.** Repita la pregunta original relacionada con la segunda mejora mediante `--modo prueba --pregunta "…"`. Guarde el resultado como **Después de mejora 2** e indique si mejoró, empeoró o no cambió. Si empeora, registre la evidencia y considere revertir el cambio.
+
+**Comprobación D:** tiene dos cambios identificados y guardados, sus configuraciones anteriores y posteriores, y al menos una prueba por intervención. Cuando sea posible, modifique **una variable por vez**.
+
+**Pistas de optimización para cualquier modelo:** (1) formule una regla clara en vez de repetirla en tres lugares; (2) entregue únicamente documentos pertinentes y verifique que el modelo los recibe; (3) use una Skill adecuada al tipo de tarea, no todas por defecto; (4) pida reconocer información ausente, sin inventarla; (5) si la respuesta es confusa, ensaye una instrucción breve de formato. El tamaño del contexto y los resultados pueden variar según el modelo y el equipo. **No se exige cambiar de modelo, instalar herramientas ni modificar Python.**
+
+### Etapa 4. Comparar resultados con las mismas preguntas
+
+**Paso 23.** Con la configuración final, ejecute el modo prueba tres veces y repita exactamente las preguntas de los pasos **7, 9 y 11**, sin añadir pistas ni respuestas esperadas.
+
+**Paso 24.** Copie las tres respuestas finales y complete:
+
+| Caso | Resultado antes | Resultado después | Evidencia que lo respalda | Evaluación |
+|---|---|---|---|---|
+| 1. Plazo y responsable | [Resumen] | [Resumen] | [Texto/fuente] | Mejoró / igual / empeoró |
+| 2. Requisitos no especificados | [Resumen] | [Resumen] | [Texto/fuente] | Mejoró / igual / empeoró |
+| 3. Orientación al estudiante | [Resumen] | [Resumen] | [Texto/fuente] | Mejoró / igual / empeoró |
+
+**Prueba de generalización (pregunta nueva).** Sin modificar nuevamente el asistente, ejecute una cuarta consulta que **no haya utilizado durante las mejoras**:
+
+> ¿Es obligatorio presentar un certificado digital para solicitar la revisión de una evaluación?
+
+Contraste la respuesta con `normativa_ejemplo.md`. Compruebe si distingue correctamente entre requisitos exigidos y requisitos que el documento no establece. Registre el resultado. Esta prueba complementa las tres comparaciones anteriores.
+
+**Paso 25.** Escriba dos o tres frases: ¿qué problema se redujo?, ¿qué problema continúa?, ¿qué evidencia respalda su conclusión? **Una única respuesta correcta no demuestra fiabilidad general.**
+
+**Comprobación E:** compara tres casos antes y después con la **misma redacción** y distingue observaciones de suposiciones.
+
+## Bloque 3 — Evaluación y documentación del trabajo
+
+### Etapa 5. Preparar evidencias
 
 **Paso 26.** Abra su bitácora en Bloc de notas, Word o el editor utilizado. Cree estos apartados: **Propósito del asistente**, **Preguntas y respuestas iniciales**, **Problemas detectados**, **Dos mejoras**, **Resultados finales** y **Conclusión**.
 
@@ -244,7 +244,7 @@ Aunque **System Prompt**, **Knowledge** y **Skills** estén alineados, sin contr
 
 **Comprobación F:** otro participante podría reconocer qué preguntas utilizó, qué modificó y cómo determinó el resultado.
 
-### Etapa 6. Concluir y revisar la calidad de la evidencia (25 minutos)
+### Etapa 6. Concluir y revisar la calidad de la evidencia
 
 **Paso 30.** Escriba una conclusión crítica en un párrafo: qué mejoró, qué limitaciones persisten y qué se debería probar antes de utilizar el asistente en un proceso real.
 
