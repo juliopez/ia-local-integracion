@@ -266,6 +266,8 @@ def _terminos(texto: str) -> set[str]:
         "calificacion": "nota", "calificaciones": "nota",
         "notas": "nota", "matriculas": "matricula",
         "periodos": "periodo",
+        "dirijo": "destinatario", "dirigir": "destinatario",
+        "enviar": "destinatario", "destino": "destinatario",
     }
     return {
         equivalencias.get(token, token)
@@ -323,6 +325,8 @@ def validar_respuesta_documental(pregunta: str, respuesta: str) -> str:
         return RESPUESTA_SIN_EVIDENCIA
 
     terminos = _terminos(pregunta)
+    if "a quien" in consulta or "a quien" in consulta.replace("¿", ""):
+        terminos.add("destinatario")
     if len(terminos) < 2:
         return RESPUESTA_SIN_EVIDENCIA
 
