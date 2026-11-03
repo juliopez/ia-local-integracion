@@ -116,8 +116,8 @@ En este laboratorio esos conceptos serán aplicados mediante la evaluación de u
 
 Secuencia sugerida para profundizar (sin tiempos obligatorios):
 
-| Actividad | Tiempo aproximado |
-|-----------|------------------:|
+| Actividad | Enfoque |
+|-----------|---------|
 | Presentación del laboratorio | Introducción |
 | Caso guiado de validación | Diseño y ejecución |
 | Optimización del prompt | Intervenciones justificadas |
