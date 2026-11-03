@@ -353,7 +353,17 @@ def validar_respuesta_documental(pregunta: str, respuesta: str) -> str:
         if (len(cubiertos) >= 2 and
                 len(cubiertos) / len(terminos) >= 0.65 and
                 bool(terminos & terminos_linea)):
+            # Desambiguación del tipo de pregunta sin inventar respuestas.
+            pide_ubicacion = any(x in consulta for x in (
+                "donde", "en que plataforma", "en que lugar",
+            ))
+            expresa_ubicacion = any(x in normal for x in (
+                "aula virtual", "plataforma", "sitio web", "portal",
+                "se comunican", "se publican",
+            ))
+            bonificacion = 1 if pide_ubicacion and expresa_ubicacion else 0
             candidatos.append((
+                bonificacion,
                 len(cubiertos) / len(terminos),
                 len(terminos & terminos_linea),
                 nombre, seccion, pasaje,
@@ -363,10 +373,10 @@ def validar_respuesta_documental(pregunta: str, respuesta: str) -> str:
     candidatos.sort(reverse=True)
     mejor = candidatos[0]
     if (len(candidatos) > 1 and
-            candidatos[1][:2] == mejor[:2] and
-            candidatos[1][4] != mejor[4]):
+            candidatos[1][:3] == mejor[:3] and
+            candidatos[1][5] != mejor[5]):
         return RESPUESTA_SIN_EVIDENCIA
-    return f"Según {mejor[2]} ({mejor[3]}): {mejor[4]}"
+    return f"Según {mejor[3]} ({mejor[4]}): {mejor[5]}"
 
 
 # ---------------------------------------------------------
