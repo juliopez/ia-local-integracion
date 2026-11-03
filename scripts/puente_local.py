@@ -257,15 +257,25 @@ def _terminos(texto: str) -> set[str]:
         "una", "uno", "unos", "unas", "del", "las", "los", "con",
         "por", "mis", "sus", "ser", "hay", "son", "me", "mi",
         "en", "el", "la", "un", "de", "a", "y", "se", "es",
+        "solicitar", "solicitud", "solicitudes",
+    }
+    equivalencias = {
+        "dias": "plazo", "dia": "plazo", "tiempo": "plazo",
+        "revisar": "revision", "revisiones": "revision",
+        "evaluacion": "evaluacion", "evaluaciones": "evaluacion",
+        "calificacion": "nota", "calificaciones": "nota",
+        "notas": "nota", "matriculas": "matricula",
+        "periodos": "periodo",
     }
     return {
-        token for token in re.findall(r"[a-z0-9]+", _normalizar(texto))
-        if len(token) >= 4 and token not in vacias
+        equivalencias.get(token, token)
+        for token in re.findall(r"[a-z0-9]+", _normalizar(texto))
+        if len(token) >= 3 and token not in vacias
     }
 
 
-def _pasajes_documentales() -> list[tuple[str, str]]:
-    """Obtiene unidades textuales de documentos Markdown/TXT sin inventar datos."""
+def _pasajes_documentales() -> list[tuple[str, str, str]]:
+    """Extrae viñetas con su encabezado; descarta secciones de ausencias."""
     pasajes = []
     if not CARPETA_CONTEXTO.is_dir():
         return pasajes
@@ -274,30 +284,38 @@ def _pasajes_documentales() -> list[tuple[str, str]]:
             continue
         if archivo.suffix.lower() not in {".md", ".txt"}:
             continue
-        texto = archivo.read_text(encoding="utf-8")
-        # Párrafos y viñetas: conservar texto de fuente, no reescribirlo.
-        for bloque in re.split(r"\n\s*\n|(?=^[-*] )", texto, flags=re.MULTILINE):
-            bloque = bloque.strip()
-            if not bloque or bloque.startswith("#"):
+        seccion = ""
+        excluida = False
+        for linea in archivo.read_text(encoding="utf-8").splitlines():
+            linea = linea.strip()
+            if not linea:
                 continue
-            if len(bloque) > 900:
+            if linea.startswith("#"):
+                seccion = linea.lstrip("# ").strip()
+                excluida = "no contiene" in _normalizar(seccion)
                 continue
-            pasajes.append((archivo.name, bloque))
+            if excluida or linea.startswith("**Documento ficticio"):
+                continue
+            if linea.startswith(("- ", "* ")):
+                texto = linea[2:].strip()
+            else:
+                texto = linea
+            if len(texto) > 900:
+                continue
+            # La cabecera ayuda a recuperar información en viñetas breves.
+            pasajes.append((archivo.name, seccion, texto))
     return pasajes
 
 
 def validar_respuesta_documental(pregunta: str, respuesta: str) -> str:
-    """Respuesta extractiva conservadora, independiente de la redacción del LLM.
+    """Entrega exclusivamente pasajes literales con respaldo suficiente.
 
-    Nunca publica afirmaciones generadas libremente. Si no identifica evidencia
-    textual inequívoca, se abstiene. La coincidencia léxica no es validación
-    semántica universal y debe evaluarse con documentos nuevos.
+    El texto generado por Ollama no se considera evidencia. Esta recuperación
+    léxica es conservadora, no un verificador semántico universal.
     """
     consulta = _normalizar(pregunta).strip()
     if re.fullmatch(r"\s*(hola|buenas|buenos dias|buenas tardes|buenas noches)[!¡.,\s]*", consulta):
         return "Hola, ¿en qué consulta académica puedo ayudarte?"
-
-    # Evitar confundir datos personales con hechos generales del documento.
     if any(x in consulta for x in (
         "estoy inscrito", "estoy inscrita", "mi nota", "mis notas",
         "mi matricula", "me puede enviar", "puedes enviar",
@@ -309,28 +327,35 @@ def validar_respuesta_documental(pregunta: str, respuesta: str) -> str:
         return RESPUESTA_SIN_EVIDENCIA
 
     candidatos = []
-    for nombre, pasaje in _pasajes_documentales():
-        # Secciones de exclusiones: no son hechos positivos para contestar.
+    for nombre, seccion, pasaje in _pasajes_documentales():
         normal = _normalizar(pasaje)
         if any(x in normal for x in (
-            "no contiene", "no especifica", "no se indica",
-            "no se establece", "no establece", "no dispone",
+            "no especifica", "no se indica", "no se establece",
+            "no establece", "no dispone", "no es un plazo",
         )):
             continue
-        presentes = _terminos(pasaje)
-        coincidencias = terminos & presentes
-        if len(coincidencias) >= 2 and len(coincidencias) / len(terminos) >= 0.6:
-            candidatos.append((len(coincidencias) / len(terminos), len(coincidencias), nombre, pasaje))
-
+        # El encabezado proporciona el tema; la línea debe aportar
+        # al menos un término específico de la consulta.
+        terminos_linea = _terminos(pasaje)
+        terminos_seccion = _terminos(seccion)
+        cubiertos = terminos & (terminos_linea | terminos_seccion)
+        if (len(cubiertos) >= 2 and
+                len(cubiertos) / len(terminos) >= 0.65 and
+                bool(terminos & terminos_linea)):
+            candidatos.append((
+                len(cubiertos) / len(terminos),
+                len(terminos & terminos_linea),
+                nombre, seccion, pasaje,
+            ))
     if not candidatos:
         return RESPUESTA_SIN_EVIDENCIA
-
     candidatos.sort(reverse=True)
     mejor = candidatos[0]
-    # No afirmar nada cuando hay evidencia igualmente plausible y distinta.
-    if len(candidatos) > 1 and candidatos[1][0:2] == mejor[0:2] and candidatos[1][3] != mejor[3]:
+    if (len(candidatos) > 1 and
+            candidatos[1][:2] == mejor[:2] and
+            candidatos[1][4] != mejor[4]):
         return RESPUESTA_SIN_EVIDENCIA
-    return f"Según {mejor[2]}: {mejor[3]}"
+    return f"Según {mejor[2]} ({mejor[3]}): {mejor[4]}"
 
 
 # ---------------------------------------------------------
