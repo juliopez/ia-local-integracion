@@ -191,6 +191,16 @@ ia-local-integracion-main/
 
 **Paso B4.** Abra `scripts/contexto/normativa_ejemplo.md`. Este es el documento de referencia que Python entrega al modelo a través de Ollama. No se consulta la base Knowledge de Open WebUI. El puente incorpora documentos `.md` y `.txt` de esta carpeta, con límites de tamaño didácticos; **no realiza RAG ni búsqueda vectorial**.
 
+### Pregunta frecuente: ¿puedo utilizar documentos PDF o Word como Knowledge?
+
+**Sí, pero depende de la ruta.** En **Open WebUI (ruta A)**, la posibilidad de incorporar PDF o Word depende de la versión instalada y de los extractores de documentos disponibles. Que un archivo se cargue no garantiza que todo su contenido sea recuperado correctamente: compruebe con una pregunta cuya respuesta conozca y verifique la fuente. Los PDF escaneados o con tablas complejas pueden requerir procesamiento adicional.
+
+En el **puente Python (ruta B)**, la carpeta `scripts/contexto/` **solo se lee directamente en formatos `.md` y `.txt`**. Un archivo `.pdf`, `.docx` o `.doc` colocado allí no se incorpora automáticamente a las consultas. Para usar su contenido sin modificar el puente, extraiga el texto del documento y guarde una copia autorizada como `.txt` o `.md`; revise títulos, tablas, cifras y posibles errores de extracción antes de probar.
+
+**Ejercicio breve de comprobación (integrado en las pruebas existentes):** identifique una regla conocida del documento, formule una pregunta sobre ella y compruebe que el asistente la responde correctamente. Si falla, revise primero si el texto realmente llegó al modelo; no atribuya de inmediato el problema al System Prompt ni cambie de modelo.
+
+**Idea clave:** *formato del archivo*, *extracción de texto* y *calidad de la respuesta* son tres asuntos diferentes. Una Skill denominada «PDF» no habilita por sí sola la lectura de PDF en el puente.
+
 **Paso B5.** Abra PowerShell desde la carpeta raíz (en el Explorador, haga clic en la barra de direcciones, escriba `powershell` y presione **Enter**). Verifique:
 
 ```powershell
