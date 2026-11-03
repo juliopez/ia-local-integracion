@@ -135,6 +135,37 @@ Contraste la respuesta con `normativa_ejemplo.md`. Compruebe si distingue correc
 
 **Paso B3.** El puente selecciona como máximo una Skill configurada según las expresiones de la pregunta. No todas las Skills se utilizan a la vez. Copiar un `SKILL.md` adicional no significa que se active automáticamente.
 
+### Práctica guiada: descubrir y descargar una Skill desde Skills.sh (exploración)
+
+En esta práctica utilizaremos una Skill real llamada **PDF Document Analysis** (`pdf`), publicada por `phodal/auto-dev`. Su archivo contiene instrucciones para comprender una solicitud, extraer información y estructurar la respuesta. **No lee archivos PDF automáticamente**: el puente sigue utilizando el texto de `scripts/contexto/normativa_ejemplo.md`. La finalidad es practicar el descubrimiento, la descarga y la incorporación de instrucciones externas.
+
+**Paso S1. Entrar al catálogo.** Abra el navegador y visite [Skills.sh](https://skills.sh/). Localice el buscador de Skills.
+
+**Paso S2. Buscar la Skill.** Escriba `pdf` y busque el resultado **`pdf`**, asociado al repositorio **`phodal/auto-dev`**. Si hay muchos resultados, compruebe el nombre del repositorio antes de seleccionar. Puede verificar la ficha exacta en [Skills.sh — pdf](https://skills.sh/phodal/auto-dev/pdf).
+
+**Paso S3. Reconocer la ficha.** Abra el resultado y observe tres elementos: **INSTALLATION** (comando de instalación para entornos compatibles), **SKILL.md** (contenido de las instrucciones) y **REPOSITORY** (enlace al repositorio original). **En este laboratorio no ejecute el comando de INSTALLATION**: descargaremos manualmente el archivo de instrucciones.
+
+**Paso S4. Abrir GitHub desde Skills.sh.** En el costado derecho de la ficha, bajo **REPOSITORY**, haga clic en **`phodal/auto-dev`**. Debe abrirse el repositorio público de GitHub. Si aparece un error 404, no descargue archivos desde enlaces no verificados: comuníquelo y elija otra Skill.
+
+**Paso S5. Localizar el archivo.** En GitHub, sobre el listado de carpetas, haga clic en **Go to file**. Escriba `SKILL.md` en el campo de búsqueda. Entre los resultados seleccione exactamente **`examples/skills/pdf/SKILL.md`**. No confunda este archivo con los `SKILL.md` de otras carpetas.
+
+**Paso S6. Comprobar el contenido.** Verifique que la página muestra el título **PDF Document Analysis** y las instrucciones de comprender la solicitud, extraer información, presentar resultados estructurados y comprobar que estén completos.
+
+**Paso S7. Descargar el archivo.** En la esquina superior derecha del visor del archivo, haga clic en el **ícono de descarga (flecha hacia abajo), junto a Raw**. GitHub descargará el archivo original. Alternativamente, haga clic en **Raw** y guárdelo con **Ctrl + S**. Compruebe que se llama exactamente **`SKILL.md`**, no `SKILL.md.txt`.
+
+**Paso S8. Guardar la Skill en el proyecto.** En el Explorador de Windows abra la carpeta del proyecto y entre a `scripts/skills/`. Cree una subcarpeta llamada **`pdf`** y coloque allí el archivo descargado. La ruta final debe ser:
+
+```text
+ia-local-integracion-main/
+└── scripts/
+    └── skills/
+        └── pdf/
+            └── SKILL.md
+```
+
+**Comprobación:** el archivo `scripts/skills/pdf/SKILL.md` existe y contiene las instrucciones originales. **No es necesario instalar Node.js ni ejecutar `npx`**. Esta práctica demuestra cómo localizar y examinar una Skill, **no su ejecución**: el puente actual no selecciona automáticamente `pdf`, aunque exista la carpeta. Para activarla haría falta adaptar explícitamente el selector, lo que **no forma parte de esta sesión**. Tampoco se extrae contenido PDF de manera automática.
+
+
 **Paso B4.** Compruebe que `normativa_ejemplo.md` contiene las reglas necesarias para responder. El puente lee archivos `.md` y `.txt` de `scripts/contexto/`; no utiliza RAG ni búsqueda vectorial.
 
 ### ¿Por qué utilizamos archivos TXT o Markdown para Knowledge?
