@@ -4,32 +4,19 @@
 
 # Validación y optimización del asistente inteligente mediante casos de prueba
 
-## Ruta intensiva — sesión 5 (60 minutos de optimización)
+## Cómo utilizar este laboratorio en la sesión 5
 
-> **Alucinaciones y fuentes:** consulte en la [guía autónoma de sesión 5](Guia_Autonoma_Sesion05_Windows_Paso_a_Paso.md) la explicación conceptual, el procedimiento para verificar afirmaciones y la comparación opcional entre la normativa breve y la ampliada. Que aparezca una fuente no garantiza que respalde cada afirmación.
+La [guía autónoma paso a paso de la sesión 5](Guia_Autonoma_Sesion05_Windows_Paso_a_Paso.md) es la **ruta práctica principal**: utiliza el puente **Python + Ollama**, los archivos locales de System Prompt, Knowledge y Skills, tres preguntas de comparación antes/después y una cuarta pregunta nueva para comprobar generalización. También incluye la práctica guiada de descubrimiento y descarga de una Skill desde [Skills.sh](https://skills.sh/).
 
+**Este Laboratorio 3 es un recurso complementario para profundizar** en diseño de casos de prueba, registro de evidencias y Proyecto Integrador. Las actividades extensas de cinco casos y los ejemplos de ajuste del System Prompt que aparecen más adelante son una **ampliación opcional**, no requisitos adicionales para completar la guía de sesión 5.
 
-> **Guía autónoma vigente:** [Sesión 5 — explicación breve, catálogo de mejoras, paso a paso, comparación y evaluación final](Guia_Autonoma_Sesion05_Windows_Paso_a_Paso.md). El estudiante selecciona **al menos dos mejoras pertinentes** sin repetir obligatoriamente cambios ya realizados. No se requiere descargar otro modelo. La guía distingue 15 minutos de introducción, 60 de optimización y 45 de evaluación; el instrumento institucional final debe definirse por separado.
+Para las pruebas locales ejecute desde la raíz del repositorio:
 
+```powershell
+py scripts/puente_local.py --modo prueba --pregunta "Escriba aquí su pregunta"
+```
 
-Esta actividad se desarrolla **después** de haber implementado el flujo Google Workspace ↔ Ollama en las sesiones 3 y 4. El bloque completo de la jornada contempla **15 minutos de contextualización, 60 minutos de mejora del asistente y 45 minutos de evaluación** (el instrumento evaluativo se definirá por separado).
-
-1. **10 min — Diagnóstico:** elegir tres consultas representativas, incluida una cuya respuesta no esté documentada; registrar respuestas iniciales y al menos dos problemas.
-2. **15 min — Selección:** elegir dos mejoras pertinentes del catálogo de System Prompt, fuentes, Skills, formato, restricciones, parámetros o preguntas, sin repetir necesariamente lo ya realizado.
-3. **25 min — Implementación:** guardar configuración original, modificar un componente por vez y comprobar sus efectos.
-4. **10 min — Comparación:** repetir las tres consultas originales, registrar diferencias, reconocer límites y elaborar conclusiones.
-
-**Evidencia:** tabla antes/después, cambios documentados en bitácora y archivos locales actualizados. No confunda mayor extensión de la respuesta con mayor calidad ni envíe pruebas a direcciones externas reales.
-
----
-
-**Ruta intensiva:** [sesión 5 — guía paso a paso](Guia_Autonoma_Sesion05_Windows_Paso_a_Paso.md).
-
-**Capítulo asociado:** Capítulo 3. Validación y optimización de asistentes inteligentes
-
-**Duración estimada:** 100 minutos
-
-**Proyecto Integrador:** Documento 3. Validación y optimización del asistente inteligente
+El modo prueba no envía correos ni modifica Google Sheets. No es necesario utilizar Open WebUI, instalar otro modelo ni modificar el código Python. Mantenga el mismo modelo y la misma configuración al comparar respuestas; los resultados también dependen de las capacidades del LLM. Los documentos de conocimiento que carga este puente son archivos `.txt` y `.md` en `scripts/contexto/` (máximo 12.000 caracteres por documento y 24.000 en total). Las Skills externas descargadas no se activan automáticamente.
 
 ---
 
@@ -123,21 +110,21 @@ En este laboratorio esos conceptos serán aplicados mediante la evaluación de u
 
 ---
 
-## 2.5 Tiempo estimado
+## 2.5 Organización sugerida
 
-**Duración total:** 100 minutos
+**Duración:** flexible; este laboratorio puede utilizarse como ampliación de la guía de sesión 5.
 
-Distribución sugerida:
+Secuencia sugerida para profundizar (sin tiempos obligatorios):
 
 | Actividad | Tiempo aproximado |
 |-----------|------------------:|
-| Presentación del laboratorio | 10 minutos |
-| Caso guiado de validación | 30 minutos |
-| Optimización del prompt | 20 minutos |
-| Proyecto Integrador | 35 minutos |
-| Reflexión y cierre | 5 minutos |
+| Presentación del laboratorio | Introducción |
+| Caso guiado de validación | Diseño y ejecución |
+| Optimización del prompt | Intervenciones justificadas |
+| Proyecto Integrador | Aplicación al proyecto propio |
+| Reflexión y cierre | Síntesis crítica |
 
-La distribución podrá ajustarse según el ritmo de trabajo del grupo.
+Realice estas actividades de ampliación según las necesidades del proyecto; no sustituyen la secuencia de la guía autónoma.
 
 ---
 
@@ -150,7 +137,7 @@ La distribución podrá ajustarse según el ritmo de trabajo del grupo.
 ### Software
 
 - Ollama operativo.
-- Open WebUI.
+- Python 3 y dependencias del puente local.
 - Modelo de lenguaje instalado.
 
 ### Archivos
@@ -173,7 +160,7 @@ Antes de comenzar este laboratorio se espera que el participante:
 - haya completado el Laboratorio 2;
 - disponga del Documento 2 del Proyecto Integrador;
 - comprenda la estructura de un asistente inteligente;
-- conozca el funcionamiento básico de Ollama y Open WebUI;
+- conozca el funcionamiento básico de Ollama y del puente Python;
 - haya revisado el Capítulo 3 del Manual del Participante.
 
 ---
@@ -187,7 +174,7 @@ Antes de iniciar confirme que dispone de los siguientes elementos.
 | Verificación                         | Estado |
 |--------------|:------:|
 | Ollama operativo                     | □ |
-| Open WebUI funcionando               | □ |
+| Puente Python disponible y configurado | □ |
 | Modelo disponible                    | □ |
 | Documento 2 del Proyecto Integrador  | □ |
 | System Prompt del asistente          | □ |
@@ -311,7 +298,7 @@ Cada caso debe responder a una pregunta sencilla:
 
 ## Procedimiento
 
-Analice el propósito del asistente académico y diseñe cinco consultas representativas.
+Como ampliación opcional, analice el propósito del asistente académico y diseñe cinco consultas representativas. Para completar la sesión 5 basta con los casos definidos en la guía autónoma.
 
 Considere diferentes niveles de dificultad.
 
@@ -391,7 +378,7 @@ Evite corregir inmediatamente los errores detectados.
 
 ## Procedimiento
 
-Ejecute uno por uno los cinco casos de prueba.
+**Si está realizando la ampliación opcional de este laboratorio**, ejecute uno por uno los cinco casos de prueba con el puente Python en `--modo prueba`. Si sigue únicamente la guía autónoma, utilice sus tres casos originales y la cuarta pregunta de generalización.
 
 Después de cada consulta registre cuidadosamente los resultados.
 
@@ -595,9 +582,9 @@ Por ello, durante esta actividad cada modificación deberá estar respaldada por
 
 Revise las observaciones registradas durante la actividad anterior.
 
-Seleccione las tres oportunidades de mejora más importantes.
+Identifique las oportunidades de mejora y seleccione **al menos dos intervenciones pertinentes**, como establece la guía autónoma.
 
-Posteriormente modifique el prompt únicamente en aquellos aspectos que considere necesarios.
+Posteriormente modifique **solo el componente pertinente** (System Prompt, documento de conocimiento o Skill configurada). No se exige modificar el prompt si el problema tiene otra causa.
 
 No agregue instrucciones innecesarias.
 
@@ -701,7 +688,7 @@ De esta manera será posible determinar objetivamente si las modificaciones real
 
 ## Procedimiento
 
-Ejecute nuevamente los cinco casos de prueba utilizando el prompt optimizado.
+En esta ampliación opcional, ejecute nuevamente los cinco casos de prueba con la configuración optimizada. En la guía principal repita exactamente sus tres preguntas originales y añada la pregunta nueva de generalización.
 
 Posteriormente compare ambas versiones.
 
@@ -868,7 +855,7 @@ Complete la siguiente síntesis.
 
 Antes de finalizar la etapa guiada confirme que:
 
-- □ optimizó el System Prompt;
+- □ aplicó al menos dos mejoras justificadas en los componentes pertinentes;
 - □ comparó los resultados obtenidos antes y después de las modificaciones;
 - □ documentó todas las modificaciones;
 - □ registró los resultados de la validación;
