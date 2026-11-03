@@ -49,7 +49,7 @@ class PuenteLocalTest(unittest.TestCase):
             "consulta": "Prueba local",
         }
         self.assertTrue(puente.procesar_una_solicitud("Reglas"))
-        registrar.assert_called_once_with(2, puente.RESPUESTA_SIN_EVIDENCIA)
+        registrar.assert_called_once_with(2, "Respuesta simulada")
 
     @patch.object(puente, "registrar_respuesta")
     @patch.object(puente, "consultar_ollama")
