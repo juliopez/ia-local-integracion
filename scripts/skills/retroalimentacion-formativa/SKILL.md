@@ -20,6 +20,10 @@ Utilice este procedimiento cuando el usuario solicite **retroalimentación sobre
 
 Si el usuario solicita retroalimentación pero no comparte el trabajo o criterios necesarios, pida únicamente el antecedente imprescindible. No simule haber revisado material inexistente.
 
+## Regla de exclusión
+
+Si la solicitud pregunta por un plazo, una norma, un requisito o el procedimiento para revisar una calificación, no aplique esta Skill ni sus encabezados de fortalezas y mejoras. Use respuesta-basada-en-evidencias y la documentación disponible. Solo aplique retroalimentación formativa cuando se solicite expresamente analizar o mejorar un trabajo o desempeño.
+
 ## Procedimiento
 
 1. **Identificar la tarea:** determine qué producto o desempeño se evalúa, su propósito y los criterios proporcionados por el usuario. No invente una rúbrica.
