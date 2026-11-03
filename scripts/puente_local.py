@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import time
 import argparse
-import re
 from pathlib import Path
 from typing import Any
 
@@ -80,8 +79,8 @@ def cargar_skills() -> str:
         total += len(contenido)
         if total > 24000:
             raise ValueError("Las Skills exceden el límite didáctico de 24000 caracteres.")
-        partes.append(f"SKILL LOCAL: {carpeta.name}\n{contenido}")
-    return "\n\n---\n\n".join(partes)
+        partes.append(f"SKILL LOCAL: {carpeta.name}\\n{contenido}")
+    return "\\n\\n---\\n\\n".join(partes)
 
 
 def cargar_contexto() -> str:
@@ -233,153 +232,6 @@ def consultar_ollama(
 
 
 # ---------------------------------------------------------
-# Validación conservadora antes de entregar respuestas
-# ---------------------------------------------------------
-
-RESPUESTA_SIN_EVIDENCIA = (
-    "No dispongo de información suficiente en los documentos "
-    "proporcionados para responder esa consulta."
-)
-
-
-def _normalizar(texto: str) -> str:
-    """Normalización sencilla para cotejar preguntas con evidencia literal."""
-    import unicodedata
-    texto = unicodedata.normalize("NFKD", texto.casefold())
-    return "".join(c for c in texto if not unicodedata.combining(c))
-
-
-def _terminos(texto: str) -> set[str]:
-    vacias = {
-        "cual", "cuales", "cuanto", "cuantos", "cuando", "como", "donde",
-        "que", "quien", "para", "desde", "hasta", "sobre", "tengo",
-        "puedo", "debo", "esta", "estan", "este", "estos", "estas",
-        "una", "uno", "unos", "unas", "del", "las", "los", "con",
-        "por", "mis", "sus", "ser", "hay", "son", "me", "mi",
-        "en", "el", "la", "un", "de", "a", "y", "se", "es",
-        "solicitar", "solicitud", "solicitudes",
-    }
-    equivalencias = {
-        "dias": "plazo", "dia": "plazo", "tiempo": "plazo",
-        "revisar": "revision", "revisiones": "revision",
-        "evaluacion": "evaluacion", "evaluaciones": "evaluacion",
-        "calificacion": "nota", "calificaciones": "nota",
-        "notas": "nota", "matriculas": "matricula",
-        "consultar": "publicacion", "consulto": "publicacion",
-        "ver": "publicacion", "encuentro": "publicacion",
-        "comunican": "publicacion", "comunica": "publicacion",
-        "publican": "publicacion", "publicacion": "publicacion",
-        "periodos": "periodo",
-        "dirijo": "destinatario", "dirigir": "destinatario",
-        "enviar": "destinatario", "destino": "destinatario",
-    }
-    return {
-        equivalencias.get(token, token)
-        for token in re.findall(r"[a-z0-9]+", _normalizar(texto))
-        if len(token) >= 3 and token not in vacias
-    }
-
-
-def _pasajes_documentales() -> list[tuple[str, str, str]]:
-    """Extrae viñetas con su encabezado; descarta secciones de ausencias."""
-    pasajes = []
-    if not CARPETA_CONTEXTO.is_dir():
-        return pasajes
-    for archivo in sorted(CARPETA_CONTEXTO.iterdir()):
-        if not archivo.is_file() or archivo.is_symlink():
-            continue
-        if archivo.suffix.lower() not in {".md", ".txt"}:
-            continue
-        seccion = ""
-        excluida = False
-        for linea in archivo.read_text(encoding="utf-8").splitlines():
-            linea = linea.strip()
-            if not linea:
-                continue
-            if linea.startswith("#"):
-                seccion = linea.lstrip("# ").strip()
-                excluida = "no contiene" in _normalizar(seccion)
-                continue
-            if excluida or linea.startswith("**Documento ficticio"):
-                continue
-            if linea.startswith(("- ", "* ")):
-                texto = linea[2:].strip()
-            else:
-                texto = linea
-            if len(texto) > 900:
-                continue
-            # Separar afirmaciones de advertencias sobre datos ausentes.
-            for frase in re.split(r"(?<=\.)\s+(?=[A-ZÁÉÍÓÚÑ*])", texto):
-                frase = frase.strip()
-                if frase:
-                    pasajes.append((archivo.name, seccion, frase))
-    return pasajes
-
-
-def validar_respuesta_documental(pregunta: str, respuesta: str) -> str:
-    """Entrega exclusivamente pasajes literales con respaldo suficiente.
-
-    El texto generado por Ollama no se considera evidencia. Esta recuperación
-    léxica es conservadora, no un verificador semántico universal.
-    """
-    consulta = _normalizar(pregunta).strip()
-    if re.fullmatch(r"\s*(hola|buenas|buenos dias|buenas tardes|buenas noches)[!¡.,\s]*", consulta):
-        return "Hola, ¿en qué consulta académica puedo ayudarte?"
-    if any(x in consulta for x in (
-        "estoy inscrito", "estoy inscrita", "mi nota", "mis notas",
-        "mi matricula", "me puede enviar", "puedes enviar",
-    )):
-        return RESPUESTA_SIN_EVIDENCIA
-
-    terminos = _terminos(pregunta)
-    if "a quien" in consulta or "a quien" in consulta.replace("¿", ""):
-        terminos.add("destinatario")
-    if len(terminos) < 2:
-        return RESPUESTA_SIN_EVIDENCIA
-
-    candidatos = []
-    for nombre, seccion, pasaje in _pasajes_documentales():
-        normal = _normalizar(pasaje)
-        if any(x in normal for x in (
-            "no especifica", "no se indica", "no se establece",
-            "no establece", "no dispone", "no es un plazo",
-        )):
-            continue
-        # El encabezado proporciona el tema; la línea debe aportar
-        # al menos un término específico de la consulta.
-        terminos_linea = _terminos(pasaje)
-        terminos_seccion = _terminos(seccion)
-        cubiertos = terminos & (terminos_linea | terminos_seccion)
-        if (len(cubiertos) >= 2 and
-                len(cubiertos) / len(terminos) >= 0.65 and
-                bool(terminos & terminos_linea)):
-            # Desambiguación del tipo de pregunta sin inventar respuestas.
-            pide_ubicacion = any(x in consulta for x in (
-                "donde", "en que plataforma", "en que lugar",
-            ))
-            expresa_ubicacion = any(x in normal for x in (
-                "aula virtual", "plataforma", "sitio web", "portal",
-                "se comunican", "se publican",
-            ))
-            bonificacion = 1 if pide_ubicacion and expresa_ubicacion else 0
-            candidatos.append((
-                bonificacion,
-                len(cubiertos) / len(terminos),
-                len(terminos & terminos_linea),
-                nombre, seccion, pasaje,
-            ))
-    if not candidatos:
-        return RESPUESTA_SIN_EVIDENCIA
-    candidatos.sort(reverse=True)
-    mejor = candidatos[0]
-    if (len(candidatos) > 1 and
-            candidatos[1][:3] == mejor[:3] and
-            candidatos[1][5] != mejor[5]):
-        return RESPUESTA_SIN_EVIDENCIA
-    return f"Según {mejor[3]} ({mejor[4]}): {mejor[5]}"
-
-
-# ---------------------------------------------------------
 # Registrar la respuesta en Apps Script
 # ---------------------------------------------------------
 
@@ -456,8 +308,7 @@ def modo_prueba(pregunta: str | None = None) -> None:
     }
     texto = consultar_ollama(system_prompt, construir_mensaje(solicitud))
     print("Respuesta de prueba (sin cambios en Sheets):")
-    print("Respuesta validada:")
-    print(validar_respuesta_documental(solicitud["consulta"], texto))
+    print(texto)
 
 
 def procesar_una_solicitud(system_prompt: str) -> bool:
@@ -469,8 +320,7 @@ def procesar_una_solicitud(system_prompt: str) -> bool:
     print(f"Procesando fila {fila}...")
     mensaje = construir_mensaje(solicitud)
     respuesta_ia = consultar_ollama(system_prompt, mensaje)
-    respuesta_validada = validar_respuesta_documental(str(solicitud.get("consulta", "")), respuesta_ia)
-    registrar_respuesta(fila, respuesta_validada)
+    registrar_respuesta(fila, respuesta_ia)
     print(f"Fila {fila} procesada correctamente.")
     return True
 
