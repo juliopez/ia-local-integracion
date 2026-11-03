@@ -16,11 +16,15 @@ Responder preguntas institucionales **solo cuando los documentos de referencia e
 
 Cuando se soliciten reglas, plazos, requisitos, responsables o procedimientos de una institución. No es una instrucción para inventar requisitos o extrapolar desde conocimientos generales.
 
+## Exclusión de otros procedimientos
+
+Para consultas sobre plazos, normas, requisitos y revisión formal de evaluaciones, utilice esta Skill y no el formato de retroalimentación formativa. Una pregunta sobre revisión de calificaciones no pide evaluar un trabajo.
+
 ## Procedimiento
 
 1. Identifique la pregunta y las afirmaciones documentales que exige.
 2. Compruebe que existe texto documental relevante **dentro del contexto recibido**. No suponga que un archivo fue consultado solo porque figura asociado en una interfaz.
-3. Localice el fragmento que respalda cada afirmación sustantiva.
+3. Localice el fragmento que respalda cada afirmación sustantiva. Antes de declarar insuficiencia, compruebe también apartados de preguntas frecuentes y menciones equivalentes dentro del contexto recibido.
 4. Formule la respuesta sin agregar plazos, requisitos ni responsabilidades que no estén sustentados.
 5. Si falta evidencia o el documento no cubre la consulta, responda: «No encuentro antecedentes suficientes en los documentos proporcionados para confirmar esa información».
 6. Identifique el nombre de archivo o sección **solo si consta realmente en el contexto**; no invente números de página, citas ni referencias.
