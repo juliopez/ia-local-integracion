@@ -242,38 +242,95 @@ RESPUESTA_SIN_EVIDENCIA = (
 )
 
 
+def _normalizar(texto: str) -> str:
+    """Normalización sencilla para cotejar preguntas con evidencia literal."""
+    import unicodedata
+    texto = unicodedata.normalize("NFKD", texto.casefold())
+    return "".join(c for c in texto if not unicodedata.combining(c))
+
+
+def _terminos(texto: str) -> set[str]:
+    vacias = {
+        "cual", "cuales", "cuanto", "cuantos", "cuando", "como", "donde",
+        "que", "quien", "para", "desde", "hasta", "sobre", "tengo",
+        "puedo", "debo", "esta", "estan", "este", "estos", "estas",
+        "una", "uno", "unos", "unas", "del", "las", "los", "con",
+        "por", "mis", "sus", "ser", "hay", "son", "me", "mi",
+        "en", "el", "la", "un", "de", "a", "y", "se", "es",
+    }
+    return {
+        token for token in re.findall(r"[a-z0-9]+", _normalizar(texto))
+        if len(token) >= 4 and token not in vacias
+    }
+
+
+def _pasajes_documentales() -> list[tuple[str, str]]:
+    """Obtiene unidades textuales de documentos Markdown/TXT sin inventar datos."""
+    pasajes = []
+    if not CARPETA_CONTEXTO.is_dir():
+        return pasajes
+    for archivo in sorted(CARPETA_CONTEXTO.iterdir()):
+        if not archivo.is_file() or archivo.is_symlink():
+            continue
+        if archivo.suffix.lower() not in {".md", ".txt"}:
+            continue
+        texto = archivo.read_text(encoding="utf-8")
+        # Párrafos y viñetas: conservar texto de fuente, no reescribirlo.
+        for bloque in re.split(r"\n\s*\n|(?=^[-*] )", texto, flags=re.MULTILINE):
+            bloque = bloque.strip()
+            if not bloque or bloque.startswith("#"):
+                continue
+            if len(bloque) > 900:
+                continue
+            pasajes.append((archivo.name, bloque))
+    return pasajes
+
+
 def validar_respuesta_documental(pregunta: str, respuesta: str) -> str:
-    """Control mínimo verificable. Nunca presenta una respuesta no validada.
+    """Respuesta extractiva conservadora, independiente de la redacción del LLM.
 
-    El caso de revisión se resuelve con evidencia textual exacta; para otros
-    hechos institucionales aún no verificables se usa una respuesta segura.
-    No equivale a un verificador semántico universal.
+    Nunca publica afirmaciones generadas libremente. Si no identifica evidencia
+    textual inequívoca, se abstiene. La coincidencia léxica no es validación
+    semántica universal y debe evaluarse con documentos nuevos.
     """
-    pregunta_normalizada = pregunta.casefold()
-    contexto = cargar_contexto().casefold()
-
-    if re.fullmatch(r"\s*(hola|buenas|buenos días|buenas tardes|buenas noches)[!¡.,\s]*", pregunta_normalizada):
+    consulta = _normalizar(pregunta).strip()
+    if re.fullmatch(r"\s*(hola|buenas|buenos dias|buenas tardes|buenas noches)[!¡.,\s]*", consulta):
         return "Hola, ¿en qué consulta académica puedo ayudarte?"
 
-    # Solo contestar el plazo cuando la pregunta trata de revisión de notas.
-    consulta_revision = (
-        "revisi" in pregunta_normalizada
-        and any(t in pregunta_normalizada for t in ("evaluaci", "nota", "calificaci"))
-    )
-    respaldo_plazo = (
-        "cinco días hábiles desde la publicación de la nota" in contexto
-        and "coordinación académica" in contexto
-    )
-    if consulta_revision and respaldo_plazo:
-        return (
-            "Tienes cinco días hábiles desde la publicación de la nota "
-            "para solicitar una revisión de tu evaluación. "
-            "La solicitud debe dirigirse a coordinación académica."
-        )
+    # Evitar confundir datos personales con hechos generales del documento.
+    if any(x in consulta for x in (
+        "estoy inscrito", "estoy inscrita", "mi nota", "mis notas",
+        "mi matricula", "me puede enviar", "puedes enviar",
+    )):
+        return RESPUESTA_SIN_EVIDENCIA
 
-    # En ausencia de comprobación documental inequívoca, no enviar
-    # afirmaciones institucionales generadas libremente por el modelo.
-    return RESPUESTA_SIN_EVIDENCIA
+    terminos = _terminos(pregunta)
+    if len(terminos) < 2:
+        return RESPUESTA_SIN_EVIDENCIA
+
+    candidatos = []
+    for nombre, pasaje in _pasajes_documentales():
+        # Secciones de exclusiones: no son hechos positivos para contestar.
+        normal = _normalizar(pasaje)
+        if any(x in normal for x in (
+            "no contiene", "no especifica", "no se indica",
+            "no se establece", "no establece", "no dispone",
+        )):
+            continue
+        presentes = _terminos(pasaje)
+        coincidencias = terminos & presentes
+        if len(coincidencias) >= 2 and len(coincidencias) / len(terminos) >= 0.6:
+            candidatos.append((len(coincidencias) / len(terminos), len(coincidencias), nombre, pasaje))
+
+    if not candidatos:
+        return RESPUESTA_SIN_EVIDENCIA
+
+    candidatos.sort(reverse=True)
+    mejor = candidatos[0]
+    # No afirmar nada cuando hay evidencia igualmente plausible y distinta.
+    if len(candidatos) > 1 and candidatos[1][0:2] == mejor[0:2] and candidatos[1][3] != mejor[3]:
+        return RESPUESTA_SIN_EVIDENCIA
+    return f"Según {mejor[2]}: {mejor[3]}"
 
 
 # ---------------------------------------------------------
