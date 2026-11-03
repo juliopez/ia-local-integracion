@@ -79,8 +79,8 @@ def cargar_skills() -> str:
         total += len(contenido)
         if total > 24000:
             raise ValueError("Las Skills exceden el límite didáctico de 24000 caracteres.")
-        partes.append(f"SKILL LOCAL: {carpeta.name}\\n{contenido}")
-    return "\\n\\n---\\n\\n".join(partes)
+        partes.append(f"SKILL LOCAL: {carpeta.name}\n{contenido}")
+    return "\n\n---\n\n".join(partes)
 
 
 def cargar_contexto() -> str:
