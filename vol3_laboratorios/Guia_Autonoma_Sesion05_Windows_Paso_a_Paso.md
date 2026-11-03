@@ -131,9 +131,33 @@ Este texto es **un ejemplo**: adáptelo al problema real diagnosticado, sin alte
 
 **Paso B4.** Compruebe que `normativa_ejemplo.md` contiene las reglas necesarias para responder. El puente lee archivos `.md` y `.txt` de `scripts/contexto/`; no utiliza RAG ni búsqueda vectorial.
 
+### ¿Por qué utilizamos archivos TXT o Markdown para Knowledge?
+
+Cuando incorporamos conocimiento a nuestro asistente, necesitamos que el modelo reciba el contenido del documento en un formato que pueda interpretar.
+
+Los archivos `.txt` y `.md` contienen **texto plano**. Nuestro programa Python puede leerlos directamente y enviar su contenido a Ollama junto con la consulta del usuario. Markdown permite, además, organizar ese texto con títulos, listas y tablas sencillas.
+
+Los archivos PDF y Word tienen estructuras más complejas: pueden incluir formato, tablas, imágenes y otros elementos que requieren herramientas adicionales para extraer el texto correctamente.
+
+```text
+Documento .txt o .md
+         ↓
+Python lee su contenido
+         ↓
+Ollama recibe texto + consulta
+         ↓
+El modelo genera una respuesta
+```
+
+**¿Significa que no podemos utilizar PDF o Word?** No. Podemos aprovechar su información después de extraer el texto y guardarlo en un formato compatible con el puente.
+
+**¿Por qué no incorporamos esos formatos directamente?** Porque el objetivo de esta práctica es comprender cómo un asistente utiliza conocimiento externo sin agregar todavía la complejidad de procesar diferentes formatos documentales. El puente podría ampliarse posteriormente con bibliotecas de Python para extraer texto de PDF y Word, sin necesidad de cambiar el modelo.
+
+**Importante:** esta es una decisión de implementación del **puente Python del taller**, no una incapacidad general de Ollama o de los modelos de lenguaje. Convertir un documento tampoco garantiza respuestas correctas: compruebe que el texto esté completo, sea legible y que las afirmaciones del asistente estén respaldadas por él.
+
 ### Pregunta frecuente: ¿puedo utilizar PDF o Word como Knowledge?
 
-**Sí como fuente de información, pero no directamente en este puente.** El puente del taller lee `.md` y `.txt`; colocar un archivo `.pdf`, `.docx` o `.doc` en `scripts/contexto/` no hará que el modelo lo lea.
+**Sí, como fuente de información, pero no directamente en este puente.** El puente del taller lee `.md` y `.txt`; colocar un archivo `.pdf`, `.docx` o `.doc` en `scripts/contexto/` no hará que el modelo lo lea.
 
 **Paso B5.** Si desea utilizar información de un PDF o documento Word, abra el archivo con una herramienta apropiada, extraiga o copie su contenido textual y guarde una **copia autorizada** como `.txt` o `.md` dentro de `scripts/contexto/`. Revise encabezados, tablas, números y errores de conversión. Un PDF escaneado puede requerir OCR; copiar un archivo no equivale a extraer su texto.
 
