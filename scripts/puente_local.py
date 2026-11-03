@@ -304,8 +304,11 @@ def _pasajes_documentales() -> list[tuple[str, str, str]]:
                 texto = linea
             if len(texto) > 900:
                 continue
-            # La cabecera ayuda a recuperar información en viñetas breves.
-            pasajes.append((archivo.name, seccion, texto))
+            # Separar afirmaciones de advertencias sobre datos ausentes.
+            for frase in re.split(r"(?<=\.)\s+(?=[A-ZÁÉÍÓÚÑ*])", texto):
+                frase = frase.strip()
+                if frase:
+                    pasajes.append((archivo.name, seccion, frase))
     return pasajes
 
 
