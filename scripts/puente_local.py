@@ -55,18 +55,14 @@ def cargar_system_prompt() -> str:
 # Contexto documental y skill local (sin API de Open WebUI)
 # ---------------------------------------------------------
 
-def cargar_skills() -> str:
-    """Carga todas las Skills locales declarativas desde scripts/skills/*/SKILL.md.
-
-    Solo lee Markdown; no ejecuta scripts ni instala dependencias. El modelo recibe
-    los procedimientos como instrucciones, sin selección automática garantizada.
-    """
-    if not CARPETA_SKILLS.is_dir():
+def cargar_skills(skill_seleccionada: str | None = None) -> str:
+    """Carga una Skill seleccionada; sin selección no carga procedimientos."""
+    if not CARPETA_SKILLS.is_dir() or not skill_seleccionada:
         return ""
     partes = []
     total = 0
     for carpeta in sorted(CARPETA_SKILLS.iterdir()):
-        if not carpeta.is_dir() or carpeta.is_symlink():
+        if not carpeta.is_dir() or carpeta.is_symlink() or carpeta.name != skill_seleccionada:
             continue
         archivo = carpeta / "SKILL.md"
         if not archivo.is_file() or archivo.is_symlink():
@@ -106,9 +102,28 @@ def cargar_contexto() -> str:
     return "\n\n---\n\n".join(partes)
 
 
-def construir_instrucciones(system_prompt: str) -> str:
-    """Suma la skill sin atribuirle acciones ejecutables ni acceso web."""
-    skills = cargar_skills()
+def seleccionar_skill(consulta: str) -> str | None:
+    """Selecciona instrucciones, nunca genera respuestas ni interpreta Knowledge."""
+    texto = consulta.lower()
+    # Priorizar una solicitud explícita de evaluación de un trabajo.
+    if any(expresion in texto for expresion in (
+        "retroalimenta", "retroalimentación sobre", "evalúa mi trabajo",
+        "evalua mi trabajo", "revisa mi trabajo", "mejora mi explicación",
+        "mejora mi explicacion",
+    )):
+        return "retroalimentacion-formativa"
+    if any(expresion in texto for expresion in (
+        "plazo", "calificaci", "revisión", "revision", "normativa",
+        "requisito", "arancel", "matrícula", "matricula",
+        "procedimiento", "solicitud", "reglamento",
+    )):
+        return "respuesta-basada-en-evidencias"
+    return None
+
+
+def construir_instrucciones(system_prompt: str, consulta: str = "") -> str:
+    """Incluye solo la Skill pertinente; el modelo sigue generando la respuesta."""
+    skills = cargar_skills(seleccionar_skill(consulta))
     if not skills:
         return system_prompt
     return (
@@ -197,7 +212,7 @@ def consultar_ollama(
         "messages": [
             {
                 "role": "system",
-                "content": construir_instrucciones(system_prompt),
+                "content": construir_instrucciones(system_prompt, mensaje_usuario.split("SOLICITUD DEL USUARIO:")[-1]),
             },
             {
                 "role": "user",
