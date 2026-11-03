@@ -34,7 +34,7 @@ Este documento **no especifica** aranceles, becas, fechas de matrícula, aprobac
 
 - **¿Cuántos días tengo para solicitar una revisión?** Cinco días hábiles desde la publicación de la nota.
 - **¿A quién dirijo la solicitud?** A coordinación académica.
-- **¿Debo presentar documentos adicionales obligatorios?** Esta normativa no los establece.
+- **¿Debo presentar documentos adicionales obligatorios, como un certificado digital?** No. Esta normativa no establece documentos adicionales obligatorios ni exige un certificado digital.
 - **¿Qué hago si mi nota fue baja?** Puedo pedir retroalimentación al docente y revisar los criterios de evaluación; son recomendaciones, no requisitos.
 - **¿La revisión asegura que subirán mi calificación?** No.
 - **¿Existe un enlace oficial para solicitar la revisión?** No está indicado en este documento; consultar a coordinación académica.
